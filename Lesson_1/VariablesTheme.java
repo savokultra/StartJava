@@ -87,11 +87,11 @@ public class VariablesTheme {
         System.out.println("Исходные значения переменных: " + "a = " + a + " b = " + b);
         //побитовые операции https://proproprogs.ru/java_base/bitovye-operacii-i-ili-ne-xor
          //двоичный вид a(2): 00000010; a XOR b = 00000111 или 7; a = 7
-        a = a ^ b;
+        a ^= b;
          //двоичный вид b(5): 00000101; b XOR a = 00000010 или 2; b = 2
-        b = b ^ a;
+        b ^= a;
          // a XOR b = 000000101 или 5; a = 5
-        a = a ^ b;
+        a ^= b;
         System.out.println("Новые значения переменных: " + "a = " + a + " b = " + b + '\n');
 
         System.out.println("Задание 6: Вывод символов и их кодов;");
