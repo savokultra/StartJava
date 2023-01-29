@@ -9,6 +9,7 @@ public class MyFirstApp {
         System.out.print("Введите свое имя: ");
         System.out.print(console.nextLine());
         System.out.print(" - Так вас зовут ");
+        System.out.print("Изменил коммит в в ветке main");
     //public static void main(String[] args) {
         //System.out.println(Charset.defaultCharset().displayName());
     }
