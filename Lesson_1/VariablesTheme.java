@@ -1,6 +1,6 @@
 public class VariablesTheme {
 
-    public static void main(String [] args) {
+    public static void main(String[] args) {
         //Задание 1: Вывод значений переменных на консоль;
         System.out.println("Задание 1: Вывод значений переменных на консоль ");
         byte cores = 10;
@@ -77,11 +77,11 @@ public class VariablesTheme {
         System.out.println("Исходные значения переменных: " + "a = " + a + " b = " + b);
          /* a = 7; мне кажется в случае арифметических выражений комментарий с права от выражения 
          удобнее*/
-        a = a + b;
+        a += b;
          // b = 2
-        b = a - b;
+        b -= b;
          //a = 5
-        a = a - b;
+        a -= b;
         System.out.println("Новые значения переменных: " + "a = " + a + " b = " + b);
         System.out.println("С помощью побитовой операции: ");
         System.out.println("Исходные значения переменных: " + "a = " + a + " b = " + b);
@@ -100,24 +100,25 @@ public class VariablesTheme {
         char dog = '@';
         char caret = '^';
         char underscore = '_';
-        System.out.println("Код символа: " + (int)sharp + " Символ: " + sharp);
-        System.out.println("Код символа: " + (int)ampersand + " Символ: " + ampersand);
-        System.out.println("Код символа: " + (int)dog + " Символ: " + dog);
-        System.out.println("Код символа: " + (int)caret + " Символ: " + caret);
-        System.out.println("Код символа: " + (int)underscore + " Символ: " + underscore +'\n');
+        System.out.println("Код символа: " + (int) sharp + " Символ: " + sharp);
+        System.out.println("Код символа: " + (int) ampersand + " Символ: " + ampersand);
+        System.out.println("Код символа: " + (int) dog + " Символ: " + dog);
+        System.out.println("Код символа: " + (int) caret + " Символ: " + caret);
+        System.out.println("Код символа: " + (int) underscore + " Символ: " + underscore +'\n');
 
         System.out.println("Задание 7: Вывод в консоль ASCII-арт Дюка;");
         char slash = '/';
         char backslash = '\\';
-        char undScore = '_';
+        // underscore = '_'; инициализирована в задании 6
+        //char underscore = '_';
         char bracket = '(';
-        char bBracket = ')';
+        char backbracket = ')';
         System.out.printf("    %c%c\n", slash, backslash);
         System.out.printf("   %c  %c\n", slash, backslash);
-        System.out.printf("  %c%c%c %c%c\n", slash, undScore, bracket, bBracket, backslash);
+        System.out.printf("  %c%c%c %c%c\n", slash, underscore, bracket, backbracket, backslash);
         System.out.printf(" %c      %c\n", slash, backslash);
-        System.out.printf("%c%c%c%c%c%c%c%c%c%c\n", slash, undScore, undScore, undScore, undScore, 
-            slash, backslash, undScore, undScore, backslash);
+        System.out.printf("%c%c%c%c%c%c%c%c%c%c\n", slash, underscore, underscore, underscore, 
+                underscore, slash, backslash, underscore, underscore, backslash);
 
         System.out.println("\nЗадание 8: Вывод количества сотен, десятков и единиц числа;");
         int srcNumber = 123;
