@@ -42,7 +42,7 @@ public class IfElseStatementTheme {
             System.out.println("Наибольшее число = " + first + " ,Наименьшее число = " + second);
         } else {
             System.out.println("Наибольшее число = " + second + " ,Наименьшее число = " + first + 
-                    '\n');
+                    "\n");
         }
         System.out.println("Задание 3: Проверка числа;");
         int a = 4;
@@ -59,7 +59,29 @@ public class IfElseStatementTheme {
                 System.out.println(" положительное");
             } 
         } else {
-            System.out.println("Исходное число равно: " + a);
+            System.out.println("Исходное число равно: " + a + "/n");
         }
+
+        System.out.println("Задание 4: Поиск одинаковых цифр в числах;");
+        int number = 123;
+        int number1 = 223;
+        System.out.println("Исходные числа " + number + " и " + number1);
+        if (number != number1) {
+            if (number / 100 == number1 / 100) {
+                System.out.println("Цифры разряда сотни совпадают = " + number / 100);
+            }
+
+            if ((number / 10) % 10 == (number1 / 10) % 10) {
+                System.out.println("Цифры разряда десятки совпадают = " + ((number / 10) % 10));
+            }
+
+            if (number % 10 == number1 % 10) {
+                System.out.println("Цифра разряда единицы совпадают = " + number % 10);
+            }
+        } else {
+            System.out.println("Совпадений разрядов цифр нет");
+        }
+
+        System.out.println("\nЗадание 5: Определение символа по его коду;");
     }
 }
