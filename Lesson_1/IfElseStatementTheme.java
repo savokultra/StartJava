@@ -63,8 +63,8 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("Задание 4: Поиск одинаковых цифр в числах;");
-        int number = 123;
-        int number1 = 223;
+        int number = 999;
+        int number1 = 898;
         System.out.println("Исходные числа " + number + " и " + number1);
         if (number != number1) {
             if (number / 100 == number1 / 100) {
@@ -78,8 +78,11 @@ public class IfElseStatementTheme {
             if (number % 10 == number1 % 10) {
                 System.out.println("Цифра разряда единицы совпадают = " + number % 10);
             }
-        } else {
-            System.out.println("Совпадений разрядов цифр нет");
+
+            if ((number / 100 != number1 / 100) && ((number / 10) % 10 != (number1 / 10) % 10) &&
+                    (number % 10 != number1 % 10)) {
+                System.out.println("Совпадений разрядов цифр нет");
+            }
         }
 
         System.out.println("\nЗадание 5: Определение символа по его коду;");
