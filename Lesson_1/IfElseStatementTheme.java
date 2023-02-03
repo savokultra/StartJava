@@ -86,5 +86,16 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\nЗадание 5: Определение символа по его коду;");
+        char sumbol = '\u0057';
+        System.out.println("Введен символ: " + sumbol);
+        if (sumbol >= 'A' && sumbol <= 'Z') {
+            System.out.println("Большая буква");
+        } else if (sumbol >= 'a' && sumbol <= 'z') {
+            System.out.println("Маленькая буква");
+        } else if (sumbol >= '0' && sumbol <= '9') {
+            System.out.println("Число");
+        } else {
+            System.out.println("не буква и не число");
+        }
     }
 }
