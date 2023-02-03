@@ -95,7 +95,20 @@ public class IfElseStatementTheme {
         } else if (sumbol >= '0' && sumbol <= '9') {
             System.out.println("Число");
         } else {
-            System.out.println("не буква и не число");
+            System.out.println("не буква и не число\n");
+        }
+
+        System.out.println("\nЗадание 6: Подсчет суммы вклада и начисленных банком %;");
+        int contributionSumm = 100_000;
+        System.out.println("Сумма вклада = " + contributionSumm);
+        if (contributionSumm < 100_000) {
+            System.out.println("Вам начислено 5 % годовых или " + (int)(contributionSumm * 0.05) + 
+                    " у.е." + "\nИтоговая сумма составит: " + (int)(contributionSumm * 0.05 + 
+                            contributionSumm));
+        } else if (contributionSumm >= 100_000 && contributionSumm <= 300_000) {
+            System.out.println("Вам начислено 7 % годовых или " + (int)(contributionSumm * 0.07) + 
+                    " у.е." + "\nИтоговая сумма составит: " + (int)(contributionSumm * 0.07 + 
+                            contributionSumm));
         }
     }
 }
