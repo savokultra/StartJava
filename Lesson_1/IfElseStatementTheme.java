@@ -119,5 +119,39 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\nЗадание 7: Определение оценки по предметам;");
+        int history = 59;
+        int programming = 91;
+        int histPoint = 1;
+        int progPoint = 2;
+        if (history <= 60) {
+            histPoint = 2;
+            System.out.println(histPoint + " - оценка по истории;");
+        } else if (history > 60 && history < 74) {
+            histPoint = 3;
+            System.out.println(histPoint + " - оценка по истории;");
+        } else if (history > 73 && history < 92) {
+            histPoint = 4;
+            System.out.println(histPoint + " - оценка по истории;");
+        } else if (history > 91) {
+            histPoint = 5;
+            System.out.println(histPoint + " - оценка по истории;");
+        }
+
+        if (programming <= 60) {
+            progPoint = 2;
+            System.out.println(progPoint + " - оценка по программированию;");
+        } else if (programming > 60 && programming < 74) {
+            progPoint = 3;
+            System.out.println(progPoint + " - оценка по программированию;");
+        } else if (programming > 73 && programming < 92) {
+            progPoint = 4;
+            System.out.println(progPoint + " - оценка по программированию;");
+        } else if (programming > 91) {
+            progPoint = 5;
+            System.out.println(progPoint + " - оценка по программированию;");
+        }
+        System.out.println("Средний балл оценок по предметам:" + (histPoint + progPoint) / 2 + 
+                " балла");
+        System.out.println("Средний процент по предметам:" + (history + programming) / 2 + "%");
     }
 }
