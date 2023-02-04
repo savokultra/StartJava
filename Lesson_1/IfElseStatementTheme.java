@@ -152,6 +152,36 @@ public class IfElseStatementTheme {
         }
         System.out.println("Средний балл оценок по предметам:" + (histPoint + progPoint) / 2 + 
                 " балла");
-        System.out.println("Средний процент по предметам:" + (history + programming) / 2 + "%");
+        System.out.println("Средний процент по предметам:" + (history + programming) / 2 + "%\n");
+
+        System.out.println("Задание 8: Расчет прибыли за год;");
+        int rent = 5000;
+        int sales = 13000;
+        int price = 9000;
+        int yearDividend = ((sales * 12) - ((price + rent)*12));
+        if (yearDividend >= 0) {
+            System.out.print("Прибыль за год: ");
+            System.out.printf("%+d", yearDividend);
+            System.out.print(" рублей");
+        } else {
+            System.out.println("Прибыль за год: " + yearDividend + " рублей");
+        }
+
+        System.out.println("Задание 9: Подсчет количества банкнот;");
+        int requireUsd = 367;
+        int total100Usd = 2;
+        int total10Usd = 10;
+        int total1Usd = 80;
+        int require100 = requireUsd / 100;
+        int require10 = (requireUsd % 100) / 10;
+        int require1 = (requireUsd % 10);
+        if ((total100Usd * 100) + (total10Usd * 10) + (total1Usd) >= requireUsd) {
+            if (require100 <= total100Usd) {
+                total100Usd = total100Usd - require100;
+        } else if (require100 > total100Usd) {
+
+        }
+
+        System.out.println(total100Usd);
     }
 }
