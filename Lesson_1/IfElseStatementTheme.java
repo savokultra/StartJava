@@ -100,15 +100,24 @@ public class IfElseStatementTheme {
 
         System.out.println("\nЗадание 6: Подсчет суммы вклада и начисленных банком %;");
         int contributionSumm = 100_000;
-        System.out.println("Сумма вклада = " + contributionSumm);
+        System.out.println("Сумма вклада: " + contributionSumm + " у.е.");
         if (contributionSumm < 100_000) {
             System.out.println("Вам начислено 5 % годовых или " + (int)(contributionSumm * 0.05) + 
-                    " у.е." + "\nИтоговая сумма составит: " + (int)(contributionSumm * 0.05 + 
-                            contributionSumm));
+                    " у.е.");
+            System.out.println("Итоговая сумма составит: " + (int)(contributionSumm * 0.05 + 
+                    contributionSumm) + " у.е.");
         } else if (contributionSumm >= 100_000 && contributionSumm <= 300_000) {
             System.out.println("Вам начислено 7 % годовых или " + (int)(contributionSumm * 0.07) + 
-                    " у.е." + "\nИтоговая сумма составит: " + (int)(contributionSumm * 0.07 + 
-                            contributionSumm));
+                    " у.е.");
+            System.out.println("Итоговая сумма составит: " + (int)(contributionSumm * 0.07 + 
+                    contributionSumm) + " у.е.");
+        } else if (contributionSumm > 300_000) {
+            System.out.println("Вам начислено 10 % годовых или " + (int)(contributionSumm * 0.1) + 
+                    " у.е.");
+            System.out.println("Итоговая сумма составит: " + (int)(contributionSumm * 0.10 + 
+                    contributionSumm) + " у.е.");
         }
+
+        System.out.println("\nЗадание 7: Определение оценки по предметам;");
     }
 }
