@@ -52,12 +52,11 @@ public class IfElseStatementTheme {
             } else {
                 System.out.print("Исходное число: " + a + " - нечетное");
             }
-
             if (a < 0) {
                 System.out.println(" отрицательное");
             } else {
                 System.out.println(" положительное");
-            } 
+            }
         } else {
             System.out.println("Исходное число равно: " + a + "/n");
         }
@@ -70,15 +69,12 @@ public class IfElseStatementTheme {
             if (number / 100 == number1 / 100) {
                 System.out.println("Цифры разряда сотни совпадают = " + number / 100);
             }
-
             if ((number / 10) % 10 == (number1 / 10) % 10) {
                 System.out.println("Цифры разряда десятки совпадают = " + ((number / 10) % 10));
             }
-
             if (number % 10 == number1 % 10) {
                 System.out.println("Цифра разряда единицы совпадают = " + number % 10);
             }
-
             if ((number / 100 != number1 / 100) && ((number / 10) % 10 != (number1 / 10) % 10) &&
                     (number % 10 != number1 % 10)) {
                 System.out.println("Совпадений разрядов цифр нет");
@@ -188,7 +184,6 @@ public class IfElseStatementTheme {
                 debt100 = (total100Usd - require100);// -1
                 total100Usd = 0;
             }
-
             if (require10 <= total10Usd + ((debt100))*10) {
                 total10Usd = total10Usd - require10 + ((debt100)*10);
                 System.out.println("Вам выдано банкнот 10 USD = " + require10);
@@ -197,7 +192,6 @@ public class IfElseStatementTheme {
                 debt10 = total10Usd - require10;// -1
                 total10Usd = 0;
             }
-
             if (require1 <= total1Usd) {
                 total1Usd = total1Usd - require1 + ((debt10) * 10);
                 System.out.println("Вам выдано банкнот 1 USD = " + (int)(require1 + (-(debt100)*100)
@@ -207,5 +201,5 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("В банкомате недостаточно денег");
         }
-    }`
+    }
 }
