@@ -132,7 +132,6 @@ public class IfElseStatementTheme {
             histPoint = 5;
             System.out.println(histPoint + " - оценка по истории;");
         }
-
         if (programming <= 60) {
             progPoint = 2;
             System.out.println(progPoint + " - оценка по программированию;");
@@ -163,7 +162,6 @@ public class IfElseStatementTheme {
             System.out.println("Прибыль за год: " + yearDividend + " рублей");
         }
 
-    public static void main(String[] args) {
         System.out.println("Задание 9: Подсчет количества банкнот;");
         int requireUsd = 567;
         int total100Usd = 10;
