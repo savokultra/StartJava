@@ -199,7 +199,8 @@ public class IfElseStatementTheme {
 
             if (require1 <= total1Usd) {
                 total1Usd = total1Usd - require1 + ((debt10) * 10);
-                System.out.println("Вам выдано банкнот 1 USD = " + (int)(require1 + (-(debt100)*100) + (-(debt10) * 10)) );
+                System.out.println("Вам выдано банкнот 1 USD = " + (int)(require1 + (-(debt100)*100)
+                         + (-(debt10) * 10)) );
             }
         } else {
             System.out.println("В банкомате недостаточно денег");
