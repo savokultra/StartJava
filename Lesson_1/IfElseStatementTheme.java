@@ -176,12 +176,20 @@ public class IfElseStatementTheme {
         int require10 = (requireUsd % 100) / 10;
         int require1 = (requireUsd % 10);
         if ((total100Usd * 100) + (total10Usd * 10) + (total1Usd) >= requireUsd) {
-            if (require100 <= total100Usd) {
-                total100Usd = total100Usd - require100;
-        } else if (require100 > total100Usd) {
+            if (requireUsd / 100 <= total100Usd) {
+                total100Usd = total100Usd - (requireUsd / 100);
+            } else {
+                total10Usd = total10Usd + (total100Usd - requireUsd / 100);
+            }
 
+            if ((requireUsd % 100) / 10 <= total10Usd) {
+                total10Usd = total10Usd - (requireUsd % 100) / 10;
+            } else total1Usd = total1Usd + (total10Usd - (requireUsd % 100) / 10);
+        } else {
+            System.out.println("В банкомате недостаточно денег");
         }
-
-        System.out.println(total100Usd);
+        System.out.println("total100Usd = " + total100Usd);
+        System.out.println("total10Usd = " + total10Usd);
+        System.out.println("total1Usd = " + total1Usd);
     }
 }
