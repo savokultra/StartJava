@@ -195,15 +195,17 @@ public class IfElseStatementTheme {
             } else { 
                 System.out.println("Вам выдано банкнот 10 USD = " + total10Usd);
                 debt10 = total10Usd - require10;// -1
+                total10Usd = 0;
             }
 
             if (require1 <= total1Usd) {
                 total1Usd = total1Usd - require1 + ((debt10) * 10);
                 System.out.println("Вам выдано банкнот 1 USD = " + (int)(require1 + (-(debt100)*100)
                          + (-(debt10) * 10)) );
+                System.out.println("Выдаваемая сумма USD = " + requireUsd);
             }
         } else {
             System.out.println("В банкомате недостаточно денег");
         }
-    }
+    }`
 }
