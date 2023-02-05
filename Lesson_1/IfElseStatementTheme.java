@@ -168,28 +168,41 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("Задание 9: Подсчет количества банкнот;");
-        int requireUsd = 367;
-        int total100Usd = 2;
-        int total10Usd = 10;
-        int total1Usd = 80;
+        int requireUsd = 567;
+        int total100Usd = 10;
+        int total10Usd = 5;
+        int total1Usd = 50;
         int require100 = requireUsd / 100;
         int require10 = (requireUsd % 100) / 10;
         int require1 = (requireUsd % 10);
+        int debt100 = 0;
+        int debt10 = 0;
+        int debt1 = 0;
         if ((total100Usd * 100) + (total10Usd * 10) + (total1Usd) >= requireUsd) {
             if (requireUsd / 100 <= total100Usd) {
-                total100Usd = total100Usd - (requireUsd / 100);
+                total100Usd = total100Usd - require100;
+                System.out.println("Вам выдано банкнот 100 USD = " + require100);
             } else {
-                total10Usd = total10Usd + (total100Usd - requireUsd / 100);
+                System.out.println("Вам выдано банкнот 100 USD = " + total100Usd);
+                debt100 = (total100Usd - require100);// -1
+                total100Usd = 0;
             }
 
-            if ((requireUsd % 100) / 10 <= total10Usd) {
-                total10Usd = total10Usd - (requireUsd % 100) / 10;
-            } else total1Usd = total1Usd + (total10Usd - (requireUsd % 100) / 10);
+            if (require10 <= total10Usd + ((debt100))*10) {
+                total10Usd = total10Usd - require10 + ((debt100)*10);
+                System.out.println("Вам выдано банкнот 10 USD = " + require10);
+            } else { 
+                System.out.println("Вам выдано банкнот 10 USD = " + total10Usd);
+                debt10 = total10Usd - require10;// -1
+            }
+
+            if (require1 <= total1Usd) {
+                total1Usd = total1Usd - require1 + ((debt10) * 10);
+                System.out.println("Вам выдано банкнот 1 USD = " + (int)(require1 + (-(debt100)*100)
+                         + (-(debt10) * 10)) );
+            }
         } else {
             System.out.println("В банкомате недостаточно денег");
         }
-        System.out.println("total100Usd = " + total100Usd);
-        System.out.println("total10Usd = " + total10Usd);
-        System.out.println("total1Usd = " + total1Usd);
     }
 }
