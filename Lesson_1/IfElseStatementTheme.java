@@ -167,6 +167,7 @@ public class IfElseStatementTheme {
             System.out.println("Прибыль за год: " + yearDividend + " рублей");
         }
 
+    public static void main(String[] args) {
         System.out.println("Задание 9: Подсчет количества банкнот;");
         int requireUsd = 567;
         int total100Usd = 10;
@@ -198,8 +199,7 @@ public class IfElseStatementTheme {
 
             if (require1 <= total1Usd) {
                 total1Usd = total1Usd - require1 + ((debt10) * 10);
-                System.out.println("Вам выдано банкнот 1 USD = " + (int)(require1 + (-(debt100)*100)
-                         + (-(debt10) * 10)) );
+                System.out.println("Вам выдано банкнот 1 USD = " + (int)(require1 + (-(debt100)*100) + (-(debt10) * 10)) );
             }
         } else {
             System.out.println("В банкомате недостаточно денег");
