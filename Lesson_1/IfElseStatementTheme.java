@@ -34,85 +34,86 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("Задание 2: Поиск max и min числа;");
-        int first = 12;
-        int second = 14;
-        if (first == second) {
-            System.out.println(first + " = " + second);
-        } else if (first > second) {
-            System.out.println("Наибольшее число = " + first + " ,Наименьшее число = " + second);
+        int number11 = 12;
+        int number12 = 14;
+        if (number11 == number12) {
+            System.out.println(number11 + " = " + number12);
+        } else if (number11 > number12) {
+            System.out.println("Наибольшее число = " + number11 + " ,Наименьшее число = " + 
+                    number12);
         } else {
-            System.out.println("Наибольшее число = " + second + " ,Наименьшее число = " + first + 
-                    "\n");
+            System.out.println("Наибольшее число = " + number12 + " ,Наименьшее число = " + 
+                    number11);
         }
-        System.out.println("Задание 3: Проверка числа;");
-        int a = 4;
-        if (a != 0) {
-            if (a % 2 == 0) {
-                System.out.print("Исходное число: " + a + " - четное");
+        System.out.println("\nЗадание 3: Проверка числа;");
+        int checkNumber = 4;
+        if (checkNumber != 0) {
+            if (checkNumber % 2 == 0) {
+                System.out.print("Исходное число: " + checkNumber + " - четное");
             } else {
-                System.out.print("Исходное число: " + a + " - нечетное");
+                System.out.print("Исходное число: " + checkNumber + " - нечетное");
             }
-            if (a < 0) {
+            if (checkNumber < 0) {
                 System.out.println(" отрицательное");
             } else {
                 System.out.println(" положительное");
             }
         } else {
-            System.out.println("Исходное число равно: " + a + "/n");
+            System.out.println("Исходное число равно: " + checkNumber);
         }
 
-        System.out.println("Задание 4: Поиск одинаковых цифр в числах;");
+        System.out.println("\nЗадание 4: Поиск одинаковых цифр в числах;");
         int number = 999;
-        int number1 = 898;
+        int number1 = 456;
+        int numberHundred = number / 100;
+        int number1Hundred = number1 / 100;
+        int numberTen = number / 10;
+        int number1Ten = number1 / 10;
+        int numberOne = number % 10;
+        int number1One = number1 % 10;
         System.out.println("Исходные числа " + number + " и " + number1);
-        if (number != number1) {
-            if (number / 100 == number1 / 100) {
-                System.out.println("Цифры разряда сотни совпадают = " + number / 100);
+        if (number == number1) {
+            System.out.println("Все разряды совпадают");
             }
-            if ((number / 10) % 10 == (number1 / 10) % 10) {
-                System.out.println("Цифры разряда десятки совпадают = " + ((number / 10) % 10));
+            if (numberHundred == number1Hundred) {
+                System.out.println("Цифры разряда сотни совпадают = " + numberHundred);
             }
-            if (number % 10 == number1 % 10) {
-                System.out.println("Цифра разряда единицы совпадают = " + number % 10);
+            if ((numberTen) % 10 == (number1Ten) % 10) {
+                System.out.println("Цифры разряда десятки совпадают = " + ((numberTen) % 10));
             }
-            if ((number / 100 != number1 / 100) && ((number / 10) % 10 != (number1 / 10) % 10) &&
-                    (number % 10 != number1 % 10)) {
+            if (numberOne == number1One) {
+                System.out.println("Цифра разряда единицы совпадают = " + numberOne);
+            } else {
                 System.out.println("Совпадений разрядов цифр нет");
-            }
         }
+
 
         System.out.println("\nЗадание 5: Определение символа по его коду;");
-        char sumbol = '\u0057';
-        System.out.println("Введен символ: " + sumbol);
-        if (sumbol >= 'A' && sumbol <= 'Z') {
+        char symbol = '\u0057';
+        System.out.println("Введен символ: " + symbol);
+        if (symbol >= 'A' && symbol <= 'Z') {
             System.out.println("Большая буква");
-        } else if (sumbol >= 'a' && sumbol <= 'z') {
+        } else if (symbol >= 'a' && symbol <= 'z') {
             System.out.println("Маленькая буква");
-        } else if (sumbol >= '0' && sumbol <= '9') {
+        } else if (symbol >= '0' && symbol <= '9') {
             System.out.println("Число");
         } else {
             System.out.println("не буква и не число\n");
         }
 
         System.out.println("\nЗадание 6: Подсчет суммы вклада и начисленных банком %;");
-        int contributionSumm = 100_000;
-        System.out.println("Сумма вклада: " + contributionSumm + " у.е.");
+        int contributionSumm = 90_000;
+        double percent = 0;
         if (contributionSumm < 100_000) {
-            System.out.println("Вам начислено 5 % годовых или " + (int)(contributionSumm * 0.05) + 
-                    " у.е.");
-            System.out.println("Итоговая сумма составит: " + (int)(contributionSumm * 0.05 + 
-                    contributionSumm) + " у.е.");
+            percent = contributionSumm * 0.05;
         } else if (contributionSumm >= 100_000 && contributionSumm <= 300_000) {
-            System.out.println("Вам начислено 7 % годовых или " + (int)(contributionSumm * 0.07) + 
-                    " у.е.");
-            System.out.println("Итоговая сумма составит: " + (int)(contributionSumm * 0.07 + 
-                    contributionSumm) + " у.е.");
+            percent = contributionSumm * 0.07;
         } else if (contributionSumm > 300_000) {
-            System.out.println("Вам начислено 10 % годовых или " + (int)(contributionSumm * 0.1) + 
-                    " у.е.");
-            System.out.println("Итоговая сумма составит: " + (int)(contributionSumm * 0.10 + 
-                    contributionSumm) + " у.е.");
+            percent = contributionSumm * 0.1;
         }
+        int totalSum = (int)(percent + contributionSumm);
+        System.out.println("Сумма вклада составила: " + contributionSumm + "\nНачисленный процент: "
+                + (int)percent + "\nИтоговая сумма с %: " + totalSum);
 
         System.out.println("\nЗадание 7: Определение оценки по предметам;");
         int history = 59;
@@ -162,7 +163,7 @@ public class IfElseStatementTheme {
             System.out.println("Прибыль за год: " + yearDividend + " рублей");
         }
 
-        System.out.println("Задание 9: Подсчет количества банкнот;");
+        System.out.println("\nЗадание 9: Подсчет количества банкнот;");
         int requireUsd = 567;
         int total100Usd = 10;
         int total10Usd = 5;
