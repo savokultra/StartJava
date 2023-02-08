@@ -45,6 +45,7 @@ public class IfElseStatementTheme {
             System.out.println("Наибольшее число = " + number12 + " ,Наименьшее число = " + 
                     number11);
         }
+
         System.out.println("\nЗадание 3: Проверка числа;");
         int checkNumber = 4;
         if (checkNumber != 0) {
@@ -67,15 +68,14 @@ public class IfElseStatementTheme {
         int number1 = 456;
         int numberHundred = number / 100;
         int number1Hundred = number1 / 100;
-        int numberTen = number / 10;
-        int number1Ten = number1 / 10;
+        int numberTen = (number / 10) % 10;
+        int number1Ten = (number1 / 10) % 10;
         int numberOne = number % 10;
         int number1One = number1 % 10;
         System.out.println("Исходные числа " + number + " и " + number1);
-        if (number == number1) {
-            System.out.println("Все разряды совпадают");
-            }
-            if (numberHundred == number1Hundred) {
+        if (numberHundred != number1Hundred && numberTen != number1Ten && numberOne != number1One) {
+            System.out.println("Совпадений разрядов цифр нет");
+            } else if (numberHundred == number1Hundred) {
                 System.out.println("Цифры разряда сотни совпадают = " + numberHundred);
             }
             if ((numberTen) % 10 == (number1Ten) % 10) {
@@ -83,10 +83,7 @@ public class IfElseStatementTheme {
             }
             if (numberOne == number1One) {
                 System.out.println("Цифра разряда единицы совпадают = " + numberOne);
-            } else {
-                System.out.println("Совпадений разрядов цифр нет");
-        }
-
+            }
 
         System.out.println("\nЗадание 5: Определение символа по его коду;");
         char symbol = '\u0057';
@@ -103,47 +100,41 @@ public class IfElseStatementTheme {
 
         System.out.println("\nЗадание 6: Подсчет суммы вклада и начисленных банком %;");
         int contributionSumm = 90_000;
-        double percent = 0;
-        if (contributionSumm < 100_000) {
-            percent = contributionSumm * 0.05;
-        } else if (contributionSumm >= 100_000 && contributionSumm <= 300_000) {
+        double percent = contributionSumm * 0.05;
+        if (contributionSumm >= 100_000 && contributionSumm <= 300_000) {
             percent = contributionSumm * 0.07;
         } else if (contributionSumm > 300_000) {
             percent = contributionSumm * 0.1;
         }
-        int totalSum = (int)(percent + contributionSumm);
+        int totalSum = (int) (percent + contributionSumm);
         System.out.println("Сумма вклада составила: " + contributionSumm + "\nНачисленный процент: "
-                + (int)percent + "\nИтоговая сумма с %: " + totalSum);
+                + (int) percent + "\nИтоговая сумма с %: " + totalSum);
 
         System.out.println("\nЗадание 7: Определение оценки по предметам;");
         int historyPercent = 59;
         int programmingPercent = 91;
-        int historyGrade = 1;
-        int programmingGrade = 2;
-        if (historyPercent <= 60) {
-            historyGrade = 2;
-        } else if (historyPercent > 60 && historyPercent < 74) {
-            historyGrade = 3;
+        int grageOfHistory = 2;
+        int gradeOfProgramm = 2;
+        if (historyPercent > 60 && historyPercent < 74) {
+            grageOfHistory = 3;
         } else if (historyPercent > 73 && historyPercent < 92) {
-            historyGrade = 4;
+            grageOfHistory = 4;
         } else if (historyPercent > 91) {
-            historyGrade = 5;
+            grageOfHistory = 5;
         }
-        if (programmingPercent <= 60) {
-            programmingGrade = 2;
-        } else if (programmingPercent > 60 && programmingPercent < 74) {
-            programmingGrade = 3;
+        if (programmingPercent > 60 && programmingPercent < 74) {
+            gradeOfProgramm = 3;
         } else if (programmingPercent > 73 && programmingPercent < 92) {
-            programmingGrade = 4;
+            gradeOfProgramm = 4;
         } else if (programmingPercent > 91) {
-            programmingGrade = 5;
+            gradeOfProgramm = 5;
         }
-        int averagePoint = (historyGrade + programmingGrade) / 2;
-        int averagePercent = (historyPercent + programmingPercent) / 2;
-        System.out.println(historyGrade + ": оценка по истории\n" + programmingGrade + 
+        int averagePoint = (grageOfHistory + gradeOfProgramm) / 2;
+        int totalPercent = (historyPercent + programmingPercent) / 2;
+        System.out.println(grageOfHistory + ": оценка по истории\n" + gradeOfProgramm + 
                 ": оценка по программированию");
         System.out.println("Средний балл оценок по предметам:" + averagePoint);
-        System.out.println("Средний процент по предметам:" + averagePercent);
+        System.out.println("Средний процент по предметам:" + totalPercent);
 
         System.out.println("\nЗадание 8: Расчет прибыли за год;");
         int rent = 5000;
@@ -167,31 +158,34 @@ public class IfElseStatementTheme {
         int debt100 = 0;
         int debt10 = 0;
         int debt1 = 0;
-        if ((total100Usd * 100) + (total10Usd * 10) + (total1Usd) >= requireUsd) {
-            if (requireUsd / 100 <= total100Usd) {
+        int cash100 = 0;
+        int cash10 = 0;
+        int cash1 = 0;
+        if ((total100Usd * 100) + (total10Usd * 10) + (total1Usd) < requireUsd) {
+            System.out.println("В банкомате недостаточно денег");
+            } if (require100 <= total100Usd) {
+                cash100 = require100;
                 total100Usd = total100Usd - require100;
-                System.out.println("Вам выдано банкнот 100 USD = " + require100);
             } else {
-                System.out.println("Вам выдано банкнот 100 USD = " + total100Usd);
-                debt100 = (total100Usd - require100);
+                debt100 = (total100Usd - require100) * 10;
+                cash100 = total100Usd;
                 total100Usd = 0;
             }
-            if (require10 <= total10Usd + ((debt100))*10) {
-                total10Usd = total10Usd - require10 + ((debt100)*10);
-                System.out.println("Вам выдано банкнот 10 USD = " + require10);
-            } else { 
-                System.out.println("Вам выдано банкнот 10 USD = " + total10Usd);
-                debt10 = total10Usd - require10;
+            if (require10 <= total10Usd + debt100) {
+                cash10 = require10 + ( - debt100);
+                total10Usd = total10Usd - require10 + debt100;
+            } else {
+                debt10 = (total10Usd - require10 + debt100) * 10;
+                cash10 = total10Usd;
                 total10Usd = 0;
             }
-            if (require1 <= total1Usd) {
-                total1Usd = total1Usd - require1 + ((debt10) * 10);
-                System.out.println("Вам выдано банкнот 1 USD = " + (int)(require1 + (-(debt100)*100)
-                         + (-(debt10) * 10)) );
-                System.out.println("Выдаваемая сумма USD = " + requireUsd);
+            if (require1 <= total1Usd + debt10) {
+                cash1 = require1 + ( - debt10);
+                total1Usd = total1Usd - cash1;
             }
-        } else {
-            System.out.println("В банкомате недостаточно денег");
-        }
+            System.out.println("Вам выдано банкнот 100USD: " + cash100);
+            System.out.println("Вам выдано банкнот 10USD: " + cash10);
+            System.out.println("Вам выдано банкнот 1USD: " + cash1);
+            System.out.println("Итоговая сумма: " + requireUsd);
     }
 }
