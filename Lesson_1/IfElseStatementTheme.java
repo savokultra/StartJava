@@ -75,14 +75,16 @@ public class IfElseStatementTheme {
         System.out.println("Исходные числа " + number + " и " + number1);
         if (numberHundred != number1Hundred && numberTen != number1Ten && numberOne != number1One) {
             System.out.println("Совпадений разрядов цифр нет");
-            } else if (numberHundred == number1Hundred) {
-                System.out.println("Цифры разряда сотни совпадают = " + numberHundred);
-            }
-            if (numberTen == number1Ten) {
-                System.out.println("Цифры разряда десятки совпадают = " + ((numberTen) % 10));
-            }
-            if (numberOne == number1One) {
-                System.out.println("Цифра разряда единицы совпадают = " + numberOne);
+            } else {
+                if (numberHundred == number1Hundred) {
+                    System.out.println("Цифры разряда сотни совпадают = " + numberHundred);
+                }
+                if (numberTen == number1Ten) {
+                    System.out.println("Цифры разряда десятки совпадают = " + ((numberTen) % 10));
+                }
+                if (numberOne == number1One) {
+                    System.out.println("Цифра разряда единицы совпадают = " + numberOne);
+                }
             }
 
         System.out.println("\nЗадание 5: Определение символа по его коду;");
@@ -163,26 +165,27 @@ public class IfElseStatementTheme {
         int cash1 = 0;
         if ((total100Usd * 100) + (total10Usd * 10) + (total1Usd) < requireUsd) {
             System.out.println("В банкомате недостаточно денег");
-            }
-            if (require100 <= total100Usd) {
-                cash100 = require100;
-                total100Usd = total100Usd - require100;
-            } else {
-                debt100 = (total100Usd - require100) * -10;
-                cash100 = total100Usd;
-                total100Usd = 0;
-            }
-            if (require10 <= total10Usd - debt100) {
-                cash10 = require10 + debt100;
-                total10Usd = total10Usd - require10 - debt100;
-            } else {
-                debt10 = (total10Usd - require10 - debt100) * -10;
-                cash10 = total10Usd;
-                total10Usd = 0;
-            }
-            if (require1 <= total1Usd - debt10) {
-                cash1 = require1 + debt10;
-                total1Usd = total1Usd - cash1;
+            } else { 
+                if (require100 <= total100Usd) {
+                    cash100 = require100;
+                    total100Usd = total100Usd - require100;
+                } else {
+                    debt100 = (total100Usd - require100) * -10;
+                    cash100 = total100Usd;
+                    total100Usd = 0;
+                }
+                if (require10 <= total10Usd - debt100) {
+                    cash10 = require10 + debt100;
+                    total10Usd = total10Usd - require10 - debt100;
+                } else {
+                    debt10 = (total10Usd - require10 - debt100) * -10;
+                    cash10 = total10Usd;
+                    total10Usd = 0;
+                }
+                if (require1 <= total1Usd - debt10) {
+                    cash1 = require1 + debt10;
+                    total1Usd = total1Usd - cash1;
+                }
             }
             System.out.println("Вам выдано банкнот 100USD: " + cash100);
             System.out.println("Вам выдано банкнот 10USD: " + cash10);
