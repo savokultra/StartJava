@@ -64,19 +64,69 @@ public class CyclesTheme {
         System.out.println("\nЗадание 4: Вывод чисел на консоль в несколько строк;");
         //полуинтервал [1, 24) число 24 не включаем в полуинтервал
         int l = 1;
-        for (; l < 11; l+= 2) {
-            System.out.printf("%3d", l);
-        }
-        System.out.println("");
-        for (; l < 21; l+= 2) {
-            System.out.printf("%3d", l);
-        }
-        System.out.println("");
         for (; l < 24; l+= 2) {
             System.out.printf("%3d", l);
+            if (l % 10 == 9) {
+                System.out.println("");
+            }
         }
-        while (l < 31) {
-            System.out.printf("%3d", 0, l+= 2);
+        for (; l % 10 != 1; l+= 2) {
+            System.out.print("  0");
         }
+
+        System.out.println("\n\nЗадание 5: Проверка количества двоек на четность/нечетность;");
+        int value = 3242592;
+        int value4 = value;
+        int count = 0;
+        while (value > 1) {
+            value-= 2;
+            count+= 1;
+        }
+        if (count % 2 != 0) {
+            System.out.println("Число " + value4 + " содержит нечетное количество двоек " + count);
+        } else {
+            System.out.println("Число " + value4 + " содержит четное количество двоек " + count);
+        }
+
+        System.out.println("\nЗадание 6: Отображение фигур в консоли;");
+        for (int n = 0; n < 50; n++) {
+            System.out.print("*");
+            if (n % 10 == 9) {
+                System.out.println("");
+            }
+        }
+        System.out.println("");
+        int m = 0;
+        int n = 5;
+        int o = 5;
+        while (m < 15) {
+            System.out.print("#");
+            m++;
+            for (;m == n; n+= o) {
+                System.out.println("");
+                o--;
+            }
+        }
+        System.out.println("");
+        int p1 = 1;
+        int q2 = 1;
+        int r3 = q2;
+        do {
+            System.out.print("$");
+            if (p1 == q2) {
+                System.out.println("");
+                r3++;
+                q2+= r3;
+            }
+            p1++;
+        } while (p1 < 7);
+        do {
+            System.out.print("$");
+            if (p1 == q2) {
+                System.out.println("");
+            }
+            p1--;
+            q2-= r3;
+        } while (p1 > 4);
     }
 }
