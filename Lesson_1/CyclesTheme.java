@@ -128,5 +128,21 @@ public class CyclesTheme {
             p1--;
             q2-= r3;
         } while (p1 > 4);
+
+        System.out.println("\nЗадание 7: Отображение ASCII-символов;");
+        System.out.println("Dec Char");
+        for (int r = 33; r < 48; r++) {
+            if (r % 2 != 0) {
+                char ch = (char) r;
+                System.out.printf("%3d%5s%n", r, ch);
+            }
+        }
+        System.out.println("\nDec Char");
+        for (int r = 97; r < 123; r++) {
+            if (r % 2 == 0) {
+                char ch = (char) r;
+                System.out.printf("%3d%5s%n", r, ch);
+            }
+        }
     }
 }
