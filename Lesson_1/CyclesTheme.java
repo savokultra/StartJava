@@ -144,5 +144,19 @@ public class CyclesTheme {
                 System.out.printf("%3d%5s%n", r, ch);
             }
         }
+
+        System.out.println("\nЗадание 8: Проверка, является ли число палиндромом;");
+        int number1 = 1234321;
+        int invertOfnumber = 0;
+        int copyOfnumber = number1;
+        while (copyOfnumber != 0) {
+            invertOfnumber = invertOfnumber * 10 + copyOfnumber % 10;
+            copyOfnumber = copyOfnumber / 10;
+        }
+        if (invertOfnumber == number1) {
+            System.out.println("Число " + number1 + " является палиндромом");
+        } else {
+            System.out.println("Число " + number1 + " не является палиндромом");
+        }
     }
 }
