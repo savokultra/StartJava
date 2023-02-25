@@ -189,7 +189,7 @@ public class CyclesTheme {
         }
 
         System.out.println("\nЗадание 10: Вывод таблицы умножения Пифагора;");
-        System.out.println("        ТАБЛИЦА ПИФАГОРА");
+        System.out.println("\n          ТАБЛИЦА ПИФАГОРА");
         System.out.print("   |");
         for (int s = 2; s < 10; s++) {
             System.out.printf("%4d", s);
@@ -197,9 +197,9 @@ public class CyclesTheme {
         System.out.print("\n____________________________________");
         System.out.println();
         for (int s = 1; s < 9; s++) {
-            System.out.printf("%d  |", s+1);
+            System.out.printf("%2d |", s + 1);
             for (int t = 1; t < 9; t++) {
-            System.out.printf("%4d", (s + 1) * (t + 1));
+            System.out.printf("%4d", (s + 1) * (t +1 ));
             }
             System.out.println("");
         }
