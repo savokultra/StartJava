@@ -199,7 +199,7 @@ public class CyclesTheme {
         for (int s = 1; s < 9; s++) {
             System.out.printf("%d  |", s+1);
             for (int t = 1; t < 9; t++) {
-            System.out.printf("%4d", (s + 1) * (t +1));
+            System.out.printf("%4d", (s + 1) * (t + 1));
             }
             System.out.println("");
         }
