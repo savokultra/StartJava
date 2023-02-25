@@ -158,5 +158,33 @@ public class CyclesTheme {
         } else {
             System.out.println("Число " + number1 + " не является палиндромом");
         }
+
+        System.out.println("\nЗадание 9: Определение, является ли число счастливым;");
+        int count1 = 123321;
+        int count1Clone = count1;
+        int count1Sum = 0;
+        int count2Sum = 0;
+        int countDevider = 10;
+        int firstValue = 0;
+        while ((count1Clone / countDevider) > 1) {
+            countDevider*= 10;
+        }
+        while (count1Clone > 1000) {
+        count1Sum = count1Sum + count1Clone / countDevider; 
+        firstValue = count1Clone / countDevider;
+        count1Clone = count1Clone - countDevider * firstValue;
+        countDevider/= 10;
+        }
+        while (count1Clone > 0) {
+            count2Sum = count2Sum + count1Clone % 10;
+            count1Clone = count1Clone / 10;
+        }
+        System.out.println("Сумма первых трёх цифр = " + count1Sum);
+        System.out.println("Сумма последних трёх цифр = " + count2Sum);
+        if (count1Sum == count2Sum) {
+            System.out.println("Число " + count1 + " - счастливое число");
+        } else {
+            System.out.println("Число " + count1 + " - не счастливое число");
+        }
     }
 }
