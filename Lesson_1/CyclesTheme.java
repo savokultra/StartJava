@@ -129,7 +129,7 @@ public class CyclesTheme {
             q2-= r3;
         } while (p1 > 4);
 
-        System.out.println("\nЗадание 7: Отображение ASCII-символов;");
+        System.out.println("\n\nЗадание 7: Отображение ASCII-символов;");
         System.out.println("Dec Char");
         for (int r = 33; r < 48; r++) {
             if (r % 2 != 0) {
@@ -145,6 +145,7 @@ public class CyclesTheme {
             }
         }
 
+        // всё что ниже решение нашел на похожих задачах или отдельных фрагментах в сети
         System.out.println("\nЗадание 8: Проверка, является ли число палиндромом;");
         int number1 = 1234321;
         int invertOfnumber = 0;
@@ -185,6 +186,22 @@ public class CyclesTheme {
             System.out.println("Число " + count1 + " - счастливое число");
         } else {
             System.out.println("Число " + count1 + " - не счастливое число");
+        }
+
+        System.out.println("\nЗадание 10: Вывод таблицы умножения Пифагора;");
+        System.out.println("        ТАБЛИЦА ПИФАГОРА");
+        System.out.print("   |");
+        for (int s = 2; s < 10; s++) {
+            System.out.printf("%4d", s);
+        }
+        System.out.print("\n____________________________________");
+        System.out.println();
+        for (int s = 1; s < 9; s++) {
+            System.out.printf("%d  |", s+1);
+            for (int t = 1; t < 9; t++) {
+            System.out.printf("%4d", (s + 1) * (t +1));
+            }
+            System.out.println("");
         }
     }
 }
