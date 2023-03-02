@@ -54,15 +54,14 @@ public class CyclesTheme {
 
         System.out.println("\nЗадание 4: Вывод чисел на консоль в несколько строк;");
         //полуинтервал [1, 24) число 24 не включаем в полуинтервал
-        int l = 1;
-        for (; l < 24; l+= 2) {
-            System.out.printf("%3d", l);
-            if (l % 10 == 9) {
+        for (int i = 1; i < 24; i+= 2) {
+            System.out.printf("%3d", i);
+            if (i % 10 == 9) {
                 System.out.println("");
             }
         }
-        for (; l % 10 != 1; l+= 2) {
-            System.out.print("  0");
+        for (int i = 25; i % 10 != 1; i+= 2) {
+            System.out.printf("%3d", 0);
         }
 
         System.out.println("\n\nЗадание 5: Проверка количества двоек на четность/нечетность;");
