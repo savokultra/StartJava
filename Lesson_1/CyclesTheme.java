@@ -36,22 +36,21 @@ public class CyclesTheme {
 
         System.out.println("\n\nЗадание 3: Вывод реверсивного числа и суммы его цифр;");
         int number = 1234;
-        int k = 0;
+        int numberCopy = number;
         int thousand = 0;
         int hundred = 0;
         int ten = 0;
         int one = 0;
-        while (k < number) {
-            k++;
-            thousand = k / 1000;
-            hundred = (k - 1000) / 100;
-            ten = (k % 100) / 10;
-            one = k % 10;
+        for (; numberCopy % 10 != 0; one++, --numberCopy) {
         }
-        int sum = one + ten + hundred + thousand;
-        System.out.printf("Исходное число в обратном порядке: %d%d%d%d", one, ten, hundred, 
-                thousand);
-        System.out.println("\nСумма цифр: " + sum);
+        for (; numberCopy % 100 / 10 != 0; ten++, numberCopy-= 10) {
+        }
+        for (; ((numberCopy - 1000) / 100) != 0; hundred++, numberCopy-= 100) {
+        }
+        for (; numberCopy / 1000 != 0; thousand++, numberCopy-= 1000) {
+        }
+        System.out.println("Исходное число в обратном порядке: " + one + ten + hundred + thousand);
+        System.out.println("Сумма цифр = " + (one + ten + hundred + thousand));
 
         System.out.println("\nЗадание 4: Вывод чисел на консоль в несколько строк;");
         //полуинтервал [1, 24) число 24 не включаем в полуинтервал
