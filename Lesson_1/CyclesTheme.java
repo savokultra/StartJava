@@ -2,17 +2,17 @@ public class CyclesTheme {
 
     public static void main(String[] args) {
         System.out.println("Задание 1: Подсчет суммы четных и нечетных чисел;");
-        int i = -10;
+        int counter = -10;
         int sumEven = 0;
         int sumOdd = 0;
         do {
-            if (i % 2 == 0) {
-                sumEven = sumEven + i;
+            if (counter % 2 == 0) {
+                sumEven+= counter;
             } else {
-                sumOdd = sumOdd + i;
+                sumOdd+= counter;
             }
-            i++;
-        } while (i <= 21);
+            counter++;
+        } while (counter <= 21);
         System.out.println("в промежутке [-10, 21] сумма четных чисел = " + sumEven + 
                 ", а нечетных = " + sumOdd);
 
