@@ -17,29 +17,21 @@ public class CyclesTheme {
                 ", а нечетных = " + sumOdd);
 
         System.out.println("\nЗадание 2: Вывод чисел в интервале (min и max) в порядке убывания;");
-        int value1 = 10;
-        int value2 = 5;
-        int value3 = -1;
-        int max = 0;
-        int min = 0;
-        int j = 0;
-        if (value1 > value2 && value1 > value3) {
-            max = value1;
+        int number1 = 10;
+        int number2 = 5;
+        int number3 = -1;
+        int maxNumber = number1;
+        int minNumber = number3;
+        int counter1 = 0;
+        if (number2 > number1 && number2 > number3) {
+            maxNumber = number2;
         } else {
-            min = value1;
+            if (number2 < number1 && number2 < number3) {
+            minNumber = number2;
+            }
         }
-        if (value2 > value1 && value2 > value3) {
-            max = value2;
-        } else {
-            min = value2;
-        }
-        if (value3 > value1 && value3 > value2) {
-            max = value3;
-        } else {
-            min = value3;
-        }
-        for (j = --max; j > min; --j) {
-            System.out.print(j);
+        for (counter1 = --maxNumber; counter1 > minNumber; --counter1) {
+            System.out.print(counter1);
         }
 
         System.out.println("\n\nЗадание 3: Вывод реверсивного числа и суммы его цифр;");
@@ -75,17 +67,17 @@ public class CyclesTheme {
         }
 
         System.out.println("\n\nЗадание 5: Проверка количества двоек на четность/нечетность;");
-        int value = 3242592;
-        int value4 = value;
+        int number = 3242592;
+        int number4 = number;
         int count = 0;
-        while (value > 1) {
-            value-= 2;
+        while (number > 1) {
+            number-= 2;
             count+= 1;
         }
         if (count % 2 != 0) {
-            System.out.println("Число " + value4 + " содержит нечетное количество двоек " + count);
+            System.out.println("Число " + number4 + " содержит нечетное количество двоек " + count);
         } else {
-            System.out.println("Число " + value4 + " содержит четное количество двоек " + count);
+            System.out.println("Число " + number4 + " содержит четное количество двоек " + count);
         }
 
         System.out.println("\nЗадание 6: Отображение фигур в консоли;");
@@ -166,14 +158,14 @@ public class CyclesTheme {
         int count1Sum = 0;
         int count2Sum = 0;
         int countDevider = 10;
-        int firstValue = 0;
+        int firstnumber = 0;
         while ((count1Clone / countDevider) > 1) {
             countDevider*= 10;
         }
         while (count1Clone > 1000) {
         count1Sum = count1Sum + count1Clone / countDevider; 
-        firstValue = count1Clone / countDevider;
-        count1Clone = count1Clone - countDevider * firstValue;
+        firstnumber = count1Clone / countDevider;
+        count1Clone = count1Clone - countDevider * firstnumber;
         countDevider/= 10;
         }
         while (count1Clone > 0) {
