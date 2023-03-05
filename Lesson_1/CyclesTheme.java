@@ -57,7 +57,7 @@ public class CyclesTheme {
         for (int i = 1; i < 24; i+= 2) {
             System.out.printf("%3d", i);
             if (i % 10 == 9) {
-                System.out.println("");
+                System.out.println();
             }
         }
         for (int i = 25; i % 10 != 1; i+= 2) {
@@ -65,27 +65,29 @@ public class CyclesTheme {
         }
 
         System.out.println("\n\nЗадание 5: Проверка количества двоек на четность/нечетность;");
-        int number = 3242592;
-        int number4 = number;
-        int count = 0;
-        while (number > 1) {
-            number-= 2;
-            count+= 1;
+        int number5 = 3242592;
+        int number4 = number5;
+        int countTwos = 0;
+        while (number5 > 1) {
+            number5-= 2;
+            countTwos++;
         }
-        if (count % 2 != 0) {
-            System.out.println("Число " + number4 + " содержит нечетное количество двоек " + count);
+        if (countTwos % 2 != 0) {
+            System.out.println("Число " + number4 + " содержит нечетное количество двоек " + 
+                    countTwos);
         } else {
-            System.out.println("Число " + number4 + " содержит четное количество двоек " + count);
+            System.out.println("Число " + number4 + " содержит четное количество двоек " + 
+                    countTwos);
         }
 
-        System.out.println("\nЗадание 6: Отображение фигур в консоли;");
+        System.out.println("\nЗадание 6: Отображение фигур в консоли;\n");
         for (int n = 0; n < 50; n++) {
             System.out.print("*");
             if (n % 10 == 9) {
-                System.out.println("");
+                System.out.println();
             }
         }
-        System.out.println("");
+        System.out.println();
         int m = 0;
         int n = 5;
         int o = 5;
@@ -93,18 +95,18 @@ public class CyclesTheme {
             System.out.print("#");
             m++;
             for (;m == n; n+= o) {
-                System.out.println("");
+                System.out.println();
                 o--;
             }
         }
-        System.out.println("");
+        System.out.println();
         int p1 = 1;
         int q2 = 1;
         int r3 = q2;
         do {
             System.out.print("$");
             if (p1 == q2) {
-                System.out.println("");
+                System.out.println();
                 r3++;
                 q2+= r3;
             }
@@ -113,7 +115,7 @@ public class CyclesTheme {
         do {
             System.out.print("$");
             if (p1 == q2) {
-                System.out.println("");
+                System.out.println();
             }
             p1--;
             q2-= r3;
@@ -121,33 +123,33 @@ public class CyclesTheme {
 
         System.out.println("\n\nЗадание 7: Отображение ASCII-символов;");
         System.out.println("Dec Char");
-        for (int r = 33; r < 48; r++) {
-            if (r % 2 != 0) {
-                char ch = (char) r;
-                System.out.printf("%3d%5s%n", r, ch);
+        for (int i1 = 33; i1 < 48; i1++) {
+            if (i1 % 2 != 0) {
+                char ch = (char) i1;
+                System.out.printf("%3d%5s%n", i1, ch);
             }
         }
         System.out.println("\nDec Char");
-        for (int r = 97; r < 123; r++) {
-            if (r % 2 == 0) {
-                char ch = (char) r;
-                System.out.printf("%3d%5s%n", r, ch);
+        for (int i1 = 97; i1 < 123; i1++) {
+            if (i1 % 2 == 0) {
+                char ch = (char) i1;
+                System.out.printf("%3d%5s%n", i1, ch);
             }
         }
 
         // всё что ниже решение нашел на похожих задачах или отдельных фрагментах в сети
         System.out.println("\nЗадание 8: Проверка, является ли число палиндромом;");
-        int number1 = 1234321;
+        int number6 = 1234321;
         int invertOfnumber = 0;
-        int copyOfnumber = number1;
+        int copyOfnumber = number6;
         while (copyOfnumber != 0) {
             invertOfnumber = invertOfnumber * 10 + copyOfnumber % 10;
             copyOfnumber = copyOfnumber / 10;
         }
-        if (invertOfnumber == number1) {
-            System.out.println("Число " + number1 + " является палиндромом");
+        if (invertOfnumber == number6) {
+            System.out.println("Число " + number6 + " является палиндромом");
         } else {
-            System.out.println("Число " + number1 + " не является палиндромом");
+            System.out.println("Число " + number6 + " не является палиндромом");
         }
 
         System.out.println("\nЗадание 9: Определение, является ли число счастливым;");
@@ -191,7 +193,7 @@ public class CyclesTheme {
             for (int t = 1; t < 9; t++) {
             System.out.printf("%4d", (s + 1) * (t + 1));
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 }
