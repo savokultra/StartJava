@@ -163,31 +163,31 @@ public class CyclesTheme {
         }
 
         System.out.println("\nЗадание 9: Определение, является ли число счастливым;");
-        int count1 = 123321;
-        int count1Clone = count1;
-        int count1Sum = 0;
-        int count2Sum = 0;
+        int happyNumber = 123321;
+        int happyNumberClone = happyNumber;
+        int happyNumberSum = 0;
+        int countSum = 0;
         int countDevider = 10;
         int firstnumber = 0;
-        while ((count1Clone / countDevider) > 1) {
-            countDevider*= 10;
+        while ((happyNumberClone / countDevider) > 1) {
+            countDevider *= 10;
         }
-        while (count1Clone > 1000) {
-        count1Sum = count1Sum + count1Clone / countDevider; 
-        firstnumber = count1Clone / countDevider;
-        count1Clone = count1Clone - countDevider * firstnumber;
-        countDevider/= 10;
+        while (happyNumberClone > 1000) {
+            happyNumberSum = happyNumberSum + happyNumberClone / countDevider; 
+            firstnumber = happyNumberClone / countDevider;
+            happyNumberClone = happyNumberClone - countDevider * firstnumber;
+            countDevider /= 10;
         }
-        while (count1Clone > 0) {
-            count2Sum = count2Sum + count1Clone % 10;
-            count1Clone = count1Clone / 10;
+        while (happyNumberClone > 0) {
+            countSum = countSum + happyNumberClone % 10;
+            happyNumberClone = happyNumberClone / 10;
         }
-        System.out.println("Сумма первых трёх цифр = " + count1Sum);
-        System.out.println("Сумма последних трёх цифр = " + count2Sum);
-        if (count1Sum == count2Sum) {
-            System.out.println("Число " + count1 + " - счастливое число");
+        System.out.println("Сумма первых трёх цифр = " + happyNumberSum);
+        System.out.println("Сумма последних трёх цифр = " + countSum);
+        if (happyNumberSum == countSum) {
+            System.out.println("Число " + happyNumber + " - счастливое число");
         } else {
-            System.out.println("Число " + count1 + " - не счастливое число");
+            System.out.println("Число " + happyNumber + " - не счастливое число");
         }
 
         System.out.println("\nЗадание 10: Вывод таблицы умножения Пифагора;");
