@@ -50,9 +50,9 @@ public class CyclesTheme {
         int sum = 0;
         System.out.print("Исходное число в обратном порядке: ");
         while (numberCopy > 0) {
-        System.out.print(numberCopy % 10);
-        sum += numberCopy % 10;
-        numberCopy /= 10;
+            System.out.print(numberCopy % 10);
+            sum += numberCopy % 10;
+            numberCopy /= 10;
         }
         System.out.println("\nСумма цифр = " + sum);
 
