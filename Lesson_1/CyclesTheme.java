@@ -91,45 +91,45 @@ public class CyclesTheme {
         }
 
         System.out.println("\nЗадание 6: Отображение фигур в консоли;\n");
-        for (int n = 0; n < 50; n++) {
+        for (int i = 0; i < 50; i++) {
             System.out.print("*");
-            if (n % 10 == 9) {
+            if (i % 10 == 9) {
                 System.out.println();
             }
         }
         System.out.println();
-        int m = 0;
-        int n = 5;
-        int o = 5;
-        while (m < 15) {
+        int sharp = 0;
+        int sharpCounter = 5;
+        int copyCounter = sharpCounter;
+        while (sharp < 15) {
             System.out.print("#");
-            m++;
-            for (;m == n; n+= o) {
+            sharp++;
+            if (sharp == sharpCounter) {
                 System.out.println();
-                o--;
+                sharpCounter += --copyCounter;
             }
         }
         System.out.println();
-        int p1 = 1;
-        int q2 = 1;
-        int r3 = q2;
+        int dollar = 1;
+        int dollarCounter = 1;
+        int copyDollar = dollarCounter;
         do {
             System.out.print("$");
-            if (p1 == q2) {
+            if (dollar == dollarCounter) {
                 System.out.println();
-                r3++;
-                q2+= r3;
+                copyDollar++;
+                dollarCounter += copyDollar;
             }
-            p1++;
-        } while (p1 < 7);
+            dollar++;
+        } while (dollar < 7);
         do {
             System.out.print("$");
-            if (p1 == q2) {
+            if (dollar == dollarCounter) {
                 System.out.println();
             }
-            p1--;
-            q2-= r3;
-        } while (p1 > 4);
+            dollar--;
+            dollarCounter -= copyDollar;
+        } while (dollar > 4);
 
         System.out.println("\n\nЗадание 7: Отображение ASCII-символов;");
         System.out.println("Dec Char");
