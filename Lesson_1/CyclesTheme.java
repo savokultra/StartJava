@@ -83,10 +83,10 @@ public class CyclesTheme {
             }
         }
         if (twosCount % 2 != 0) {
-            System.out.println("Число " + number5 + " содержит нечетное количество двоек - " + 
+            System.out.println("Число " + number5 + " содержит нечетное количество двоек = " + 
                     twosCount);
         } else {
-            System.out.println("Число " + number5 + " содержит четное количество двоек - " + 
+            System.out.println("Число " + number5 + " содержит четное количество двоек = " + 
                     twosCount);
         }
 
