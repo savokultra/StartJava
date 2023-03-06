@@ -133,17 +133,17 @@ public class CyclesTheme {
 
         System.out.println("\n\nЗадание 7: Отображение ASCII-символов;");
         System.out.println("Dec Char");
-        for (int i1 = 33; i1 < 48; i1++) {
-            if (i1 % 2 != 0) {
-                char ch = (char) i1;
-                System.out.printf("%3d%5s%n", i1, ch);
+        for (int i = 33; i < 48; i++) {
+            if (i % 2 != 0) {
+                char ch = (char) i;
+                System.out.printf("%3d%5s%n", i, ch);
             }
         }
         System.out.println("\nDec Char");
-        for (int i1 = 97; i1 < 123; i1++) {
-            if (i1 % 2 == 0) {
-                char ch = (char) i1;
-                System.out.printf("%3d%5s%n", i1, ch);
+        for (int i = 97; i < 123; i++) {
+            if (i % 2 == 0) {
+                char ch = (char) i;
+                System.out.printf("%3d%5s%n", i, ch);
             }
         }
 
