@@ -149,17 +149,17 @@ public class CyclesTheme {
 
         // всё что ниже решение нашел на похожих задачах или отдельных фрагментах в сети
         System.out.println("\nЗадание 8: Проверка, является ли число палиндромом;");
-        int number6 = 1234321;
-        int invertOfnumber = 0;
-        int copyOfnumber = number6;
-        while (copyOfnumber != 0) {
-            invertOfnumber = invertOfnumber * 10 + copyOfnumber % 10;
-            copyOfnumber = copyOfnumber / 10;
+        int palindrom = 1234321;
+        int invertPalindrom = 0;
+        int copyPalindrom = palindrom;
+        while (copyPalindrom != 0) {
+            invertPalindrom = invertPalindrom * 10 + copyPalindrom % 10;
+            copyPalindrom = copyPalindrom / 10;
         }
-        if (invertOfnumber == number6) {
-            System.out.println("Число " + number6 + " является палиндромом");
+        if (invertPalindrom == palindrom) {
+            System.out.println("Число " + palindrom + " является палиндромом");
         } else {
-            System.out.println("Число " + number6 + " не является палиндромом");
+            System.out.println("Число " + palindrom + " не является палиндромом");
         }
 
         System.out.println("\nЗадание 9: Определение, является ли число счастливым;");
