@@ -73,17 +73,21 @@ public class CyclesTheme {
         System.out.println("\n\nЗадание 5: Проверка количества двоек на четность/нечетность;");
         int number5 = 3242592;
         int number4 = number5;
-        int countTwos = 0;
-        while (number5 > 1) {
-            number5-= 2;
-            countTwos++;
+        int twos = 0;
+        int twosCount = 0;
+        while (number4 > 0) { 
+            twos = number4 % 10;
+            number4 /= 10;
+            if (twos == 2) {
+                twosCount += 1;
+            }
         }
-        if (countTwos % 2 != 0) {
-            System.out.println("Число " + number4 + " содержит нечетное количество двоек " + 
-                    countTwos);
+        if (twosCount % 2 != 0) {
+            System.out.println("Число " + number5 + " содержит нечетное количество двоек - " + 
+                    twosCount);
         } else {
-            System.out.println("Число " + number4 + " содержит четное количество двоек " + 
-                    countTwos);
+            System.out.println("Число " + number5 + " содержит четное количество двоек - " + 
+                    twosCount);
         }
 
         System.out.println("\nЗадание 6: Отображение фигур в консоли;\n");
