@@ -13,8 +13,8 @@ public class CyclesTheme {
             }
             counter++;
         } while (counter <= 21);
-        System.out.println("в промежутке [-10, 21] сумма четных чисел = " + sumEven + 
-                ", а нечетных = " + sumOdd);
+            System.out.println("в промежутке [-10, 21] сумма четных чисел = " + sumEven + 
+                    ", а нечетных = " + sumOdd);
 
         System.out.println("\nЗадание 2: Вывод чисел в интервале (min и max) в порядке убывания;");
         int number1 = -1;
