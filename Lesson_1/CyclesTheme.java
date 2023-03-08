@@ -118,15 +118,13 @@ public class CyclesTheme {
         System.out.println("Dec Char");
         for (int i = 33; i < 48; i++) {
             if (i % 2 != 0) {
-                char ch = (char) i;
-                System.out.printf("%3d%5s%n", i, ch);
+                System.out.printf("%3d%5s%n", i, (char) i);
             }
         }
         System.out.println("\nDec Char");
         for (int i = 97; i < 123; i++) {
             if (i % 2 == 0) {
-                char ch = (char) i;
-                System.out.printf("%3d%5s%n", i, ch);
+                System.out.printf("%3d%5s%n", i, (char) i);
             }
         }
 
