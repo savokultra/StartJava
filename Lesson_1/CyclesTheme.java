@@ -145,27 +145,13 @@ public class CyclesTheme {
 
         System.out.println("\nЗадание 9: Определение, является ли число счастливым;");
         int happyNumber = 123321;
-        int happyNumberClone = happyNumber;
+        int copyHappyNumber = happyNumber;
         int happyNumberSum = 0;
-        int countSum = 0;
-        int countDevider = 10;
-        int firstnumber = 0;
-        while ((happyNumberClone / countDevider) > 1) {
-            countDevider *= 10;
+        while (copyHappyNumber > 0) {
+            happyNumberSum += copyHappyNumber % 10;
+            copyHappyNumber /= 10;
         }
-        while (happyNumberClone > 1000) {
-            happyNumberSum = happyNumberSum + happyNumberClone / countDevider; 
-            firstnumber = happyNumberClone / countDevider;
-            happyNumberClone = happyNumberClone - countDevider * firstnumber;
-            countDevider /= 10;
-        }
-        while (happyNumberClone > 0) {
-            countSum = countSum + happyNumberClone % 10;
-            happyNumberClone = happyNumberClone / 10;
-        }
-        System.out.println("Сумма первых трёх цифр = " + happyNumberSum);
-        System.out.println("Сумма последних трёх цифр = " + countSum);
-        if (happyNumberSum == countSum) {
+        if (happyNumberSum % 2 == 0) {
             System.out.println("Число " + happyNumber + " - счастливое число");
         } else {
             System.out.println("Число " + happyNumber + " - не счастливое число");
