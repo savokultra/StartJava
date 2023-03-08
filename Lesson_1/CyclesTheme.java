@@ -20,7 +20,6 @@ public class CyclesTheme {
         int number1 = 10;
         int number2 = -1;
         int number3 = 5;
-        int min = 0;
         int max = 0;
         for (;max <= number1 || max <= number2 || max <= number3; max++) {
         }
