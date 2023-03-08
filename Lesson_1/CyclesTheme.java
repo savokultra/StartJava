@@ -78,18 +78,20 @@ public class CyclesTheme {
                 System.out.println();
             }
         }
+
         System.out.println();
-        int sharp = 0;
-        int sharpCounter = 5;
-        int copyCounter = sharpCounter;
-        while (sharp < 15) {
+        int counter1 = 0;
+        int size = 5;
+        while (counter1 <= size && size != 0) {
             System.out.print("#");
-            sharp++;
-            if (sharp == sharpCounter) {
+            counter1++;
+            if (counter1 == size) {
                 System.out.println();
-                sharpCounter += --copyCounter;
+                size--;
+                counter1 = 0;
             }
         }
+        
         System.out.println();
         int dollar = 1;
         int dollarCounter = 1;
