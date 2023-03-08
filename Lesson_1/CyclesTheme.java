@@ -55,22 +55,20 @@ public class CyclesTheme {
 
         System.out.println("\n\nЗадание 5: Проверка количества двоек на четность/нечетность;");
         int number5 = 3242592;
-        int number4 = number5;
-        int twos = 0;
-        int twosCount = 0;
-        while (number4 > 0) { 
-            twos = number4 % 10;
-            number4 /= 10;
-            if (twos == 2) {
-                twosCount += 1;
+        int copyNumber5 = number5;
+        int countTwos = 0;
+        while (copyNumber5 > 0) { 
+            if (copyNumber5 % 10 == 2) {
+                countTwos ++;
             }
+            copyNumber5 /= 10;
         }
-        if (twosCount % 2 != 0) {
+        if (countTwos % 2 != 0) {
             System.out.println("Число " + number5 + " содержит нечетное количество двоек = " + 
-                    twosCount);
+                    countTwos);
         } else {
             System.out.println("Число " + number5 + " содержит четное количество двоек = " + 
-                    twosCount);
+                    countTwos);
         }
 
         System.out.println("\nЗадание 6: Отображение фигур в консоли;\n");
