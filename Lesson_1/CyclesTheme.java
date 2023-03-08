@@ -17,31 +17,15 @@ public class CyclesTheme {
                     ", а нечетных = " + sumOdd);
 
         System.out.println("\nЗадание 2: Вывод чисел в интервале (min и max) в порядке убывания;");
-        int number1 = -1;
-        int number2 = 10;
+        int number1 = 10;
+        int number2 = -1;
         int number3 = 5;
         int min = 0;
         int max = 0;
-        if (number1 > number2 && number1 > number3) {
-            max = number1; 
+        for (;max <= number1 || max <= number2 || max <= number3; max++) {
         }
-        if (number2 > number1 && number2 > number3) {
-            max = number2; 
-        }
-        if (number3 > number1 && number3 > number2) {
-            max = number3;
-        }
-        if (number1 < number2 && number1 < number3) {
-            min = number1;
-        }
-        if (number2 < number1 && number2 < number3) {
-            min = number2;
-        }
-        if (number3 < number1 && number3 < number2) {
-            min = number3;
-        }
-        for (int i = --max; i > min; --i) {
-            System.out.print(i + " ");
+        for (int i = max - 2; i > number1 || i > number2 || i > number3; i--) {
+            System.out.print(" " + i);
         }
 
         System.out.println("\n\nЗадание 3: Вывод реверсивного числа и суммы его цифр;");
