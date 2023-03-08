@@ -42,16 +42,15 @@ public class CyclesTheme {
 
         System.out.println("\nЗадание 4: Вывод чисел на консоль в несколько строк;");
         //полуинтервал [1, 24) число 24 не включаем в полуинтервал
-        int halfInterval = 24;
-        for (int i = 1; i < halfInterval; i += 2) {
+        int interval = 24;
+        for (int i = 1; i < interval; i += 2) {
             System.out.printf("%3d", i);
             if (i % 10 == 9) {
                 System.out.println();
             }
         }
-        while (halfInterval % 10 != 0) {
+        for (;interval % 10 != 0; interval += 2) {
             System.out.printf("%3d", 0);
-            halfInterval += 2;
         }
 
         System.out.println("\n\nЗадание 5: Проверка количества двоек на четность/нечетность;");
