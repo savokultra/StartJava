@@ -4,24 +4,24 @@ public class Calculator {
         int number = 4;
         int number1 = 3;
         char sign = '^';
-        int numberCopy = number;
+        int result = number;
         if (sign == '+') {
-            number+= number1;
+            result+= number1;
         } else if (sign == '-') {
-            number-= number1;
+            result-= number1;
         } else if (sign == '*') {
-            number*=  number1;
+            result*=  number1;
         } else if (sign == '/') {
-            number/= number1;
+            result/= number1;
         } else if (sign == '%') {
-            number%=  number1;
+            result%=  number1;
         } else if (sign == '^') {
             int count = number1;
             while (count > 1) {
-                number*= number;
+                result*= result;
                 count--;
             }
         }
-        System.out.println(numberCopy + " " + sign + " " + number1 + " = " + number);
+        System.out.println(number + " " + sign + " " + number1 + " = " + result);
     }
 }
