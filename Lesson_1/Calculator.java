@@ -10,11 +10,11 @@ public class Calculator {
         } else if (sign == '-') {
             result-= number1;
         } else if (sign == '*') {
-            result*=  number1;
+            result*= number1;
         } else if (sign == '/') {
             result/= number1;
         } else if (sign == '%') {
-            result%=  number1;
+            result%= number1;
         } else if (sign == '^') {
             int count = number1;
             while (count > 1) {
