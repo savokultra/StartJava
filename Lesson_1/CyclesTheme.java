@@ -30,13 +30,12 @@ public class CyclesTheme {
         System.out.println("\n\nЗадание 3: Вывод реверсивного числа и суммы его цифр;");
         int number = 1234;
         int sum = 0;
-        int reverseNumber = 0; 
         System.out.print("Исходное число в обратном порядке: ");
         while (number > 0) {
-            reverseNumber = number % 10;
-            sum += reverseNumber;
+            int digit = number % 10;
+            sum += digit;
             number /= 10;
-            System.out.print(reverseNumber);
+            System.out.print(digit);
         }
         System.out.println("\nСумма цифр = " + sum);
 
