@@ -79,39 +79,39 @@ public class CyclesTheme {
         }
 
         System.out.println();
-        int counter1 = 0;
-        int size = 5;
-        while (counter1 <= size && size != 0) {
+        int symbolCounter = 0;
+        int width = 5;
+        while (symbolCounter <= width && width != 0) {
             System.out.print("#");
-            counter1++;
-            if (counter1 == size) {
+            symbolCounter++;
+            if (symbolCounter == width) {
                 System.out.println();
-                size--;
-                counter1 = 0;
+                width--;
+                symbolCounter = 0;
             }
         }
         
         System.out.println();
-        int dollar = 1;
-        int dollarCounter = 1;
-        int copyDollar = dollarCounter;
+        width = 1;
+        symbolCounter = 1;
+        int copywidth = symbolCounter;
         do {
             System.out.print("$");
-            if (dollar == dollarCounter) {
+            if (width == symbolCounter) {
                 System.out.println();
-                copyDollar++;
-                dollarCounter += copyDollar;
+                copywidth++;
+                symbolCounter += copywidth;
             }
-            dollar++;
-        } while (dollar < 7);
+            width++;
+        } while (width < 7);
         do {
             System.out.print("$");
-            if (dollar == dollarCounter) {
+            if (width == symbolCounter) {
                 System.out.println();
             }
-            dollar--;
-            dollarCounter -= copyDollar;
-        } while (dollar > 4);
+            width--;
+            symbolCounter -= copywidth;
+        } while (width > 4);
 
         System.out.println("\n\nЗадание 7: Отображение ASCII-символов;");
         System.out.println("Dec Char");
