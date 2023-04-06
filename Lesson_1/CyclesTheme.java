@@ -58,7 +58,7 @@ public class CyclesTheme {
         int countTwos = 0;
         while (copyNumber5 > 0) { 
             if (copyNumber5 % 10 == 2) {
-                countTwos ++;
+                countTwos++;
             }
             copyNumber5 /= 10;
         }
