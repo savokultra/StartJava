@@ -90,28 +90,19 @@ public class CyclesTheme {
                 symbolCounter = 0;
             }
         }
-        
+
         System.out.println();
-        width = 1;
-        symbolCounter = 1;
-        int copywidth = symbolCounter;
+        width = 5;
+        symbolCounter = 0;
         do {
-            System.out.print("$");
-            if (width == symbolCounter) {
-                System.out.println();
-                copywidth++;
-                symbolCounter += copywidth;
-            }
-            width++;
-        } while (width < 7);
-        do {
-            System.out.print("$");
-            if (width == symbolCounter) {
-                System.out.println();
-            }
-            width--;
-            symbolCounter -= copywidth;
-        } while (width > 4);
+            System.out.println("$");
+            do {
+                System.out.print("$");
+                width--;
+            } while (width == 3);
+            symbolCounter++;
+        } while (symbolCounter <= 3);
+
 
         System.out.println("\n\nЗадание 7: Отображение ASCII-символов;");
         System.out.println("Dec Char");
