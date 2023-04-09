@@ -120,13 +120,13 @@ public class CyclesTheme {
         // всё что ниже решение нашел на похожих задачах или отдельных фрагментах в сети
         System.out.println("\nЗадание 8: Проверка, является ли число палиндромом;");
         int palindrome = 1234321;
-        int invertpalindrome = 0;
-        int copypalindrome = palindrome;
-        while (copypalindrome > 0) {
-            invertpalindrome = invertpalindrome * 10 + copypalindrome % 10;
-            copypalindrome /= 10;
+        int invertPalindrome = 0;
+        int copyPalindrome = palindrome;
+        while (copyPalindrome > 0) {
+            invertPalindrome = invertPalindrome * 10 + copyPalindrome % 10;
+            copyPalindrome /= 10;
         }
-        if (invertpalindrome == palindrome) {
+        if (invertPalindrome == palindrome) {
             System.out.println("Число " + palindrome + " является палиндромом");
         } else {
             System.out.println("Число " + palindrome + " не является палиндромом");
