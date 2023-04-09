@@ -41,14 +41,14 @@ public class CyclesTheme {
 
         System.out.println("\nЗадание 4: Вывод чисел на консоль в несколько строк;");
         //полуинтервал [1, 24) число 24 не включаем в полуинтервал
-        int range = 24;
-        for (int i = 1; i < range; i += 2) {
+        int numberQuantity = 24;
+        for (int i = 1; i < numberQuantity; i += 2) {
             System.out.printf("%3d", i);
             if (i % 10 == 9) {
                 System.out.println();
             }
         }
-        for (;range % 10 != 0; range += 2) {
+        for (;numberQuantity % 10 != 0; numberQuantity += 2) {
             System.out.printf("%3d", 0);
         }
 
