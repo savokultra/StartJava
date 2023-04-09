@@ -133,14 +133,18 @@ public class CyclesTheme {
         }
 
         System.out.println("\nЗадание 9: Определение, является ли число счастливым;");
-        int happyNumber = 123321;
+        int happyNumber = 164461;
         int copyHappyNumber = happyNumber;
         int happyNumberSum = 0;
-        while (copyHappyNumber > 0) {
+        for (int i = 1; i < 4; i++) {
             happyNumberSum += copyHappyNumber % 10;
             copyHappyNumber /= 10;
         }
-        if (happyNumberSum % 2 == 0) {
+        for (int i = 1; i < 4; i++) {
+            happyNumberSum -= copyHappyNumber % 10;
+            copyHappyNumber /= 10;
+        }
+        if (happyNumberSum == 0) {
             System.out.println("Число " + happyNumber + " - счастливое число");
         } else {
             System.out.println("Число " + happyNumber + " - не счастливое число");
