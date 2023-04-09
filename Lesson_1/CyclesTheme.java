@@ -79,29 +79,29 @@ public class CyclesTheme {
         }
 
         System.out.println();
-        int symbolCounter = 0;
+        int countSymbols = 0;
         int width = 5;
-        while (symbolCounter <= width && width != 0) {
+        while (countSymbols <= width && width != 0) {
             System.out.print("#");
-            symbolCounter++;
-            if (symbolCounter == width) {
+            countSymbols++;
+            if (countSymbols == width) {
                 System.out.println();
                 width--;
-                symbolCounter = 0;
+                countSymbols = 0;
             }
         }
 
         System.out.println();
         width = 5;
-        symbolCounter = 0;
+        countSymbols = 0;
         do {
             System.out.println("$");
             do {
                 System.out.print("$");
                 width--;
             } while (width == 3);
-            symbolCounter++;
-        } while (symbolCounter <= 3);
+            countSymbols++;
+        } while (countSymbols <= 3);
 
 
         System.out.println("\n\nЗадание 7: Отображение ASCII-символов;");
