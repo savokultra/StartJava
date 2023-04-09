@@ -151,8 +151,7 @@ public class CyclesTheme {
         }
 
         System.out.println("\nЗадание 10: Вывод таблицы умножения Пифагора;");
-        System.out.println("\n          ТАБЛИЦА ПИФАГОРА");
-        System.out.print("   |");
+        System.out.print("\n          ТАБЛИЦА ПИФАГОРА\n   |");
         for (int i = 2; i < 10; i++) {
             System.out.printf("%4d", i);
         }
