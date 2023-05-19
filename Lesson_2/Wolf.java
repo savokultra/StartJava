@@ -1,32 +1,40 @@
 public class Wolf {
 
-    String name;
-    String color;
-    float weight;
-    int age;
-    boolean male;
+    private String name;
+    //private String color;
+    //private float weight;
+    //private int age;
+    //private boolean male;
 
-    void move() {
+    public void move() {
         System.out.println("Идёт");
     }
 
-    boolean sit() {
+    public boolean sit() {
         System.out.println("Сидит");
         return true;
     }
 
-    void run() {
+    public void run() {
         System.out.println("Бежит");
     }
 
-    boolean voice() {
+    public boolean howl() {
         System.out.println("Воет");
         return true;
     }
 
-    String hunt() {
+    public String hunt() {
         System.out.println("Охотится");
         return "Охотится";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
 
