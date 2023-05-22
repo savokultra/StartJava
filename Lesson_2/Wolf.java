@@ -72,7 +72,6 @@ public class Wolf {
     public void setMale(boolean male) {
         this.male = male;
     }
-
 }
 
 
