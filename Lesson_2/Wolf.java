@@ -6,29 +6,6 @@ public class Wolf {
     private int age;
     private boolean male;
 
-    public void move() {
-        System.out.println("Идёт");
-    }
-
-    public boolean sit() {
-        System.out.println("Сидит");
-        return true;
-    }
-
-    public void run() {
-        System.out.println("Бежит");
-    }
-
-    public boolean howl() {
-        System.out.println("Воет");
-        return true;
-    }
-
-    public String hunt() {
-        System.out.println("Охотится");
-        return "Охотится";
-    }
-
     public String getName() {
         return name;
     }
@@ -71,6 +48,29 @@ public class Wolf {
 
     public void setMale(boolean male) {
         this.male = male;
+    }
+
+    public void move() {
+        System.out.println("Идёт");
+    }
+
+    public boolean sit() {
+        System.out.println("Сидит");
+        return true;
+    }
+
+    public void run() {
+        System.out.println("Бежит");
+    }
+
+    public boolean howl() {
+        System.out.println("Воет");
+        return true;
+    }
+
+    public String hunt() {
+        System.out.println("Охотится");
+        return "Охотится";
     }
 }
 
