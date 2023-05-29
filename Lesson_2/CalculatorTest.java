@@ -12,18 +12,18 @@ public class CalculatorTest {
             char sign = scanner.next().charAt(0);
             System.out.println("Введите второе число: ");
             int number1 = scanner.nextInt();
-            /*System.out.println("Хотите продолжить вычисления? [yes/no]:");
-            String string = scanner.nextLine();
-            System.out.println("calcTest.setString(string);: " + calcTest.getString());*/
             calcTest.setNumber(number);
             calcTest.setNumber1(number1);
             calcTest.setSign(sign);
             calcTest.switchMethod();
+            //не работает с String
+            System.out.println("Хотите продолжить вычисления? [yes/no]:");
+            String string = scanner.nextLine();
             calcTest.setString(string);
+            //но работает с int
             System.out.println("Хотите продолжить вычисления? [yes 1 /no 2 ]:");
             int start = scanner.nextInt();
             calcTest.setStart(start);
-            System.out.println("calcTest.getStart() =" + calcTest.getStart());
         } while (calcTest.getStart() == 1);
     }
 }
