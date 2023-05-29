@@ -4,29 +4,47 @@ public class Calculator {
     private int number1;
     private int result;
     private char sign;
+    private int start;
+    private String string;
 
     public int getNumber() {
-    return number;
+        return number;
     }
 
     public void setNumber(int number) {
-    this.number = number;
+        this.number = number;
     }
 
     public int getNumber1() {
-    return number1;
+        return number1;
     }
 
     public void setNumber1(int number1) {
-    this.number1 = number1;
+        this.number1 = number1;
     }
 
     public char getSign() {
-    return sign;
+        return sign;
     }
 
     public void setSign(char sign) {
-    this.sign = sign;
+        this.sign = sign;
+    }
+
+    public int getStart() {
+        return start;
+    }
+
+    public void setStart(int start) {
+        this.start = start;
+    }
+
+    public String getString() {
+    return string;
+    }
+
+    public void setString(String string) {
+        this.string = string;
     }
 
     public void switchMethod() {
