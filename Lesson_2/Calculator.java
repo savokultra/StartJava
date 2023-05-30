@@ -2,13 +2,11 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    private String string;
+    private String agree;
     private int number;
     private int number1;
-    private int result;
     private char sign;
-    private int check;
-    private boolean checkString;
+    private int checkStep;
 
     public int getNumber() {
         return number;
@@ -34,15 +32,15 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public String getString() {
-        return string;
+    public String getAgree() {
+        return agree;
     }
 
-    public void setString(String string) {
-        this.string = string;
+    public void setAgree(String agree) {
+        this.agree = agree;
     }
 
-    public void switchMethod() {
+    public void switchCalc() {
         switch(sign) {
             case '+':
                 number += number1;
@@ -80,23 +78,18 @@ public class Calculator {
     public void scannerString() {
         System.out.println("Хотите продолжить вычисления? [yes/no]:");
         Scanner scanner = new Scanner(System.in);
-        string = scanner.nextLine();
+        agree = scanner.nextLine();
     }
 
-    public int check() {
-        if (getString().contains("yes")) {
-            check = 1;
-        } else if (getString().contains("no")){
-            check = 2;
+    public int checkNextStep() {
+        if (getAgree().contains("yes")) {
+            checkStep = 1;
+        } else if (getAgree().contains("no")) {
+            checkStep = 2;
         } else {
-            check = 3;
+            checkStep = 3;
         }
-    return check;
+    return checkStep;
     }
-
-    /*public boolean checkString() {
-        checkString = getString().contains("yes");
-        return checkString;
-    }*/
 
 }

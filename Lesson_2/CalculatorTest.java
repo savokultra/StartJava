@@ -15,10 +15,10 @@ public class CalculatorTest {
             calcTest.setNumber(number);
             calcTest.setNumber1(number1);
             calcTest.setSign(sign);
-            calcTest.switchMethod();
+            calcTest.switchCalc();
             do {
                 calcTest.scannerString();
-            } while (calcTest.check() == 3);
-        } while (calcTest.check() == 1);
+            } while (calcTest.checkNextStep() == 3);
+        } while (calcTest.checkNextStep() == 1);
     }
 }
