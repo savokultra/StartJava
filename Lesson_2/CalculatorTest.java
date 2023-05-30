@@ -16,7 +16,9 @@ public class CalculatorTest {
             calcTest.setNumber1(number1);
             calcTest.setSign(sign);
             calcTest.switchMethod();
-            calcTest.scannerString();
-        } while (calcTest.checkString() == true);
+            do {
+                calcTest.scannerString();
+            } while (calcTest.check() == 3);
+        } while (calcTest.check() == 1);
     }
 }

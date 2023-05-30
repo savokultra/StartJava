@@ -7,7 +7,7 @@ public class Calculator {
     private int number1;
     private int result;
     private char sign;
-    private int start;
+    private int check;
     private boolean checkString;
 
     public int getNumber() {
@@ -32,14 +32,6 @@ public class Calculator {
 
     public void setSign(char sign) {
         this.sign = sign;
-    }
-
-    public int getStart() {
-        return start;
-    }
-
-    public void setStart(int start) {
-        this.start = start;
     }
 
     public String getString() {
@@ -91,9 +83,20 @@ public class Calculator {
         string = scanner.nextLine();
     }
 
-    public boolean checkString() {
+    public int check() {
+        if (getString().contains("yes")) {
+            check = 1;
+        } else if (getString().contains("no")){
+            check = 2;
+        } else {
+            check = 3;
+        }
+    return check;
+    }
+
+    /*public boolean checkString() {
         checkString = getString().contains("yes");
         return checkString;
-    }
+    }*/
 
 }
