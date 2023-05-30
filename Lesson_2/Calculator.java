@@ -91,5 +91,4 @@ public class Calculator {
         }
     return checkStep;
     }
-
 }
