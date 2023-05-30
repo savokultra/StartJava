@@ -1,11 +1,14 @@
+import java.util.Scanner;
+
 public class Calculator {
 
+    private String string;
     private int number;
     private int number1;
     private int result;
     private char sign;
     private int start;
-    private String string;
+    private boolean checkString;
 
     public int getNumber() {
         return number;
@@ -40,7 +43,7 @@ public class Calculator {
     }
 
     public String getString() {
-    return string;
+        return string;
     }
 
     public void setString(String string) {
@@ -81,4 +84,16 @@ public class Calculator {
                 System.out.println("Такая математическая операция не поддерживается");
         }
     }
+
+    public void scannerString() {
+        System.out.println("Хотите продолжить вычисления? [yes/no]:");
+        Scanner scanner = new Scanner(System.in);
+        string = scanner.nextLine();
+    }
+
+    public boolean checkString() {
+        checkString = getString().contains("yes");
+        return checkString;
+    }
+
 }

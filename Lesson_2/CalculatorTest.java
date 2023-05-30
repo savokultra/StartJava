@@ -16,14 +16,7 @@ public class CalculatorTest {
             calcTest.setNumber1(number1);
             calcTest.setSign(sign);
             calcTest.switchMethod();
-            //не работает с String после вывода на 
-            System.out.println("Хотите продолжить вычисления? String [yes/no]:");
-            String string = scanner.nextLine();
-            calcTest.setString(string);
-            //но работает с int
-            System.out.println("Хотите продолжить вычисления? Int [yes 1 /no 2 ]:");
-            int start = scanner.nextInt();
-            calcTest.setStart(start);
-        } while (calcTest.getStart() == 1);
+            calcTest.scannerString();
+        } while (calcTest.checkString() == true);
     }
 }
