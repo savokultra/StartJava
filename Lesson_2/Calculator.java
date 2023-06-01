@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Calculator {
 
     private String agree;
@@ -73,12 +71,6 @@ public class Calculator {
             default:
                 System.out.println("Такая математическая операция не поддерживается");
         }
-    }
-
-    public void scannerString() {
-        System.out.println("Хотите продолжить вычисления? [yes/no]:");
-        Scanner scanner = new Scanner(System.in);
-        agree = scanner.nextLine();
     }
 
     public int checkNextStep() {
