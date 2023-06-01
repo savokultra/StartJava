@@ -1,10 +1,9 @@
 public class Calculator {
 
-    private String agree;
     private int number;
     private int number1;
+    private int result;
     private char sign;
-    private String checkStep;
 
     public int getNumber() {
         return number;
@@ -30,46 +29,37 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public String getAgree() {
-        return agree;
-    }
-
-    public void setAgree(String agree) {
-        this.agree = agree;
-    }
-
     public void switchCalc() {
         switch(sign) {
             case '+':
-                number += number1;
-                System.out.println("Результат сложения равен: " + number);
+                result = number + number1;
                 break;
             case '-':
-                number -= number1;
-                System.out.println("Результат вычитания равен: " + number);
+                result = number - number1;
                 break;
             case '/':
                 if (number1 != 0) {
-                    number /= number1;
-                    System.out.println("Результат вычитания равен: " + number);
+                    result = number / number1;
                 } else {
                     System.out.println("На 0 делить нельзя!");
                 }
                 break;
             case '*':
-                number *= number1;
-                System.out.println("Результат вычитания равен: " + number);
+                result = number * number1;
                 break;
             case '^':
                 int degree = number;
-                while (number1 > 1) {
-                    number *= degree;
-                    number1--;
+                int numberCopy = number;
+                int number1Copy = number1;
+                while (number1Copy > 1) {
+                    numberCopy *= degree;
+                    number1Copy--;
                 }
-                System.out.println("Результат возведения в степень равен: " + number);
+                result = numberCopy;
                 break;
             default:
                 System.out.println("Такая математическая операция не поддерживается");
         }
+        System.out.println(number + " " + sign + " " + number1 + " = " + result);
     }
 }

@@ -5,6 +5,7 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Calculator calcTest = new Calculator();
         Scanner scanner = new Scanner(System.in);
+        String agree;
         do {
             System.out.println("Введите первое число: ");
             int number = scanner.nextInt();
@@ -16,12 +17,11 @@ public class CalculatorTest {
             int number1 = scanner.nextInt();
             calcTest.setNumber1(number1);
             calcTest.switchCalc();
-                do {
-                    System.out.println("Хотите продолжить вычисления? [yes/no]:");
-                    String agree = scanner.nextLine();
-                    calcTest.setAgree(agree);
-                    System.out.println("calcTest.getAgree() :" + calcTest.getAgree());
-                } while (calcTest.getAgree() == ("no"));
-        } while (calcTest.getAgree() == ("no"));
+            do {
+                scanner = new Scanner(System.in);
+                System.out.println("Хотите продолжить вычисления? [yes/no]:");
+                agree = scanner.nextLine();
+            } while (agree.equals("yes") != true && agree.equals("no") != true);
+        } while (agree.equals("yes"));
     }
 }
