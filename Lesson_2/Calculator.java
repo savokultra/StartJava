@@ -4,7 +4,7 @@ public class Calculator {
     private int number;
     private int number1;
     private char sign;
-    private int checkStep;
+    private String checkStep;
 
     public int getNumber() {
         return number;
@@ -71,16 +71,5 @@ public class Calculator {
             default:
                 System.out.println("Такая математическая операция не поддерживается");
         }
-    }
-
-    public int checkNextStep() {
-        if (getAgree().contains("yes")) {
-            checkStep = 1;
-        } else if (getAgree().contains("no")) {
-            checkStep = 2;
-        } else {
-            checkStep = 3;
-        }
-    return checkStep;
     }
 }
