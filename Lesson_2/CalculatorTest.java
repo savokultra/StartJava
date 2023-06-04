@@ -4,24 +4,24 @@ public class CalculatorTest {
 
     public static void main(String[] args) {
         Calculator calcTest = new Calculator();
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String agree;
         do {
             System.out.println("Введите первое число: ");
-            int number = scanner.nextInt();
+            int number = sc.nextInt();
             calcTest.setNumber(number);
             System.out.println("Введите знак математической операции: + - * / ^ ");
-            char sign = scanner.next().charAt(0);
+            char sign = sc.next().charAt(0);
             calcTest.setSign(sign);
             System.out.println("Введите второе число: ");
-            int number1 = scanner.nextInt();
+            int number1 = sc.nextInt();
             calcTest.setNumber1(number1);
-            calcTest.switchCalc();
+            calcTest.calculate();
             do {
-                scanner = new Scanner(System.in);
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");
-                agree = scanner.nextLine();
-            } while (agree.equals("yes") != true && agree.equals("no") != true);
+                sc.nextLine();
+                agree = sc.nextLine();
+            } while (!agree.equals("yes") && !agree.equals("no"));
         } while (agree.equals("yes"));
     }
 }
