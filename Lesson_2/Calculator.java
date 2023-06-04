@@ -36,8 +36,9 @@ public class Calculator {
                 result = number * number1;
                 break;
             case '^':
-                for (int i = 0; i < number1; i++)
+                for (int i = 0; i < number1; i++) {
                 result *= number;
+            }
                 break;
             default:
                 System.out.println("Такая математическая операция не поддерживается");
