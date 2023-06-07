@@ -73,14 +73,10 @@ public class Jaeger {
         this.armor = armor;
     }
 
-    boolean move() {
-        System.out.println("Робот находится в движении");
-        return true;
+    int move() {
+        if (speed > 0) {
+        System.out.println("Робот находится в движении\nCкорость робота " + getSpeed());
+        }
+    return speed; 
     }
-
-    int speed() {
-        System.out.println("скорость робота " + getSpeed());
-        return speed;
-    }
-
 }
