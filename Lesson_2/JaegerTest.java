@@ -2,8 +2,9 @@ public class JaegerTest {
 
     public static void main(String[] args) {
         Jaeger flyJaeger = new Jaeger();
+        flyJaeger.setModelName("Shark");
         flyJaeger.setSpeed(20);
         flyJaeger.move();
-        flyJaeger.speed();
+        System.out.println("ModelName: " + flyJaeger.getModelName());
     }
 }
