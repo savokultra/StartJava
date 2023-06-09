@@ -33,7 +33,7 @@ public class Jaeger {
         this.origin = origin;
     }
 
-    private float getHeight() {
+    public float getHeight() {
         return height;
     }
 
@@ -41,7 +41,7 @@ public class Jaeger {
         this.height = height;
     }
 
-    private float getWeight() {
+    public float getWeight() {
         return height;
     }
 
@@ -49,7 +49,7 @@ public class Jaeger {
         this.weight = weight;
     }
 
-    private int getSpeed() {
+    public int getSpeed() {
         return speed;
     }
 
@@ -57,7 +57,7 @@ public class Jaeger {
         this.speed = speed;
     }
 
-    private int getStrength() {
+    public int getStrength() {
         return strength;
     }
 
@@ -65,7 +65,7 @@ public class Jaeger {
         this.strength = strength;
     }
 
-    private int getArmor() {
+    public int getArmor() {
         return armor;
     }
 
