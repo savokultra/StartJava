@@ -6,5 +6,6 @@ public class JaegerTest {
         flyJaeger.setSpeed(20);
         flyJaeger.move();
         System.out.println("ModelName: " + flyJaeger.getModelName());
+        sdf sf
     }
 }
