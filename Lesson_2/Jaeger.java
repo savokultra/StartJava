@@ -77,6 +77,28 @@ public class Jaeger {
         if (speed > 0) {
         System.out.println("Робот находится в движении\nCкорость робота: " + getSpeed());
         }
-    return speed; 
+    return speed;
+    }
+}
+
+class SwimmingJaeger {
+        String modelName;
+        String mark;
+        String origin;
+        float height;
+        float weight;
+        int speed;
+        int strength;
+        int armor;
+
+    public SwimmingJaeger() {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.origin = origin;
+        this.height = height;
+        this.weight = weight;
+        this.speed = speed;
+        this.strength = strength;
+        this.armor = armor;
     }
 }
