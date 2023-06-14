@@ -79,26 +79,26 @@ public class Jaeger {
         }
     return speed;
     }
-}
 
-class SwimmingJaeger {
+    public class SwimmingJaeger {
         String modelName;
-        String mark;
+        /*String mark;
         String origin;
         float height;
         float weight;
         int speed;
         int strength;
-        int armor;
+        int armor;*/
 
-    public SwimmingJaeger() {
-        this.modelName = modelName;
-        this.mark = mark;
-        this.origin = origin;
-        this.height = height;
-        this.weight = weight;
-        this.speed = speed;
-        this.strength = strength;
-        this.armor = armor;
+        public SwimmingJaeger(String modelName) {
+            this.modelName = modelName;
+            /*this.mark = mark;
+            this.origin = origin;
+            this.height = height;
+            this.weight = weight;
+            this.speed = speed;
+            this.strength = strength;
+            this.armor = armor;*/
+        }
     }
 }
