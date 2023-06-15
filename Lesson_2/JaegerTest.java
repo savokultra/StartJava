@@ -9,29 +9,14 @@ public class JaegerTest {
         flyJaeger.setOrigin("Japan");
         flyJaeger.setHeight(3.2f);
         flyJaeger.setWeight(1.0f);
-        flyJaeger.setSpeed(20);
+        flyJaeger.setSpeed(2000);
         flyJaeger.setStrength(5500);
         flyJaeger.setArmor(200);
+        System.out.println("flyJaeger ModelName: " + flyJaeger.getModelName());
 
-        SwimmingJaeger shark = new SwimmingJaeger();
-        shark.modelName = "Shark";
-        //Scanner sc = new Scanner(System.in);
-        //System.out.println("ModelName = ");
-        //String modelName = sc.nextLine();
-        //shark.setModelName(modelName);
-        /*System.out.println("Mark = ");
-        shark.mark = sc.nextLine();
-        System.out.println("Origin = ");
-        shark.origin = sc.nextLine();
-        System.out.println("Height (format 0.0) = ");
-        shark.height = sc.nextFloat();
-        System.out.println("Weight (format 0.0) = ");
-        shark.weight = sc.nextFloat();
-        System.out.println("Speed (format 0) = ");
-        shark.speed = sc.nextInt();
-        System.out.println("Strength (format 0) = ");
-        shark.strength = sc.nextInt();
-        System.out.println("Armor (format 0) = ");
-        shark.armor = sc.nextInt();*/
+        Jaeger shark = new Jaeger("Shark", "II", "EU", 8.5f, 2.8f, 40, 12000, 3500);
+        System.out.println("shark ModelName: " + shark.getModelName());
+        System.out.println(flyJaeger.move());
+        System.out.println(shark.move());
     }
 }
