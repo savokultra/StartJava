@@ -12,11 +12,13 @@ public class JaegerTest {
         flyJaeger.setSpeed(2000);
         flyJaeger.setStrength(5500);
         flyJaeger.setArmor(200);
-        System.out.println("flyJaeger ModelName: " + flyJaeger.getModelName());
-
-        Jaeger shark = new Jaeger("Shark", "II", "EU", 8.5f, 2.8f, 40, 12000, 3500);
-        System.out.println("shark ModelName: " + shark.getModelName());
+        flyJaeger.setMaxAltitude(18000);
+        Jaeger shark = new Jaeger("Shark", "II", "EU", 8.5f, 2.8f, 40, 12000, 3500, 0, 1000);
         System.out.println(flyJaeger.move());
         System.out.println(shark.move());
+        System.out.println("Бронезащита робота " + flyJaeger.getModelName() + " составляет " + 
+            flyJaeger.getArmor() + " условных единиц");
+        System.out.println("Бронезащита робота " + shark.getModelName() + " составляет " + 
+            shark.getArmor() + " условных единиц");
     }
 }

@@ -8,6 +8,8 @@ public class Jaeger {
     private int speed;
     private int strength;
     private int armor;
+    private int maxAltitude;
+    private int maxDepth;
 
     public Jaeger() {
         modelName = "";
@@ -18,10 +20,12 @@ public class Jaeger {
         speed = 0;
         strength = 0;
         armor = 0;
+        maxAltitude = 0;
+        maxDepth = 0;
     }
 
     public Jaeger(String modelName, String mark, String origin, float height, float weight, 
-            int speed, int strength, int armor) {
+            int speed, int strength, int armor, int maxAltitude, int maxDepth) {
         this.modelName = modelName;
         this.mark = mark;
         this.origin = origin;
@@ -30,6 +34,8 @@ public class Jaeger {
         this.speed = speed;
         this.strength = strength;
         this.armor = armor;
+        this.maxAltitude = maxAltitude;
+        this.maxDepth = maxDepth;
     }
 
     public String getModelName() {
@@ -94,6 +100,22 @@ public class Jaeger {
 
     public void setArmor(int armor) {
         this.armor = armor;
+    }
+
+    public int getMaxAltitude() {
+        return maxAltitude;
+    }
+
+    public void setMaxAltitude(int maxAltitude) {
+        this.maxAltitude = maxAltitude;
+    }
+
+    public int getMaxDepth() {
+        return maxDepth;
+    }
+
+    public void setMaxDepth(int maxDepth) {
+        this.maxDepth = maxDepth;
     }
 
     public int move() {
