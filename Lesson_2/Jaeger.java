@@ -35,6 +35,7 @@ public class Jaeger {
                 this.speed = speed;
                 this.strength = strength;
                 this.armor = armor;
+                this.armorDamage = armorDamage;
                 this.maxAltitude = maxAltitude;
                 this.maxDepth = maxDepth;
     }
@@ -138,13 +139,13 @@ public class Jaeger {
     public int selfDestruct() {
         if (armor - armorDamage < armor * 0.01) {
             armor-= armorDamage;
-            System.out.println("Робот " + getModelName() + 
-                " Запустил программу самоуничтожения");
-        } else {
+            System.out.println("\nРобот " + getModelName() + 
+                " Запустил программу самоуничтожения\nБроня робота " + getModelName() + ": " 
+                    + getArmor() + " единиц");
+        } else if (armor - armorDamage > armor * 0.01){
             armor-= armorDamage;
-            System.out.println("Броня робота " + getModelName() + " " + getArmor() + " единиц");
+            System.out.println("\nБроня робота " + getModelName() + ": " + armor + " единиц");
         }
     return armor;
     }
-
 }
