@@ -13,16 +13,6 @@ public class Jaeger {
     private int maxDepth;
 
     public Jaeger() {
-        modelName = "";
-        mark = "";
-        origin = "";
-        height = 0.0f;
-        weight = 0.0f;;
-        speed = 0;
-        strength = 0;
-        armor = 0;
-        maxAltitude = 0;
-        maxDepth = 0;
     }
 
     public Jaeger(String modelName, String mark, String origin, float height, float weight, 
@@ -48,32 +38,16 @@ public class Jaeger {
         this.modelName = modelName;
     }
 
-    public String getMark() {
-        return mark;
-    }
-
     public void setMark(String mark) {
         this.mark = mark;
-    }
-
-    public String getOrigin() {
-        return origin;
     }
 
     public void setOrigin(String origin) {
         this.origin = origin;
     }
 
-    public float getHeight() {
-        return height;
-    }
-
     public void setHeight(float height) {
         this.height = height;
-    }
-
-    public float getWeight() {
-        return height;
     }
 
     public void setWeight(float weight) {
@@ -88,10 +62,6 @@ public class Jaeger {
         this.speed = speed;
     }
 
-    public int getStrength() {
-        return strength;
-    }
-
     public void setStrength(int strength) {
         this.strength = strength;
     }
@@ -104,24 +74,12 @@ public class Jaeger {
         this.armor = armor;
     }
 
-    public int getArmorDamage() {
-        return armorDamage;
-    }
-
     public void setArmorDamage(int armorDamage) {
         this.armorDamage = armorDamage;
     }
 
-    public int getMaxAltitude() {
-        return maxAltitude;
-    }
-
     public void setMaxAltitude(int maxAltitude) {
         this.maxAltitude = maxAltitude;
-    }
-
-    public int getMaxDepth() {
-        return maxDepth;
     }
 
     public void setMaxDepth(int maxDepth) {
@@ -129,25 +87,25 @@ public class Jaeger {
     }
 
     public int move() {
-        if (speed > 0 && getMaxAltitude() > 0) {
+        if (speed > 0 && maxAltitude > 0) {
             System.out.print("Робот " + getModelName() + 
                     " находится в движении\nCкорость робота " + getModelName() + ": " + getSpeed() +
-                        " км/ч");
+                            " км/ч");
         }
         else {
             System.out.print("Робот " + getModelName() + 
                     " находится в движении\nCкорость робота " + getModelName() + ": " + getSpeed() +
-                        " узлов");
+                            " узлов");
         }
     return speed;
     }
 
-    public int selfDestruct() {
+    public int analysisOfArmor() {
         if (armor - armorDamage < armor * 0.01) {
             armor-= armorDamage;
             System.out.println("\nРобот " + modelName + 
                     " Запустил программу самоуничтожения\nБроня робота " + modelName + ": " 
-                        + armor + " единиц(a)");
+                            + armor + " единиц(a)");
         } else if (armor - armorDamage > armor * 0.01) {
             armor-= armorDamage;
             System.out.println("\nБроня робота " + modelName + ": " + armor + " единиц(a) робот" +
@@ -156,7 +114,7 @@ public class Jaeger {
     return armor;
     }
 
-    public void weaponSelect() {
+    public void selectWeapon() {
         if (maxAltitude > 0) {
             System.out.println("Применяется оружие воздушного боя");
         }
@@ -164,5 +122,4 @@ public class Jaeger {
             System.out.println("Применяется оружие подводного боя");
         }
     }
-
 }

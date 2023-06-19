@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class JaegerTest {
 
     public static void main(String[] args) {
@@ -14,13 +12,13 @@ public class JaegerTest {
         flyJaeger.setArmor(200);
         flyJaeger.setArmorDamage(199);
         flyJaeger.setMaxAltitude(18000);
-        flyJaeger.weaponSelect();
+        flyJaeger.selectWeapon();
         flyJaeger.move();
-        flyJaeger.selfDestruct();
+        flyJaeger.analysisOfArmor();
         System.out.println("\n");
         Jaeger shark = new Jaeger("Shark", "II", "EU", 8.5f, 2.8f, 40, 12000, 3500, 453, 0, 1000);
-        shark.weaponSelect();
+        shark.selectWeapon();
         shark.move();
-        shark.selfDestruct();
+        shark.analysisOfArmor();
     }
 }
