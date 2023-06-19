@@ -91,8 +91,7 @@ public class Jaeger {
             System.out.print("Робот " + getModelName() + 
                     " находится в движении\nCкорость робота " + getModelName() + ": " + getSpeed() +
                             " км/ч");
-        }
-        else {
+        } else if (speed > 0 && maxDepth > 0) {
             System.out.print("Робот " + getModelName() + 
                     " находится в движении\nCкорость робота " + getModelName() + ": " + getSpeed() +
                             " узлов");
@@ -117,8 +116,7 @@ public class Jaeger {
     public void selectWeapon() {
         if (maxAltitude > 0) {
             System.out.println("Применяется оружие воздушного боя");
-        }
-        else {
+        } else {
             System.out.println("Применяется оружие подводного боя");
         }
     }
