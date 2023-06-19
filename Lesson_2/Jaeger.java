@@ -129,9 +129,15 @@ public class Jaeger {
     }
 
     public int move() {
-        if (speed > 0) {
+        if (speed > 0 && getMaxAltitude() > 0) {
             System.out.print("Робот " + getModelName() + 
-                " находится в движении\nCкорость робота " + getModelName() + ": " + getSpeed());
+                    " находится в движении\nCкорость робота " + getModelName() + ": " + getSpeed() +
+                        " км/ч");
+        }
+        else {
+            System.out.print("Робот " + getModelName() + 
+                    " находится в движении\nCкорость робота " + getModelName() + ": " + getSpeed() +
+                        " узлов");
         }
     return speed;
     }
@@ -139,13 +145,24 @@ public class Jaeger {
     public int selfDestruct() {
         if (armor - armorDamage < armor * 0.01) {
             armor-= armorDamage;
-            System.out.println("\nРобот " + getModelName() + 
-                " Запустил программу самоуничтожения\nБроня робота " + getModelName() + ": " 
-                    + getArmor() + " единиц");
-        } else if (armor - armorDamage > armor * 0.01)  {
+            System.out.println("\nРобот " + modelName + 
+                    " Запустил программу самоуничтожения\nБроня робота " + modelName + ": " 
+                        + armor + " единиц(a)");
+        } else if (armor - armorDamage > armor * 0.01) {
             armor-= armorDamage;
-            System.out.println("\nБроня робота " + getModelName() + ": " + armor + " единиц");
+            System.out.println("\nБроня робота " + modelName + ": " + armor + " единиц(a) робот" +
+                    " боеспособен");
         }
     return armor;
     }
+
+    public void weaponSelect() {
+        if (maxAltitude > 0) {
+            System.out.println("Применяется оружие воздушного боя");
+        }
+        else {
+            System.out.println("Применяется оружие подводного боя");
+        }
+    }
+
 }
