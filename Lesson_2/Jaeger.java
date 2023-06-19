@@ -142,7 +142,7 @@ public class Jaeger {
             System.out.println("\nРобот " + getModelName() + 
                 " Запустил программу самоуничтожения\nБроня робота " + getModelName() + ": " 
                     + getArmor() + " единиц");
-        } else if (armor - armorDamage > armor * 0.01){
+        } else if (armor - armorDamage > armor * 0.01)  {
             armor-= armorDamage;
             System.out.println("\nБроня робота " + getModelName() + ": " + armor + " единиц");
         }
