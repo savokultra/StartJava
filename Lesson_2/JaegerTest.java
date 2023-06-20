@@ -14,12 +14,12 @@ public class JaegerTest {
         flyJaeger.setMaxAltitude(18000);
         flyJaeger.selectWeapon();
         flyJaeger.move();
-        flyJaeger.analysisOfArmor();
+        flyJaeger.armorAnalysis();
         System.out.println("\n");
         
         Jaeger shark = new Jaeger("Shark", "II", "EU", 8.5f, 2.8f, 40, 12000, 3500, 453, 0, 1000);
         shark.selectWeapon();
         shark.move();
-        shark.analysisOfArmor();
+        shark.armorAnalysis();
     }
 }
