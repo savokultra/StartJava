@@ -16,6 +16,7 @@ public class JaegerTest {
         flyJaeger.move();
         flyJaeger.analysisOfArmor();
         System.out.println("\n");
+        
         Jaeger shark = new Jaeger("Shark", "II", "EU", 8.5f, 2.8f, 40, 12000, 3500, 453, 0, 1000);
         shark.selectWeapon();
         shark.move();
