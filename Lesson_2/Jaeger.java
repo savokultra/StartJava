@@ -88,7 +88,7 @@ public class Jaeger {
 
     public int move() {
         if (speed > 0 && maxAltitude > 0) {
-            System.out.print("Робот " + modelName() + 
+            System.out.print("Робот " + modelName + 
                     " находится в движении\nCкорость робота " + modelName + ": " + speed +
                     " км/ч");
         } else if (speed > 0 && maxDepth > 0) {
