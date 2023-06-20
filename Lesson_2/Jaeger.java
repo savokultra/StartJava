@@ -17,17 +17,17 @@ public class Jaeger {
 
     public Jaeger(String modelName, String mark, String origin, float height, float weight, 
             int speed, int strength, int armor, int armorDamage, int maxAltitude, int maxDepth) {
-                this.modelName = modelName;
-                this.mark = mark;
-                this.origin = origin;
-                this.height = height;
-                this.weight = weight;
-                this.speed = speed;
-                this.strength = strength;
-                this.armor = armor;
-                this.armorDamage = armorDamage;
-                this.maxAltitude = maxAltitude;
-                this.maxDepth = maxDepth;
+        this.modelName = modelName;
+        this.mark = mark;
+        this.origin = origin;
+        this.height = height;
+        this.weight = weight;
+        this.speed = speed;
+        this.strength = strength;
+        this.armor = armor;
+        this.armorDamage = armorDamage;
+        this.maxAltitude = maxAltitude;
+        this.maxDepth = maxDepth;
     }
 
     public String getModelName() {
@@ -88,29 +88,29 @@ public class Jaeger {
 
     public int move() {
         if (speed > 0 && maxAltitude > 0) {
-            System.out.print("Робот " + getModelName() + 
-                    " находится в движении\nCкорость робота " + getModelName() + ": " + getSpeed() +
-                            " км/ч");
+            System.out.print("Робот " + modelName() + 
+                    " находится в движении\nCкорость робота " + modelName() + ": " + speed() +
+                    " км/ч");
         } else if (speed > 0 && maxDepth > 0) {
-            System.out.print("Робот " + getModelName() + 
-                    " находится в движении\nCкорость робота " + getModelName() + ": " + getSpeed() +
-                            " узлов");
+            System.out.print("Робот " + modelName() + 
+                    " находится в движении\nCкорость робота " + modelName() + ": " + speed() +
+                    " узлов");
         }
-    return speed;
+        return speed;
     }
 
-    public int analysisOfArmor() {
+    public int armorAnalysis() {
         if (armor - armorDamage < armor * 0.01) {
             armor-= armorDamage;
             System.out.println("\nРобот " + modelName + 
                     " Запустил программу самоуничтожения\nБроня робота " + modelName + ": " 
-                            + armor + " единиц(a)");
+                    + armor + " единиц(a)");
         } else if (armor - armorDamage > armor * 0.01) {
             armor-= armorDamage;
             System.out.println("\nБроня робота " + modelName + ": " + armor + " единиц(a) робот" +
                     " боеспособен");
         }
-    return armor;
+        return armor;
     }
 
     public void selectWeapon() {
