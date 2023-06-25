@@ -8,5 +8,6 @@ public class GuessNumberTest {
         String name = sc.nextLine();
         Player player1 = new Player(name);
         System.out.println("имя игрока: " + player1.getName());
+        //System.out.println("GuessNumber: " + player.getPlayer());
     }
 }

@@ -3,6 +3,7 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
+        GuessNumber player = new GuessNumber(name);
     }
 
     public String getName() {
