@@ -1,7 +1,6 @@
 public class GuessNumber {
-    private int guessNumber;
+    private int hideNumber;
 
     public void searchNumber() {
-
     }
 }
