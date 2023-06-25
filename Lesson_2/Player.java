@@ -1,12 +1,11 @@
 public class Player {
-    private String name;
+    private String playerName;
 
-    public Player(String name) {
-        this.name = name;
-        GuessNumber player = new GuessNumber(name);
+    public Player(String playerName) {
+        this.playerName = playerName;
     }
 
     public String getName() {
-        return name;
+        return playerName;
     }
 }
