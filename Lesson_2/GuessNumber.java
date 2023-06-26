@@ -20,6 +20,13 @@ public class GuessNumber {
         System.out.println("playerNumber = " + playerNumber);
     }
 
+    public static void play() { 
+    System.out.print("Введите загаданное число: ");
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        Player player = new Player(number);
+    }
+
     public int getHideNumber() {
         return hideNumber;
     }
