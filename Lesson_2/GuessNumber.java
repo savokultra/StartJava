@@ -16,7 +16,6 @@ public class GuessNumber {
 
     public void showPlayersNumbers() {
         System.out.println("playerNumber = " + playerNumber);
-        System.out.println("player1Number = " + player1Number);
     }
 
     public void searchNumber() {
