@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class GuessNumber {
     private int playerNumber;
     private int player1Number;
@@ -16,9 +18,6 @@ public class GuessNumber {
 
     public void showPlayersNumbers() {
         System.out.println("playerNumber = " + playerNumber);
-    }
-
-    public void searchNumber() {
     }
 
     public int getHideNumber() {

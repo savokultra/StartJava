@@ -12,6 +12,11 @@ public class GuessNumberTest {
         String name1 = sc.nextLine();
         Player player1 = new Player(name1);
         System.out.println("имя игрока 2: " + player1.getName());
+
+        System.out.print("Введите загаданное число: ");
+        int number = sc.nextInt();
+        player.setNumber(number);
+
         GuessNumber playerNumber = new GuessNumber(player.getNumber());
         playerNumber.showPlayersNumbers();
         playerNumber.showHideNumber();
