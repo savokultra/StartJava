@@ -12,5 +12,8 @@ public class GuessNumberTest {
         String name1 = sc.nextLine();
         Player player1 = new Player(name1);
         System.out.println("имя игрока 2: " + player1.getName());
+        player.setNumber(0);
+        player1.setNumber(0);
+        //playerNumber.showPlayersNumbers();
     }
 }

@@ -1,19 +1,31 @@
 public class Player {
-    private String playerName;
-    private int playerNumber;
+    private String name;
+    private int number;
 
     public Player() {
     }
 
-    public Player(String playerName) {
-        this.playerName = playerName;
+    public Player(int number) {
+        this.number = number;
     }
 
-    public Player(int playerNumber) {
-        this.playerNumber = playerNumber;
+    public Player(String name) {
+        this.name = name;
     }
 
     public String getName() {
-        return playerName;
+        return name;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public void setNumber() {
+        GuessNumber playerNumber = new GuessNumber(number);
     }
 }
