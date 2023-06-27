@@ -1,38 +1,27 @@
 import java.util.Scanner;
 
-public class GuessNumberTest {
+public class CalculatorTest {
 
     public static void main(String[] args) {
-
-        System.out.println("Введите имя игрока: ");
+        Calculator calcTest = new Calculator();
         Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
-        Player player = new Player(name);
-        System.out.println("имя игрока: " + player.getName());
-        
-        /*System.out.println("Введите имя второго игрока: ");
-        String name1 = sc.nextLine();
-        Player player1 = new Player(name1);
-        System.out.println("имя второго игрока:: " + player1.getName());*/
-        
-        System.out.println("Игрок " + player.getName() + " введите число");
-        int number = sc.nextInt();
-        player.setNumber(number);
-        GuessNumber playerNumber = new GuessNumber(player.getNumber());
-        System.out.println("Игрок " + player.getName() + " ввёл число " + player.getNumber());
-        
-        /*System.out.println("Игрок1 " + player1.getName() + " введите число");
-        sc.nextLine();
-        int number1 = sc.nextInt();
-        player1.setNumber(number1);
-        GuessNumber player1Number = new GuessNumber(player1.getNumber());
-        System.out.println("Игрок 1" + player1.getName() + " ввёл число " + player1.getNumber());*/
-        
-
-        //GuessNumber.playerInsert();
-        //GuessNumber.play();
-
-        playerNumber.showPlayersNumbers();
-        playerNumber.showHideNumber();
+        String agree;
+        do {
+            System.out.println("Введите первое число: ");
+            int number = sc.nextInt();
+            calcTest.setNumber(number);
+            System.out.println("Введите знак математической операции: + - * / ^ ");
+            char sign = sc.next().charAt(0);
+            calcTest.setSign(sign);
+            System.out.println("Введите второе число: ");
+            int number1 = sc.nextInt();
+            calcTest.setNumber1(number1);
+            calcTest.calculate();
+            do {
+                System.out.println("Хотите продолжить вычисления? [yes/no]:");
+                sc.nextLine();
+                agree = sc.nextLine();
+            } while (!agree.equals("yes") && !agree.equals("no"));
+        } while (agree.equals("yes"));
     }
 }
