@@ -18,23 +18,24 @@ public class GuessNumber {
 
     public void showPlayersNumbers() {
         System.out.println("playerNumber = " + playerNumber);
+        //System.out.println("player1Number = " + player1Number);
     }
     
     /*public static void playerInsert() { 
-        System.out.println("Введите имя игрока: ");
-        Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
-        Player player = new Player(name);
-        System.out.println("имя игрока: " + player.getName());
-        System.out.println("Введите имя второго игрока: ");
-        String name1 = sc.nextLine();
-        Player player1 = new Player(name1);
-        System.out.println("имя игрока 2: " + player1.getName());
+        Player player = new Player();
         System.out.println("Игрок " + player.getName() + " введите число");
+        Scanner sc = new Scanner(System.in);
         int number = sc.nextInt();
         player.setNumber(number);
-        GuessNumber playerNumber = new GuessNumber(number);
+        GuessNumber playerNumber = new GuessNumber(player.getNumber());
         System.out.println("Игрок " + player.getName() + " ввёл число " + player.getNumber());
+        
+        Player player1 = new Player();
+        System.out.println("Игрок 1 " + player1.getName() + " введите число"); 
+        int number1 = sc.nextInt();
+        player1.setNumber(number1);
+        GuessNumber player1Number = new GuessNumber(number1);
+        System.out.println("Игрок 1 " + player1.getName() + " ввёл число " + player1.getNumber());
     }*/
 
     public int getHideNumber() {
