@@ -3,11 +3,27 @@ import java.util.Scanner;
 public class GuessNumberTest {
 
     public static void main(String[] args) {
-        GuessNumber.playerInsert();
-        GuessNumber.play();
 
-        //GuessNumber playerNumber = new GuessNumber(player.getNumber());
-        //playerNumber.showPlayersNumbers();
-        //playerNumber.showHideNumber();
+        System.out.println("Введите имя игрока: ");
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+        Player player = new Player(name);
+        System.out.println("имя игрока: " + player.getName());
+        System.out.println("Введите имя второго игрока: ");
+        String name1 = sc.nextLine();
+        Player player1 = new Player(name1);
+        System.out.println("имя игрока 2: " + player1.getName());
+        System.out.println("Игрок " + player.getName() + " введите число");
+        int number = sc.nextInt();
+        player.setNumber(number);
+        GuessNumber playerNumber = new GuessNumber(player.getNumber());
+        System.out.println("Игрок " + player.getName() + " ввёл число " + player.getNumber());
+        
+
+        //GuessNumber.playerInsert();
+        //GuessNumber.play();
+
+        playerNumber.showPlayersNumbers();
+        playerNumber.showHideNumber();
     }
 }
