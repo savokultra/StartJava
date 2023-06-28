@@ -5,7 +5,7 @@ public class GuessNumber {
     private String player1Name;
     private int playerNumber;
     private int player1Number;
-    private int hideNumber = 1; //+ (int) (Math.random() * 100);
+    private int hideNumber = 1 + (int) (Math.random() * 100);
 
     public GuessNumber() {
     }
@@ -28,6 +28,10 @@ public class GuessNumber {
         return player1Number;
     }
     
+    public int getHideNumber() {
+        return hideNumber;
+    }
+    
     public String getPlayerName() {
         return playerName;
     }
@@ -42,9 +46,15 @@ public class GuessNumber {
         Player playerNumber = new Player();
         playerNumber.setNumber(number);
         this.playerNumber = number;
+        if (this.playerNumber < hideNumber) {
+            System.out.println("Число N меньше того, что загадал компьютер");
+        } else if (this.playerNumber > hideNumber) {
+            System.out.println("Число N больше того, что загадал компьютер");
+        }
         System.out.println("playerNumber.getNumber() = " + playerNumber.getNumber());
         System.out.println("playerName = " + playerName);
         System.out.println("playerNumber = " + this.playerNumber);
+        System.out.println("getHideNumber() = " + getHideNumber());
     }
     
     public void insertPlayer1Number() {
@@ -53,9 +63,15 @@ public class GuessNumber {
         Player player1Number = new Player();
         player1Number.setNumber(number1);
         this.player1Number = number1;
+        if (this.player1Number < hideNumber) {
+            System.out.println("Число N меньше того, что загадал компьютер");
+        } else if (this.player1Number > hideNumber) {
+            System.out.println("Число N больше того, что загадал компьютер");
+        }
         System.out.println("player1Number.getNumber() = " + player1Number.getNumber());
         System.out.println("player1Name = " + player1Name);
         System.out.println("player1Number = " + this.player1Number);
+        System.out.println("getHideNumber() = " + getHideNumber());
     }
     
     public void showHideNumber() {
