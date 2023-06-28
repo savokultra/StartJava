@@ -1,70 +1,29 @@
 import java.util.Scanner;
 
-public class GuessNumber {
-    private String playerName;
-    private String player1Name;
-    private int playerNumber;
-    private int player1Number;
-    private int hideNumber = 1 + (int) (Math.random() * 100);
+public class GuessNumberTest {
 
-    public GuessNumber() {
-    }
+    public static void main(String[] args) {
 
-    public GuessNumber(String playerName, String player1Name) {
-        this.playerName = playerName;
-        this.player1Name = player1Name;
-    }
-
-    public GuessNumber(int playerNumber, int player1Number) {
-        this.playerNumber = playerNumber;
-        this.player1Number = player1Number;
-    }
-    
-    public int getPlayerNumber() {
-        return playerNumber;
-    }
-    
-    public int getPlayer1Number() {
-        return player1Number;
-    }
-    
-    public int getHideNumber() {
-        return hideNumber;
-    }
-    
-    public String getPlayerName() {
-        return playerName;
-    }
-    
-    public String getPlayer1Name() {
-        return player1Name;
-    }
-    
-    public void insertPlayerNumber() {
+        System.out.println("Введите имя первого игрока: ");
         Scanner sc = new Scanner(System.in);
-        int number = sc.nextInt();
-        Player playerNumber = new Player();
-        playerNumber.setNumber(number);
-        this.playerNumber = number;
-        System.out.println("playerNumber.getNumber() = " + playerNumber.getNumber());
-        System.out.println("playerName = " + playerName);
-        System.out.println("playerNumber = " + this.playerNumber);
-        System.out.println("getHideNumber() = " + getHideNumber());
-    }
-    
-    public void insertPlayer1Number() {
-        Scanner sc = new Scanner(System.in);
-        int number1 = sc.nextInt();
-        Player player1Number = new Player();
-        player1Number.setNumber(number1);
-        this.player1Number = number1;
-        System.out.println("player1Number.getNumber() = " + player1Number.getNumber());
-        System.out.println("player1Name = " + player1Name);
-        System.out.println("player1Number = " + this.player1Number);
-        System.out.println("getHideNumber() = " + getHideNumber());
-    }
-    
-    public void showHideNumber() {
-        System.out.println("hideNumber = " + hideNumber);
+        String name = sc.nextLine();
+        Player player = new Player(name);
+        System.out.println("Имя первого игрока: " + player.getName());
+        
+        System.out.println("Введите имя второго игрока: ");
+        String name1 = sc.nextLine();
+        Player player1 = new Player(name1);
+        System.out.println("Имя второго игрока: " + player1.getName());
+
+        GuessNumber players = new GuessNumber(player.getName(), player1.getName());
+        
+        do {
+            System.out.println("Первый игрок " + player.getName() + " введите число");
+            players.insertPlayerNumber();
+            System.out.println("Второй игрок " + player1.getName() + " введите число");
+            players.insertPlayer1Number();
+        } while (players.getPlayerNumber() != players.getHideNumber() && players.getPlayer1Number() != players.getHideNumber());
+
+        players.showHideNumber();
     }
 }
