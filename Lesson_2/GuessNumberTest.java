@@ -16,11 +16,16 @@ public class GuessNumberTest {
         System.out.println("Имя второго игрока: " + player1.getName());
 
         GuessNumber players = new GuessNumber(player.getName(), player1.getName());
-
-        GuessNumber cycle = new GuessNumber(true);
-
-        do {
+        
         System.out.println("Первый игрок " + player.getName() + " введите число");
+        players.insertPlayerNumber();
+        System.out.println("Второй игрок " + player1.getName() + " введите число");
+        players.insertPlayer1Number();
+        
+        //System.out.println("playerNumber.getNumber() = " + playerNumber.getNumber());
+        //System.out.println("playerNumbers " + playerNumbers.getPlayerNumber() + " " + playerNumbers.getPlayer1Number());
+
+        /*System.out.println("Первый игрок " + player.getName() + " введите число");
         int number = sc.nextInt();
         player.setNumber(number);
         System.out.println("Первый игрок " + player.getName() + " ввёл число " + player.getNumber());
@@ -31,9 +36,8 @@ public class GuessNumberTest {
         System.out.println("Второй игрок " + player1.getName() + " ввёл число " + player1.getNumber());
 
         GuessNumber bets = new GuessNumber(player.getNumber(), player1.getNumber());
-        } while (cycle.playGame() == true);
-
-        cycle.showHideNumber();
-        cycle.playGame();
+        
+        System.out.println("bets.playerNumber " + bets.getPlayerNumber());*/
+        //cycle.showHideNumber();
     }
 }
