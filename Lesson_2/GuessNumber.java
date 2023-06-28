@@ -47,9 +47,11 @@ public class GuessNumber {
         playerNumber.setNumber(number);
         this.playerNumber = number;
         if (this.playerNumber < hideNumber) {
-            System.out.println("Число N меньше того, что загадал компьютер");
+            System.out.println("Число " + this.playerNumber + " меньше того, что загадал компьютер");
         } else if (this.playerNumber > hideNumber) {
-            System.out.println("Число N больше того, что загадал компьютер");
+            System.out.println("Число " + this.playerNumber + " больше того, что загадал компьютер");
+        } else {
+            System.out.println("Вы победили!\nЧисло " + this.playerNumber + " совпадает с тем, что загадал компьютер.");
         }
         System.out.println("playerNumber.getNumber() = " + playerNumber.getNumber());
         System.out.println("playerName = " + playerName);
@@ -64,9 +66,11 @@ public class GuessNumber {
         player1Number.setNumber(number1);
         this.player1Number = number1;
         if (this.player1Number < hideNumber) {
-            System.out.println("Число N меньше того, что загадал компьютер");
+            System.out.println("Число " + this.player1Number + " меньше того, что загадал компьютер");
         } else if (this.player1Number > hideNumber) {
-            System.out.println("Число N больше того, что загадал компьютер");
+            System.out.println("Число " + this.player1Number + " больше того, что загадал компьютер");
+        } else {
+            System.out.println("Вы победили!\nЧисло " + this.playerNumber + " совпадает с тем, что загадал компьютер.");
         }
         System.out.println("player1Number.getNumber() = " + player1Number.getNumber());
         System.out.println("player1Name = " + player1Name);
