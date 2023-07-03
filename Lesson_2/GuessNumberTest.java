@@ -18,6 +18,9 @@ public class GuessNumberTest {
         do {
             do {
                 players.insertPlayerNumber();
+                if (players.getPlayerNumber() == players.getHideNumber()) {
+                break;
+            }
                 players.insertPlayer1Number();
             } while (players.getPlayerNumber() != players.getHideNumber() && 
                     players.getPlayer1Number() != players.getHideNumber());
@@ -25,6 +28,7 @@ public class GuessNumberTest {
                 System.out.println("\nХотите продолжить игру [yes/no]:");
                 agree = sc.nextLine();
             } while (!agree.equals("yes") && !agree.equals("no"));
+            
         } while (agree.equals("yes"));
     }
 }
