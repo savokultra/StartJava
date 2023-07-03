@@ -30,19 +30,25 @@ public class GuessNumber {
     }
 
     public void insertPlayerNumber() {
+        startHideNumber();
+        System.out.println("\nПодсказка, искомое число = " + hideNumber);
+        System.out.println("\nПервый игрок " + playerName + " введите число");
         int number = sc.nextInt();
         this.playerNumber = number;
         if (this.playerNumber < hideNumber) {
             System.out.println("\nЧисло " + this.playerNumber + " меньше загаданного компьютером");
         } else if (this.playerNumber > hideNumber) {
             System.out.println("\nЧисло " + this.playerNumber + " больше загаданного компьютером");
+        /*} else if (playerNumber != hideNumber) {
+            insertPlayer1Number();*/
         } else {
             System.out.println("\nВы угадали!\nЧисло " + this.playerNumber + " совпадает с" +
                     "загаданным");
         }
     }
-
+    
     public void insertPlayer1Number() {
+        System.out.println("\nВторой игрок " + player1Name + " введите число");
         int number1 = sc.nextInt();
         this.player1Number = number1;
         if (this.player1Number < hideNumber) {
