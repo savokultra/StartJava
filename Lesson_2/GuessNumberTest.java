@@ -16,15 +16,9 @@ public class GuessNumberTest {
         GuessNumber players = new GuessNumber(player.getName(), player1.getName());
 
         do {
-            players.startHideNumber();
-            System.out.println("\nПодсказка, искомое число = " + players.getHideNumber());
             do {
-                System.out.println("\nПервый игрок " + player.getName() + " введите число");
                 players.insertPlayerNumber();
-                if (players.getPlayerNumber() != players.getHideNumber()) {
-                    System.out.println("\nВторой игрок " + player1.getName() + " введите число");
-                    players.insertPlayer1Number();
-                }
+                players.insertPlayer1Number();
             } while (players.getPlayerNumber() != players.getHideNumber() && 
                     players.getPlayer1Number() != players.getHideNumber());
             do {
