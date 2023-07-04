@@ -15,20 +15,13 @@ public class GuessNumberTest {
 
         GuessNumber players = new GuessNumber(player.getName(), player1.getName());
 
+        players.insertPlayerNumber();
+        
         do {
-            do {
-                players.insertPlayerNumber();
-                if (players.getPlayerNumber() == players.getHideNumber()) {
-                break;
-            }
-                players.insertPlayer1Number();
-            } while (players.getPlayerNumber() != players.getHideNumber() && 
-                    players.getPlayer1Number() != players.getHideNumber());
             do {
                 System.out.println("\nХотите продолжить игру [yes/no]:");
                 agree = sc.nextLine();
             } while (!agree.equals("yes") && !agree.equals("no"));
-            
         } while (agree.equals("yes"));
     }
 }
