@@ -12,9 +12,9 @@ public class GuessNumber {
 
     Scanner sc = new Scanner(System.in);
 
-    /*public GuessNumber(Player player) {
+    public GuessNumber(Player player) {
         this.player = player.getName();
-    }*/
+    }
 
     public GuessNumber(String playerName, String player1Name) {
         this.playerName = playerName;
@@ -26,7 +26,7 @@ public class GuessNumber {
     }
 
     public void showPlayer() {
-        System.out.println("\nshowName " + player);
+        System.out.println("\nshowPlayer = " + player);
     }
 
     public void insertPlayerNumber() {
