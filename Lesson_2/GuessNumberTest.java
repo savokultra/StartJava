@@ -6,12 +6,10 @@ public class GuessNumberTest {
         String agree;
         System.out.println("Введите имя первого игрока: ");
         Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
-        Player player = new Player(name);
+        Player player = new Player(sc.nextLine());
 
         System.out.println("\nВведите имя второго игрока: ");
-        String name1 = sc.nextLine();
-        Player player1 = new Player(name1);
+        Player player1 = new Player(sc.nextLine());
 
         GuessNumber players = new GuessNumber(player.getName(), player1.getName());
         
