@@ -14,14 +14,7 @@ public class GuessNumberTest {
         Player player1 = new Player(name1);
 
         GuessNumber players = new GuessNumber(player.getName(), player1.getName());
-
-        players.insertPlayerNumber();
         
-        do {
-            do {
-                System.out.println("\nХотите продолжить игру [yes/no]:");
-                agree = sc.nextLine();
-            } while (!agree.equals("yes") && !agree.equals("no"));
-        } while (agree.equals("yes"));
+        players.insertPlayerNumber();
     }
 }
