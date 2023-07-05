@@ -8,7 +8,7 @@ public class GuessNumber {
     private int player1Number;
     private int hideNumber;
 
-    String player;
+    Player player;
 
     Scanner sc = new Scanner(System.in);
 
