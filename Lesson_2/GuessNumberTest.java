@@ -10,7 +10,7 @@ public class GuessNumberTest {
         System.out.println("\nВведите имя второго игрока: ");
         Player player1 = new Player(sc.nextLine());
 
-        GuessNumber players = new GuessNumber(player.getName(), player1.getName());
+        GuessNumber players = new GuessNumber(player.getPlayer(), player1.getPlayer());
 
         players.showPlayer();
 

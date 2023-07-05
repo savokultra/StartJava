@@ -11,7 +11,7 @@ public class Player {
         this.number = number;
     }
 
-    public String getName() {
+    public String getPlayer() {
         return player;
     }
 }

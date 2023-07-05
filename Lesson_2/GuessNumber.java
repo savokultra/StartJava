@@ -13,7 +13,7 @@ public class GuessNumber {
     Scanner sc = new Scanner(System.in);
 
     public GuessNumber(Player player) {
-        this.player = player.getName();
+        this.player = player.getPlayer();
     }
 
     public GuessNumber(String playerName, String player1Name) {
