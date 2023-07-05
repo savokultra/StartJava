@@ -11,7 +11,9 @@ public class GuessNumberTest {
         Player player1 = new Player(sc.nextLine());
 
         GuessNumber players = new GuessNumber(player.getName(), player1.getName());
-        
+
+        players.showPlayer();
+
         players.insertPlayerNumber();
     }
 }
