@@ -7,8 +7,14 @@ public class GuessNumber {
     private int playerNumber;
     private int player1Number;
     private int hideNumber;
-    
+
+    private Player player;
+
     Scanner sc = new Scanner(System.in);
+
+    public GuessNumber(Player player) {
+        this.player = player.getName();
+    }
 
     public GuessNumber(String playerName, String player1Name) {
         this.playerName = playerName;
@@ -17,6 +23,10 @@ public class GuessNumber {
 
     public void startHideNumber() {
         hideNumber = 1 + (int) (Math.random() * 100);
+    }
+
+    public void showPlayer() {
+        System.out.println("\nshowName " + player);
     }
 
     public void insertPlayerNumber() {
