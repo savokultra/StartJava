@@ -8,13 +8,13 @@ public class GuessNumber {
     private int player1Number;
     private int hideNumber;
 
-    private Player player;
+    String player;
 
     Scanner sc = new Scanner(System.in);
 
-    public GuessNumber(Player player) {
+    /*public GuessNumber(Player player) {
         this.player = player.getName();
-    }
+    }*/
 
     public GuessNumber(String playerName, String player1Name) {
         this.playerName = playerName;

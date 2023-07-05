@@ -2,7 +2,7 @@ public class Player {
     private String player;
     private int number;
     
-    public Player(String name) {
+    public Player(String player) {
         this.player = player;
     }
 
