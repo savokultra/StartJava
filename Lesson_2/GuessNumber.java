@@ -15,18 +15,6 @@ public class GuessNumber {
         this.player1Name = player1Name;
     }
 
-    public int getPlayerNumber() {
-        return playerNumber;
-    }
-
-    public int getPlayer1Number() {
-        return player1Number;
-    }
-
-    public int getHideNumber() {
-        return hideNumber;
-    }
-
     public void startHideNumber() {
         hideNumber = 1 + (int) (Math.random() * 100);
     }
