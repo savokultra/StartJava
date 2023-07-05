@@ -66,7 +66,7 @@ public class GuessNumber {
                 System.out.println("\nХотите продолжить игру [yes/no]:");
                 sc.nextLine();
                 agree = sc.nextLine();
-                } while (!agree.equals("yes") && !agree.equals("no"));
+            } while (!agree.equals("yes") && !agree.equals("no"));
         } while (agree.equals("yes"));
     }
 }
