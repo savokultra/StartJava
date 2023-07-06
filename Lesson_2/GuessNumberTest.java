@@ -9,11 +9,11 @@ public class GuessNumberTest {
 
         System.out.println("\nВведите имя второго игрока: ");
         Player player1 = new Player(sc.nextLine());
+        
+        GuessNumber players1 = new GuessNumber(player, player1);
 
-        GuessNumber players = new GuessNumber(player.getName(), player1.getName());
-
-        players.showPlayer();
-
-        players.insertPlayerNumber();
+        players1.insertPlayerNumber();
+        
+        players1.showPlayer();
     }
 }
