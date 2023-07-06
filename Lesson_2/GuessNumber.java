@@ -6,37 +6,12 @@ public class GuessNumber {
     Scanner sc = new Scanner(System.in);
     private int hideNumber;
 
-<<<<<<< HEAD
-    Player player;
-
-    Scanner sc = new Scanner(System.in);
-
-    public GuessNumber(Player player) {
-        this.player = player.getPlayer();
-    }
-
-    public GuessNumber(String playerName, String player1Name) {
-        this.playerName = playerName;
-        this.player1Name = player1Name;
-    }
-
-    public void startHideNumber() {
-        hideNumber = 1 + (int) (Math.random() * 100);
-    }
-
-    public void showPlayer() {
-        System.out.println("\nshowPlayer = " + player);
-    }
-
-    public void insertPlayerNumber() {
-=======
     public GuessNumber(Player player, Player player1) {
         this.player = player;
         this.player1 = player1;
     }
 
     public void start() {
->>>>>>> dev
         do {
             generateHiddenNumber();
             do {
