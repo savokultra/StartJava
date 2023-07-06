@@ -3,19 +3,21 @@ import java.util.Scanner;
 public class GuessNumber {
     private String playerName;
     private String player1Name;
-    private String answer;
     private int playerNumber;
     private int player1Number;
     private int hideNumber;
 
     Player player;
-    Player player1;
 
     Scanner sc = new Scanner(System.in);
 
-    public GuessNumber(Player player, Player player1) {
-        playerName = player.getPlayer();
-        player1Name = player1.getPlayer();
+    /*public GuessNumber(Player player) {
+        this.player = player.getPlayer();
+    }*/
+
+    public GuessNumber(String playerName, String player1Name) {
+        this.playerName = playerName;
+        this.player1Name = player1Name;
     }
 
     public void startHideNumber() {
@@ -54,15 +56,10 @@ public class GuessNumber {
                 } else if (player1Number > hideNumber) {
                     System.out.println("\nЧисло " + player1Number + " больше загаданного компьютером");
                 } else {
-                    System.out.println("\nВы победили!\nЧисло " + playerNumber + " совпадает с" +
+                    System.out.println("\nВы победили!\nЧисло " + player1Number + " совпадает с" +
                             " загаданным");
                 }
             } while (playerNumber != hideNumber && player1Number != hideNumber);
-            do {
-                System.out.println("\nХотите продолжить игру [yes/no]:");
-                sc.nextLine();
-                answer = sc.nextLine();
-            } while (!answer.equals("yes") && !answer.equals("no"));
-        } while (answer.equals("yes"));
+        } while (playerNumber != hideNumber && player1Number != hideNumber);
     }
 }
