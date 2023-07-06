@@ -11,26 +11,14 @@ public class GuessNumber {
 
     Scanner sc = new Scanner(System.in);
 
-    /*public GuessNumber(Player player) {
-        this.player = player.getPlayer();
-    }*/
-
     public GuessNumber(String playerName, String player1Name) {
         this.playerName = playerName;
         this.player1Name = player1Name;
     }
 
-    public void startHideNumber() {
-        hideNumber = 1 + (int) (Math.random() * 100);
-    }
-
-    public void showPlayer() {
-        System.out.println("\nshowPlayer = " + player);
-    }
-
-    public void insertPlayerNumber() {
+    public void start() {
         do {
-            startHideNumber();
+            generateHiddenNumber();
             do {
                 System.out.println("\nПодсказка, искомое число = " + hideNumber);
                 System.out.println("\nПервый игрок " + playerName + " введите число");
@@ -43,11 +31,9 @@ public class GuessNumber {
                 } else {
                     System.out.println("\nВы угадали!\nЧисло " + playerNumber + " совпадает с" +
                             " загаданным");
-                }
-                if (playerNumber == hideNumber) {
                     break;
                 }
-                
+
                 System.out.println("\nВторой игрок " + player1Name + " введите число");
                 int number1 = sc.nextInt();
                 player1Number = number1;
@@ -58,8 +44,13 @@ public class GuessNumber {
                 } else {
                     System.out.println("\nВы победили!\nЧисло " + player1Number + " совпадает с" +
                             " загаданным");
+                    break;
                 }
-            } while (playerNumber != hideNumber && player1Number != hideNumber);
+            } while (true);
         } while (playerNumber != hideNumber && player1Number != hideNumber);
+    }
+
+    private void generateHiddenNumber() {
+        hideNumber = 1 + (int) (Math.random() * 100);
     }
 }
