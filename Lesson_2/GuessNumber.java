@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
 public class GuessNumber {
-    private String playerName;
-    private String player1Name;
-    private String answer;
-    private int playerNumber;
-    private int player1Number;
+    Player player;
+    Player player1;
+    Scanner sc = new Scanner(System.in);
     private int hideNumber;
 
+<<<<<<< HEAD
     Player player;
 
     Scanner sc = new Scanner(System.in);
@@ -30,42 +29,48 @@ public class GuessNumber {
     }
 
     public void insertPlayerNumber() {
+=======
+    public GuessNumber(Player player, Player player1) {
+        this.player = player;
+        this.player1 = player1;
+    }
+
+    public void start() {
+>>>>>>> dev
         do {
-            startHideNumber();
+            generateHiddenNumber();
             do {
                 System.out.println("\nПодсказка, искомое число = " + hideNumber);
-                System.out.println("\nПервый игрок " + playerName + " введите число");
+                System.out.println("\nПервый игрок " + player.getName() + " введите число");
                 int number = sc.nextInt();
-                playerNumber = number;
-                if (playerNumber < hideNumber) {
-                    System.out.println("\nЧисло " + playerNumber + " меньше загаданного компьютером");
-                } else if (playerNumber > hideNumber) {
-                    System.out.println("\nЧисло " + playerNumber + " больше загаданного компьютером");
+                player.setNumber(number);
+                if (player.getNumber() < hideNumber) {
+                    System.out.println("\nЧисло " + player.getNumber() + " меньше загаданного компьютером");
+                } else if (player.getNumber() > hideNumber) {
+                    System.out.println("\nЧисло " + player.getNumber() + " больше загаданного компьютером");
                 } else {
-                    System.out.println("\nВы угадали!\nЧисло " + playerNumber + " совпадает с" +
+                    System.out.println("\nВы угадали!\nЧисло " + player.getNumber() + " совпадает с" +
                             " загаданным");
-                }
-                if (playerNumber == hideNumber) {
                     break;
                 }
-                
-                System.out.println("\nВторой игрок " + player1Name + " введите число");
-                int number1 = sc.nextInt();
-                player1Number = number1;
-                if (player1Number < hideNumber) {
-                    System.out.println("\nЧисло " + player1Number + " меньше загаданного компьютером");
-                } else if (player1Number > hideNumber) {
-                    System.out.println("\nЧисло " + player1Number + " больше загаданного компьютером");
+
+                System.out.println("\nВторой игрок " + player1.getName() + " введите число");
+                number = sc.nextInt();
+                player1.setNumber(number);
+                if (player1.getNumber() < hideNumber) {
+                    System.out.println("\nЧисло " + player1.getNumber() + " меньше загаданного компьютером");
+                } else if (player1.getNumber() > hideNumber) {
+                    System.out.println("\nЧисло " + player1.getNumber() + " больше загаданного компьютером");
                 } else {
-                    System.out.println("\nВы победили!\nЧисло " + playerNumber + " совпадает с" +
+                    System.out.println("\nВы победили!\nЧисло " + player1.getNumber() + " совпадает с" +
                             " загаданным");
+                    break;
                 }
-            } while (playerNumber != hideNumber && player1Number != hideNumber);
-            do {
-                System.out.println("\nХотите продолжить игру [yes/no]:");
-                sc.nextLine();
-                answer = sc.nextLine();
-            } while (!answer.equals("yes") && !answer.equals("no"));
-        } while (answer.equals("yes"));
+            } while (true);
+        } while (player.getNumber() != hideNumber && player1.getNumber() != hideNumber);
+    }
+
+    private void generateHiddenNumber() {
+        hideNumber = 1 + (int) (Math.random() * 100);
     }
 }
