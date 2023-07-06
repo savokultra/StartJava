@@ -8,17 +8,14 @@ public class GuessNumber {
     private int player1Number;
     private int hideNumber;
 
-    private Player player;
+    Player player;
+    Player player1;
 
     Scanner sc = new Scanner(System.in);
 
-    public GuessNumber(Player player) {
-        this.player = player.getName();
-    }
-
-    public GuessNumber(String playerName, String player1Name) {
-        this.playerName = playerName;
-        this.player1Name = player1Name;
+    public GuessNumber(Player player, Player player1) {
+        playerName = player.getPlayer();
+        player1Name = player1.getPlayer();
     }
 
     public void startHideNumber() {
@@ -26,7 +23,7 @@ public class GuessNumber {
     }
 
     public void showPlayer() {
-        System.out.println("\nshowName " + player);
+        System.out.println("\nshowPlayer = " + player);
     }
 
     public void insertPlayerNumber() {
