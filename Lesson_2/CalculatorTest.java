@@ -1,27 +1,24 @@
 import java.util.Scanner;
 
-public class CalculatorTest {
+public class GuessNumberTest {
 
     public static void main(String[] args) {
-        Calculator calcTest = new Calculator();
+        String answer;
+        System.out.println("Введите имя первого игрока: ");
         Scanner sc = new Scanner(System.in);
-        String agree;
+        Player player = new Player(sc.nextLine());
+
+        System.out.println("\nВведите имя второго игрока: ");
+        Player player1 = new Player(sc.nextLine());
+
+        GuessNumber game = new GuessNumber(player, player1);
+
         do {
-            System.out.println("Введите первое число: ");
-            int number = sc.nextInt();
-            calcTest.setNumber(number);
-            System.out.println("Введите знак математической операции: + - * / ^ ");
-            char sign = sc.next().charAt(0);
-            calcTest.setSign(sign);
-            System.out.println("Введите второе число: ");
-            int number1 = sc.nextInt();
-            calcTest.setNumber1(number1);
-            calcTest.calculate();
+            game.start();
             do {
-                System.out.println("Хотите продолжить вычисления? [yes/no]:");
-                sc.nextLine();
-                agree = sc.nextLine();
-            } while (!agree.equals("yes") && !agree.equals("no"));
-        } while (agree.equals("yes"));
+                System.out.println("\nХотите продолжить игру [yes/no]:");
+                answer = sc.nextLine();
+            } while (!answer.equals("yes") && !answer.equals("no"));
+        } while (answer.equals("yes"));
     }
 }
