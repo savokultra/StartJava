@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class GuessNumber {
     Player player;
     Player player1;
-    Scanner sc = new Scanner(System.in);
     private int hideNumber;
 
     public GuessNumber(Player player, Player player1) {
@@ -15,6 +14,7 @@ public class GuessNumber {
         do {
             generateHiddenNumber();
             do {
+                Scanner sc = new Scanner(System.in);
                 System.out.println("\nПодсказка, искомое число = " + hideNumber);
                 System.out.println("\nПервый игрок " + player.getName() + " введите число");
                 int number = sc.nextInt();
