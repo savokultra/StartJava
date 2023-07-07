@@ -14,9 +14,9 @@ public class GuessNumber {
         do {
             generateHiddenNumber();
             do {
-                Scanner sc = new Scanner(System.in);
                 System.out.println("\nПодсказка, искомое число = " + hideNumber);
                 System.out.println("\nПервый игрок " + player.getName() + " введите число");
+                Scanner sc = new Scanner(System.in);
                 int number = sc.nextInt();
                 player.setNumber(number);
                 if (player.getNumber() < hideNumber) {
