@@ -11,11 +11,11 @@ public class GuessNumber {
     }
 
     public void start() {
-    generateHiddenNumber();  
+    generateHiddenNumber();
+    Scanner sc = new Scanner(System.in);
         do {
             System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
             System.out.println("\nПервый игрок " + player.getName() + " введите число");
-            Scanner sc = new Scanner(System.in);
             int number = sc.nextInt();
             player.setNumber(number);
             if (player.getNumber() < hiddenNumber) {
