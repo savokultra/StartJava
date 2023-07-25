@@ -1,24 +1,29 @@
+package com.startjava.lesson_2_3.calculator;
+
 import java.util.Scanner;
 
-public class GuessNumberTest {
+public class CalculatorTest {
 
     public static void main(String[] args) {
-        String answer;
-        System.out.println("Введите имя первого игрока: ");
+        Calculator calcTest = new Calculator();
         Scanner sc = new Scanner(System.in);
-        Player player = new Player(sc.nextLine());
-
-        System.out.println("\nВведите имя второго игрока: ");
-        Player player1 = new Player(sc.nextLine());
-
-        GuessNumber game = new GuessNumber(player, player1);
-
+        String agree;
         do {
-            game.start();
+            System.out.println("Введите первое число: ");
+            int number = sc.nextInt();
+            calcTest.setNumber(number);
+            System.out.println("Введите знак математической операции: + - * / ^ ");
+            char sign = sc.next().charAt(0);
+            calcTest.setSign(sign);
+            System.out.println("Введите второе число: ");
+            int number1 = sc.nextInt();
+            calcTest.setNumber1(number1);
+            calcTest.calculate();
             do {
-                System.out.println("\nХотите продолжить игру [yes/no]:");
-                answer = sc.nextLine();
-            } while (!answer.equals("yes") && !answer.equals("no"));
-        } while (answer.equals("yes"));
+                System.out.println("Хотите продолжить вычисления? [yes/no]:");
+                sc.nextLine();
+                agree = sc.nextLine();
+            } while (!agree.equals("yes") && !agree.equals("no"));
+        } while (agree.equals("yes"));
     }
 }
