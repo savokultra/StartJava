@@ -25,5 +25,24 @@ public class ArrayMain {
         for (String string : text)  {
             System.out.print(string + " ");
         }
+
+        int[] cats = new int[6];
+        cats[5] = 7;
+        String result = String.valueOf(cats[5]);
+
+        System.out.println("\n"+ result);
+
+        String[] catsNames = {
+                "Васька",
+                "Кузя",
+                "Барсик",
+                "Мурзик",
+                "Леопольд",
+                "Бегемот",
+                "Рыжик",
+                "Матроскин"
+        };
+        System.out.println(catsNames[6]);
+        System.out.println("catsNames.length = " + catsNames.length);
     }
 }
