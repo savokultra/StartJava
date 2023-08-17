@@ -44,5 +44,37 @@ public class ArrayMain {
         };
         System.out.println(catsNames[6]);
         System.out.println("catsNames.length = " + catsNames.length);
+
+        int[] numbers2 = new int[5];
+        for (int i = 0; i < numbers2.length; i++) {
+            numbers2[i] = i * 10;
+        }
+        for (int i = 0; i < numbers2.length; i++) {
+            System.out.println(numbers2[i]);
+        }
+
+        String[] strings = new String[3];
+        strings[0] = "hello";
+        strings[1] = "good bye";
+        strings[2] = "java";
+        for (String string : strings) {
+            System.out.println(string);
+        }
+
+        int[] numbers3 = {1, 2, 3};
+        int sum = 0;
+        for (int number : numbers3) {
+            sum+=  number;
+        }
+        System.out.println("\nsum = " + sum);
+        for (int i = 0; i < numbers3.length; i++) {
+            sum+= numbers3[i];
+        }
+        System.out.println("\nsum = " + sum);
+
+        int value = 0;
+        String s = new String("abc");
+        System.out.println("\n" + s);
+
     }
 }
