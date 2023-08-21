@@ -1,5 +1,7 @@
 package com.startjava.lesson_2_3_4.array;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class ArraysTheme {
     int length;
 
@@ -26,12 +28,11 @@ public class ArraysTheme {
             if (i > 0 && i < 9) {
                 sum*= i;
                 System.out.print(i);
-                if (i < 8) {
-                    System.out.print(" * ");
-                }
+                char y = i < 8 ? '*' : '=';
+                System.out.print(" " + y + " ");
             }
         }
-        System.out.print(" = " + sum);
+        System.out.print(sum);
     }
 
     public static void main(String[] args) {
