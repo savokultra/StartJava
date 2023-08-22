@@ -1,7 +1,6 @@
 package com.startjava.lesson_2_3_4.array;
 
 public class ArraysTheme {
-    int length;
 
     public static void taskOne() {
         System.out.println("Задание 1 Реверс значений массива");
@@ -15,6 +14,7 @@ public class ArraysTheme {
             System.out.print(arrayOne[i] + " ");
         }
     }
+
     public static void taskTwo() {
         System.out.println("\n\nЗадание 2 Произведение элементов массива");
         int sum = 1;
@@ -25,15 +25,44 @@ public class ArraysTheme {
         for (int i : arrayTwo) {
             if (i > 0 && i < 9) {
                 sum*= i;
-                char y = i < 8 ? '*' : '=';
-                System.out.print(i + " " + y + " ");
+                char ch = i < 8 ? '*' : '=';
+                System.out.print(i + " " + ch + " ");
             }
         }
         System.out.print(sum);
     }
 
+    public static void taskThree() {
+        System.out.println("\n\nЗадание 3 Удаление элементов массива");
+        double[] arrayThree = new double[15];
+        for (int i = 0; i < 15; i++) {
+            double randomNumber = Math.random();
+            arrayThree[i] = randomNumber;
+            System.out.printf(i + "%5.2f%n", + randomNumber);
+        }
+        int cell = arrayThree.length / 2;
+        System.out.println("\nсредняя ячейка = " + cell);
+        System.out.printf("arrayThree[cell] = " + "%5.2f%n", + arrayThree[cell]);
+        for (int i = 0; i < 15; i++) {
+            if (arrayThree[i] > arrayThree[cell]) {
+                arrayThree[i] = 0;
+                System.out.printf(i + "%5.2f%n", + arrayThree[i]);
+            }
+        }
+        for (double x : arrayThree) {
+            System.out.printf("%5.2f%n", x);
+            //https://javarush.com/groups/posts/1412-formatiruem-vihvod-chisel-v-java
+            /*
+            DecimalFormat dF = new DecimalFormat( "#.###" );
+double value = 72.224463;
+System.out.print(dF.format(value));/*
+             */
+        }
+    }
+
     public static void main(String[] args) {
         taskOne();
         taskTwo();
+        taskThree();
     }
 }
