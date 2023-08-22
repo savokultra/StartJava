@@ -25,9 +25,8 @@ public class ArraysTheme {
         for (int i : arrayTwo) {
             if (i > 0 && i < 9) {
                 sum*= i;
-                System.out.print(i);
                 char y = i < 8 ? '*' : '=';
-                System.out.print(" " + y + " ");
+                System.out.print(i + " " + y + " ");
             }
         }
         System.out.print(sum);
