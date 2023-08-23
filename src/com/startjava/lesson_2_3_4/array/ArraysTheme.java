@@ -50,7 +50,7 @@ public class ArraysTheme {
             }
         }
         for (double x : arrayThree) {
-            System.out.printf("%5.2f%n", x);
+            System.out.print(\nString.format("%.2f", x) + " ");
             //https://javarush.com/groups/posts/1412-formatiruem-vihvod-chisel-v-java
             /*
             DecimalFormat dF = new DecimalFormat( "#.###" );
