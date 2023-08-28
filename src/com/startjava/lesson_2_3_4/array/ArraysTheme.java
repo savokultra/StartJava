@@ -50,7 +50,7 @@ public class ArraysTheme {
             if (arrayThree[i] > arrayThree[cell]) {
                 System.out.print("Число в ячейке № " + i + " = " + (String.format("%.2f", arrayThree[i])));
                 arrayThree[i] = 0;
-                System.out.print(" больше чем число в средней ячейке " + cell + "  " + (" = " + String.format("%.2f", arrayThree[cell])) + " и ей присвоено значение = ");
+                System.out.print(" больше чем число в средней ячейке " + cell + (" = " + String.format("%.2f", arrayThree[cell])) + " и ей присвоено значение = ");
                 System.out.printf("%5.2f%n", arrayThree[i]);
             }
         }
