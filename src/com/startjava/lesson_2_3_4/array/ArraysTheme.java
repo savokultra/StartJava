@@ -35,29 +35,27 @@ public class ArraysTheme {
     public static void taskThree() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] arrayThree = new double[15];
-        System.out.print("\nЭлементы массива arrayThree: ");
+        System.out.print("\n  Исходный массив: ");
         for (int i = 0; i < 15; i++) {
             double randomNumber = Math.random();
             arrayThree[i] = randomNumber;
-            System.out.printf("%5.2f", randomNumber);
+            System.out.printf("%.3f ", randomNumber);
         }
         
         int cell = arrayThree.length / 2;
-        
-        System.out.println("\n\nсредняя ячейка № " + cell + " содержит число = " + (String.format("%.2f", arrayThree[cell])) + "\n");
+        int count = 0;
         
         for (int i = 0; i < 15; i++) {
             if (arrayThree[i] > arrayThree[cell]) {
-                System.out.print("Число в ячейке № " + i + " = " + (String.format("%.2f", arrayThree[i])));
                 arrayThree[i] = 0;
-                System.out.print(" больше чем число в средней ячейке " + cell + (" = " + String.format("%.2f", arrayThree[cell])) + " и ей присвоено значение = ");
-                System.out.printf("%5.2f%n", arrayThree[i]);
+                count++;
             }
         }
-        System.out.print("\nЭлементы массива arrayThree после замены: ");
+        System.out.print("\nИзмененный массив: ");
         for (double x : arrayThree) {
-            System.out.print(String.format("%.2f", x) + " ");
+            System.out.print(String.format("%.3f ", x));
         }
+        System.out.println("\nКоличество обнуленных ячеек = " + count);
     }
 
     public static void main(String[] args) {
