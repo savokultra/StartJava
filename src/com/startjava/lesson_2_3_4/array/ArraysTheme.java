@@ -35,28 +35,28 @@ public class ArraysTheme {
     public static void taskThree() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] arrayThree = new double[15];
+        System.out.print("\nЭлементы массива arrayThree: ");
         for (int i = 0; i < 15; i++) {
             double randomNumber = Math.random();
             arrayThree[i] = randomNumber;
-            System.out.printf(i + "%5.2f%n", + randomNumber);
+            System.out.printf("%5.2f", randomNumber);
         }
+        
         int cell = arrayThree.length / 2;
-        System.out.println("\nсредняя ячейка = " + cell);
-        System.out.printf("arrayThree[cell] = " + "%5.2f%n", + arrayThree[cell]);
+        
+        System.out.println("\n\nсредняя ячейка № " + cell + " содержит число = " + (String.format("%.2f", arrayThree[cell])) + "\n");
+        
         for (int i = 0; i < 15; i++) {
             if (arrayThree[i] > arrayThree[cell]) {
+                System.out.print("Число в ячейке № " + i + " = " + (String.format("%.2f", arrayThree[i])));
                 arrayThree[i] = 0;
-                System.out.printf(i + "%5.2f%n", + arrayThree[i]);
+                System.out.print(" больше чем число в средней ячейке " + cell + "  " + (" = " + String.format("%.2f", arrayThree[cell])) + " и ей присвоено значение = ");
+                System.out.printf("%5.2f%n", arrayThree[i]);
             }
         }
+        System.out.print("\nЭлементы массива arrayThree после замены: ");
         for (double x : arrayThree) {
-            System.out.print(\nString.format("%.2f", x) + " ");
-            //https://javarush.com/groups/posts/1412-formatiruem-vihvod-chisel-v-java
-            /*
-            DecimalFormat dF = new DecimalFormat( "#.###" );
-double value = 72.224463;
-System.out.print(dF.format(value));/*
-             */
+            System.out.print(String.format("%.2f", x) + " ");
         }
     }
 
