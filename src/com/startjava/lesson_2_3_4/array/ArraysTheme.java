@@ -58,9 +58,34 @@ public class ArraysTheme {
         System.out.println("\nКоличество обнуленных ячеек = " + count);
     }
 
+    public static void taskFour() {
+        char[] arrayFour = new char[26];
+        char z = 'Z';
+        for(int i = 0; i < arrayFour.length; i++) {
+            arrayFour[i] = z;
+            System.out.print(z);
+            z--;
+        }
+        int d = 0;
+        int e = 0;
+        for(char a : arrayFour) {
+            do {
+                System.out.print(a);
+                d++;
+                if (e == 26) {
+                    break;
+                }
+            } while (d < e);
+            System.out.println("");
+            e++;
+            d = 0;
+        }
+    }
+
     public static void main(String[] args) {
         taskOne();
         taskTwo();
         taskThree();
+        taskFour();
     }
 }
