@@ -66,19 +66,18 @@ public class ArraysTheme {
             System.out.print(z);
             z--;
         }
-        int d = 0;
-        int e = 0;
+        int first = 1;
+        int second = 1;
+        int third = 2;
+        System.out.println("");
         for(char a : arrayFour) {
-            do {
-                System.out.print(a);
-                d++;
-                if (e == 26) {
-                    break;
-                }
-            } while (d < e);
-            System.out.println("");
-            e++;
-            d = 0;
+            System.out.print(a);
+            if (first == second) {
+                System.out.println();
+                first = first + third;
+                third++;
+            }
+            second++;
         }
     }
 
