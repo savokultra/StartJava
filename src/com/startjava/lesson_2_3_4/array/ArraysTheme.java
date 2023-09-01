@@ -77,6 +77,16 @@ public class ArraysTheme {
         }
     }
 
+    public static void taskFive() {
+        double[] arrayFive = new double[30];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = 60 + Math.random() * 40;
+        }
+        for (double i : array) {
+            System.out.print((int) i + " ");
+        }
+    }
+        
     public static void main(String[] args) {
         taskOne();
         taskTwo();
