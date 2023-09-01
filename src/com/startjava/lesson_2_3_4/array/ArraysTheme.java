@@ -90,7 +90,7 @@ public class ArraysTheme {
         }
         System.out.println();
         double temp;
-        for (int i = 0; i < arrayFive.length; i++) {
+        for (int i = arrayFive.length - 1; i >= 0; i--) {
             for (int j = 0; j < arrayFive.length - 1; j++) {
                 if (arrayFive[j] > arrayFive[j + 1]) {
                     temp = arrayFive[j];
