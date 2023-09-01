@@ -1,5 +1,7 @@
 package com.startjava.lesson_2_3_4.array;
 
+import java.util.Arrays;
+
 public class ArraysTheme {
 
     public static void taskOne() {
@@ -66,7 +68,7 @@ public class ArraysTheme {
             System.out.print(z);
             z--;
         }
-
+        System.out.println("\n");
         int four = 1;
         for(char a : arrayFour) {
             for(int i = 0; i < four; i++) {
@@ -78,12 +80,25 @@ public class ArraysTheme {
     }
 
     public static void taskFive() {
+        System.out.println();
         double[] arrayFive = new double[30];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = 60 + Math.random() * 40;
+        for (int i = 0; i < arrayFive.length; i++) {
+            arrayFive[i] = 60 + Math.random() * 40;
         }
-        for (double i : array) {
-            System.out.print((int) i + " ");
+        for (double x : arrayFive) {
+            System.out.print((int) x + " ");
+        }
+        System.out.println();
+        double temp;
+        for (int i = 0; i < arrayFive.length; i++) {
+            for (int j = 0; j < arrayFive.length - 1; j++) {
+                if (arrayFive[j] > arrayFive[j + 1]) {
+                    temp = arrayFive[j];
+                    arrayFive[j] = arrayFive[j + 1];
+                    arrayFive[j + 1] = temp;
+                }
+            }
+            System.out.print((int) arrayFive[i] + " ");
         }
     }
         
@@ -92,5 +107,6 @@ public class ArraysTheme {
         taskTwo();
         taskThree();
         taskFour();
+        taskFive();
     }
 }
