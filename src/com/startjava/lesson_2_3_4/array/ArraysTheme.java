@@ -81,24 +81,33 @@ public class ArraysTheme {
 
     public static void taskFive() {
         System.out.println();
-        double[] arrayFive = new double[30];
+        // создание массива
+        int[] arrayFive = new int[30];
         for (int i = 0; i < arrayFive.length; i++) {
-            arrayFive[i] = 60 + Math.random() * 40;
+            arrayFive[i] = (int) (Math.random() * (40)) + 60;
+            System.out.println("\narrayFive[i][" + i + "] = " + arrayFive[i]);
         }
-        for (double x : arrayFive) {
-            System.out.print((int) x + " ");
+        System.out.println("\nвывод созданного массива");
+        for (int x : arrayFive) {
+            System.out.print(x + " ");
         }
-        System.out.println();
-        double temp;
+
         for (int i = arrayFive.length - 1; i >= 0; i--) {
             for (int j = 0; j < arrayFive.length - 1; j++) {
                 if (arrayFive[j] > arrayFive[j + 1]) {
-                    temp = arrayFive[j];
+                    int temp = arrayFive[j];
                     arrayFive[j] = arrayFive[j + 1];
                     arrayFive[j + 1] = temp;
                 }
+                if (arrayFive[j] == arrayFive[j + 1]) {
+                    arrayFive[j + 1] = (int) (Math.random() * (40)) + 60;
+                }
             }
-            System.out.print((int) arrayFive[i] + " ");
+        }
+
+        System.out.println("\n\nвывод отсортированного массива");
+        for (int x : arrayFive) {
+            System.out.print(x + " ");
         }
     }
         
