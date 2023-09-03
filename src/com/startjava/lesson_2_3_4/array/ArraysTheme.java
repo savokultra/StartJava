@@ -1,7 +1,5 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.util.Arrays;
-
 public class ArraysTheme {
 
     public static void taskOne() {
@@ -96,7 +94,7 @@ public class ArraysTheme {
             }
         }
         //удаление дубликатов массива
-        boolean b = false;
+        boolean b;
         do {
             b = false;
             for (int i = 0; i < arrayFive.length; i++) {
