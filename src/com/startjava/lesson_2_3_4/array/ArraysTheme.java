@@ -10,7 +10,7 @@ public class ArraysTheme {
             System.out.print(a + " ");
         }
         System.out.print("\nПосле реверса: ");
-        for (int i = 6; i >= 0; --i) {
+        for (int i = 6; i >= 0; i--) {
             System.out.print(arrayOne[i] + " ");
         }
     }
@@ -42,9 +42,8 @@ public class ArraysTheme {
             System.out.printf("%.3f ", randomNumber);
         }
         
-        int cell = arrayThree.length / 2;
+        int centreCell = arrayThree.length / 2;
         int count = 0;
-
         for (int i = 0; i < 15; i++) {
             if (arrayThree[i] > arrayThree[cell]) {
                 arrayThree[i] = 0;
@@ -83,7 +82,7 @@ public class ArraysTheme {
         for (int i = 0; i < arrayFive.length; i++) {
             arrayFive[i] = (int) (Math.random() * (40)) + 60;
         }
-
+        //вывод созданного массива
         System.out.println("\nвывод созданного массива");
         int count = 0;
         for (int x : arrayFive) {
