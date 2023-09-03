@@ -87,20 +87,19 @@ public class ArraysTheme {
             arrayFive[i] = (int) (Math.random() * (40)) + 60;
             System.out.println("\narrayFive[i][" + i + "] = " + arrayFive[i]);
         }
+
         System.out.println("\nвывод созданного массива");
         for (int x : arrayFive) {
             System.out.print(x + " ");
         }
 
+        //сортировка массива
         for (int i = arrayFive.length - 1; i >= 0; i--) {
             for (int j = 0; j < arrayFive.length - 1; j++) {
                 if (arrayFive[j] > arrayFive[j + 1]) {
                     int temp = arrayFive[j];
                     arrayFive[j] = arrayFive[j + 1];
                     arrayFive[j + 1] = temp;
-                }
-                if (arrayFive[j] == arrayFive[j + 1]) {
-                    arrayFive[j + 1] = (int) (Math.random() * (40)) + 60;
                 }
             }
         }
@@ -109,8 +108,44 @@ public class ArraysTheme {
         for (int x : arrayFive) {
             System.out.print(x + " ");
         }
+
+        //удаление дубликатов массива
+        boolean b = false;
+        do {
+            b = false;
+            for (int i = 0; i < arrayFive.length; i++) {
+                for (int j = i + 1; j < arrayFive.length; j++) {
+                    if (arrayFive[i] == arrayFive[j]) {
+                        b = true;
+                        arrayFive[j] = (int) (Math.random() * (40)) + 60;
+                        break;
+                    } else {
+                        b = false;
+                    }
+                }
+                if (b == true) {
+                    break;
+                }
+            }
+        } while (b == true);
+
+        //сортировка массива
+        for (int i = arrayFive.length - 1; i >= 0; i--) {
+            for (int j = 0; j < arrayFive.length - 1; j++) {
+                if (arrayFive[j] > arrayFive[j + 1]) {
+                    int temp = arrayFive[j];
+                    arrayFive[j] = arrayFive[j + 1];
+                    arrayFive[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println("\n\nвывод массива без дубликатов");
+        for (int x : arrayFive) {
+            System.out.print(x + " ");
+        }
     }
-        
+
     public static void main(String[] args) {
         taskOne();
         taskTwo();
