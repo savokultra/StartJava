@@ -35,7 +35,7 @@ public class ArraysTheme {
     public static void taskThree() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] arrayThree = new double[15];
-        System.out.print("\n  Исходный массив: ");
+        System.out.print("  Исходный массив: ");
         for (int i = 0; i < 15; i++) {
             double randomNumber = Math.random();
             arrayThree[i] = randomNumber;
@@ -45,7 +45,7 @@ public class ArraysTheme {
         int centreCell = arrayThree.length / 2;
         int count = 0;
         for (int i = 0; i < 15; i++) {
-            if (arrayThree[i] > arrayThree[cell]) {
+            if (arrayThree[i] > arrayThree[centreCell]) {
                 arrayThree[i] = 0;
                 count++;
             }
@@ -54,18 +54,18 @@ public class ArraysTheme {
         for (double x : arrayThree) {
             System.out.print(String.format("%.3f ", x));
         }
-        System.out.println("\nКоличество обнуленных ячеек = " + count);
+        System.out.println("\nКоличество обнуленных ячеек = " + count + "\n");
     }
 
+
     public static void taskFour() {
+        System.out.println("\nЗадание 4 Вывод алфавита лесенкой");
         char[] arrayFour = new char[26];
         char z = 'Z';
         for (int i = 0; i < arrayFour.length; i++) {
             arrayFour[i] = z;
-            System.out.print(z);
             z--;
         }
-        System.out.println("\n");
         int count = 1;
         for (char a : arrayFour) {
             for(int i = 0; i < count; i++) {
@@ -77,6 +77,7 @@ public class ArraysTheme {
     }
 
     public static void taskFive() {
+        System.out.println("\nЗадание 5 Заполнение массива уникальными числами");
         // создание массива
         int[] arrayFive = new int[30];
         for (int i = 0; i < arrayFive.length; i++) {
