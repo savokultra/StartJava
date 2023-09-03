@@ -46,7 +46,7 @@ public class ArraysTheme {
         
         int cell = arrayThree.length / 2;
         int count = 0;
-        
+
         for (int i = 0; i < 15; i++) {
             if (arrayThree[i] > arrayThree[cell]) {
                 arrayThree[i] = 0;
@@ -69,12 +69,12 @@ public class ArraysTheme {
             z--;
         }
         System.out.println("\n");
-        int four = 1;
+        int count = 1;
         for(char a : arrayFour) {
-            for(int i = 0; i < four; i++) {
+            for(int i = 0; i < count; i++) {
                 System.out.print(arrayFour[i]);
             }
-            four++;
+            count++;
             System.out.println();
         }
     }
@@ -95,7 +95,6 @@ public class ArraysTheme {
                 System.out.println();
             }
         }
-
         //удаление дубликатов массива
         boolean b = false;
         do {
@@ -107,12 +106,11 @@ public class ArraysTheme {
                         arrayFive[j] = (int) (Math.random() * (40)) + 60;
                     }
                 }
-                if (b == true) {
+                if (b) {
                     break;
                 }
             }
-        } while (b == true);
-
+        } while (b);
         //сортировка массива
         for (int i = arrayFive.length - 1; i >= 0; i--) {
             for (int j = 0; j < arrayFive.length - 1; j++) {
@@ -123,7 +121,6 @@ public class ArraysTheme {
                 }
             }
         }
-
         System.out.println("\nвывод массива по возрастанию без дубликатов");
         for (int x : arrayFive) {
             System.out.print(x + " ");
