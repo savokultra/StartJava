@@ -80,33 +80,20 @@ public class ArraysTheme {
     }
 
     public static void taskFive() {
-        System.out.println();
         // создание массива
         int[] arrayFive = new int[30];
         for (int i = 0; i < arrayFive.length; i++) {
             arrayFive[i] = (int) (Math.random() * (40)) + 60;
-            System.out.println("\narrayFive[i][" + i + "] = " + arrayFive[i]);
         }
 
         System.out.println("\nвывод созданного массива");
+        int qwe = 0;
         for (int x : arrayFive) {
             System.out.print(x + " ");
-        }
-
-        //сортировка массива
-        for (int i = arrayFive.length - 1; i >= 0; i--) {
-            for (int j = 0; j < arrayFive.length - 1; j++) {
-                if (arrayFive[j] > arrayFive[j + 1]) {
-                    int temp = arrayFive[j];
-                    arrayFive[j] = arrayFive[j + 1];
-                    arrayFive[j + 1] = temp;
-                }
+            qwe++;
+            if (qwe % 10 == 0) {
+                System.out.println();
             }
-        }
-
-        System.out.println("\n\nвывод отсортированного массива");
-        for (int x : arrayFive) {
-            System.out.print(x + " ");
         }
 
         //удаление дубликатов массива
@@ -118,9 +105,6 @@ public class ArraysTheme {
                     if (arrayFive[i] == arrayFive[j]) {
                         b = true;
                         arrayFive[j] = (int) (Math.random() * (40)) + 60;
-                        break;
-                    } else {
-                        b = false;
                     }
                 }
                 if (b == true) {
@@ -140,9 +124,13 @@ public class ArraysTheme {
             }
         }
 
-        System.out.println("\n\nвывод массива без дубликатов");
+        System.out.println("\nвывод массива по возрастанию без дубликатов");
         for (int x : arrayFive) {
             System.out.print(x + " ");
+            qwe++;
+            if (qwe % 10 == 0) {
+                System.out.println();
+            }
         }
     }
 
