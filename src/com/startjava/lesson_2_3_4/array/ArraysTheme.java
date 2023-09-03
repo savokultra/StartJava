@@ -63,14 +63,14 @@ public class ArraysTheme {
     public static void taskFour() {
         char[] arrayFour = new char[26];
         char z = 'Z';
-        for(int i = 0; i < arrayFour.length; i++) {
+        for (int i = 0; i < arrayFour.length; i++) {
             arrayFour[i] = z;
             System.out.print(z);
             z--;
         }
         System.out.println("\n");
         int count = 1;
-        for(char a : arrayFour) {
+        for (char a : arrayFour) {
             for(int i = 0; i < count; i++) {
                 System.out.print(arrayFour[i]);
             }
@@ -87,11 +87,11 @@ public class ArraysTheme {
         }
 
         System.out.println("\nвывод созданного массива");
-        int qwe = 0;
+        int count = 0;
         for (int x : arrayFive) {
             System.out.print(x + " ");
-            qwe++;
-            if (qwe % 10 == 0) {
+            count++;
+            if (count % 10 == 0) {
                 System.out.println();
             }
         }
@@ -124,8 +124,8 @@ public class ArraysTheme {
         System.out.println("\nвывод массива по возрастанию без дубликатов");
         for (int x : arrayFive) {
             System.out.print(x + " ");
-            qwe++;
-            if (qwe % 10 == 0) {
+            count++;
+            if (count % 10 == 0) {
                 System.out.println();
             }
         }
