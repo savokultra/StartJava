@@ -2,7 +2,15 @@ package com.startjava.lesson_2_3_4.array;
 
 public class ArraysTheme {
 
-    public static void taskOne() {
+public static void main(String[] args) {
+        ementsReverse();
+        ementsMultiplication();
+        elementsDeletion();
+        alphabetOutput();
+        uniqueElementsCreate();
+    }
+
+    public static void ementsReverse() {
         System.out.println("Задание 1 Реверс значений массива");
         int[] arrayOne = {1, 7, 4, 5, 2, 6, 3};
         System.out.print("До реверса: ");
@@ -15,7 +23,7 @@ public class ArraysTheme {
         }
     }
 
-    public static void taskTwo() {
+    public static void ementsMultiplication() {
         System.out.println("\n\nЗадание 2 Произведение элементов массива");
         int sum = 1;
         int[] arrayTwo = new int[10];
@@ -32,7 +40,7 @@ public class ArraysTheme {
         System.out.print(sum);
     }
 
-    public static void taskThree() {
+    public static void elementsDeletion() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] arrayThree = new double[15];
         System.out.print("  Исходный массив: ");
@@ -58,7 +66,7 @@ public class ArraysTheme {
     }
 
 
-    public static void taskFour() {
+    public static void alphabetOutput() {
         System.out.println("\nЗадание 4 Вывод алфавита лесенкой");
         char[] arrayFour = new char[26];
         char z = 'Z';
@@ -76,7 +84,7 @@ public class ArraysTheme {
         }
     }
 
-    public static void taskFive() {
+    public static void uniqueElementsCreate() {
         System.out.println("\nЗадание 5 Заполнение массива уникальными числами");
         // создание массива
         int[] arrayFive = new int[30];
@@ -127,13 +135,5 @@ public class ArraysTheme {
                 System.out.println();
             }
         }
-    }
-
-    public static void main(String[] args) {
-        taskOne();
-        taskTwo();
-        taskThree();
-        taskFour();
-        taskFive();
     }
 }
