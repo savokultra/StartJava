@@ -4,27 +4,38 @@ import java.util.Arrays;
 
 public class ArraysTheme {
 
-    public static void taskOne() {
+    public static void main(String[] args) {
+        ementsReverse();
+        ementsMultiplication();
+        elementsDeletion();
+        alphabetOutput();
+        uniqueElementsCreate();
+    }
+
+    public static void ementsReverse() {
         System.out.println("Задание 1 Реверс значений массива");
-        int[] arrayOne = {1, 7, 4, 5, 2, 6, 3};
+        int[] randomNumbers = {1, 7, 4, 5, 2, 6, 3};
         System.out.print("До реверса: ");
-        for (int a : arrayOne) {
+        for (int a : randomNumbers) {
             System.out.print(a + " ");
         }
+        
+        int[] reverseRandomNumbers = new int[randomNumbers.length];
+        
         System.out.print("\nПосле реверса: ");
-        for (int i = 6; i >= 0; --i) {
-            System.out.print(arrayOne[i] + " ");
+        for (int i = 6; i >= 0; i--) {
+            System.out.print(randomNumbers[i] + " ");
         }
     }
 
-    public static void taskTwo() {
+    public static void ementsMultiplication() {
         System.out.println("\n\nЗадание 2 Произведение элементов массива");
         int sum = 1;
-        int[] arrayTwo = new int[10];
-        for (int i = 0; i < arrayTwo.length; i++) {
-            arrayTwo[i] = i;
+        int[] numbers = new int[10];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = i;
         }
-        for (int i : arrayTwo) {
+        for (int i : numbers) {
             if (i > 0 && i < 9) {
                 sum*= i;
                 char ch = i < 8 ? '*' : '=';
@@ -34,76 +45,75 @@ public class ArraysTheme {
         System.out.print(sum);
     }
 
-    public static void taskThree() {
+    public static void elementsDeletion() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
-        double[] arrayThree = new double[15];
-        System.out.print("\n  Исходный массив: ");
+        double[] randomNumbers = new double[15];
+        System.out.print("  Исходный массив: ");
         for (int i = 0; i < 15; i++) {
             double randomNumber = Math.random();
-            arrayThree[i] = randomNumber;
+            randomNumbers[i] = randomNumber;
             System.out.printf("%.3f ", randomNumber);
         }
         
-        int cell = arrayThree.length / 2;
+        int centreCell = randomNumbers.length / 2;
         int count = 0;
-
         for (int i = 0; i < 15; i++) {
-            if (arrayThree[i] > arrayThree[cell]) {
-                arrayThree[i] = 0;
+            if (randomNumbers[i] > randomNumbers[centreCell]) {
+                randomNumbers[i] = 0;
                 count++;
             }
         }
         System.out.print("\nИзмененный массив: ");
-        for (double x : arrayThree) {
+        for (double x : randomNumbers) {
             System.out.print(String.format("%.3f ", x));
         }
-        System.out.println("\nКоличество обнуленных ячеек = " + count);
+        System.out.println("\nКоличество обнуленных ячеек = " + count + "\n");
     }
 
-    public static void taskFour() {
-        char[] arrayFour = new char[26];
+    public static void alphabetOutput() {
+        System.out.println("\nЗадание 4 Вывод алфавита лесенкой");
+        char[] alphabet = new char[26];
         char z = 'Z';
-        for(int i = 0; i < arrayFour.length; i++) {
-            arrayFour[i] = z;
-            System.out.print(z);
+        for (int i = 0; i < alphabet.length; i++) {
+            alphabet[i] = z;
             z--;
         }
-        System.out.println("\n");
         int count = 1;
-        for(char a : arrayFour) {
+        for (char a : alphabet) {
             for(int i = 0; i < count; i++) {
-                System.out.print(arrayFour[i]);
+                System.out.print(alphabet[i]);
             }
             count++;
             System.out.println();
         }
     }
 
-    public static void taskFive() {
+    public static void uniqueElementsCreate() {
+        System.out.println("\nЗадание 5 Заполнение массива уникальными числами");
         // создание массива
-        int[] arrayFive = new int[30];
-        for (int i = 0; i < arrayFive.length; i++) {
-            arrayFive[i] = (int) (Math.random() * (40)) + 60;
+        int[] randomNumbers = new int[30];
+        for (int i = 0; i < randomNumbers.length; i++) {
+            randomNumbers[i] = (int) (Math.random() * (40)) + 60;
         }
-
+        //вывод созданного массива
         System.out.println("\nвывод созданного массива");
-        int qwe = 0;
-        for (int x : arrayFive) {
+        int count = 0;
+        for (int x : randomNumbers) {
             System.out.print(x + " ");
-            qwe++;
-            if (qwe % 10 == 0) {
+            count++;
+            if (count % 10 == 0) {
                 System.out.println();
             }
         }
         //удаление дубликатов массива
-        boolean b = false;
+        boolean b;
         do {
             b = false;
-            for (int i = 0; i < arrayFive.length; i++) {
-                for (int j = i + 1; j < arrayFive.length; j++) {
-                    if (arrayFive[i] == arrayFive[j]) {
+            for (int i = 0; i < randomNumbers.length; i++) {
+                for (int j = i + 1; j < randomNumbers.length; j++) {
+                    if (randomNumbers[i] == randomNumbers[j]) {
                         b = true;
-                        arrayFive[j] = (int) (Math.random() * (40)) + 60;
+                        randomNumbers[j] = (int) (Math.random() * (40)) + 60;
                     }
                 }
                 if (b) {
@@ -112,30 +122,22 @@ public class ArraysTheme {
             }
         } while (b);
         //сортировка массива
-        for (int i = arrayFive.length - 1; i >= 0; i--) {
-            for (int j = 0; j < arrayFive.length - 1; j++) {
-                if (arrayFive[j] > arrayFive[j + 1]) {
-                    int temp = arrayFive[j];
-                    arrayFive[j] = arrayFive[j + 1];
-                    arrayFive[j + 1] = temp;
+        for (int i = randomNumbers.length - 1; i >= 0; i--) {
+            for (int j = 0; j < randomNumbers.length - 1; j++) {
+                if (randomNumbers[j] > randomNumbers[j + 1]) {
+                    int temp = randomNumbers[j];
+                    randomNumbers[j] = randomNumbers[j + 1];
+                    randomNumbers[j + 1] = temp;
                 }
             }
         }
         System.out.println("\nвывод массива по возрастанию без дубликатов");
-        for (int x : arrayFive) {
+        for (int x : randomNumbers) {
             System.out.print(x + " ");
-            qwe++;
-            if (qwe % 10 == 0) {
+            count++;
+            if (count % 10 == 0) {
                 System.out.println();
             }
         }
-    }
-
-    public static void main(String[] args) {
-        taskOne();
-        taskTwo();
-        taskThree();
-        taskFour();
-        taskFive();
     }
 }
