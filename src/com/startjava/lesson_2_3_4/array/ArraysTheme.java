@@ -35,9 +35,9 @@ public class ArraysTheme {
             numbers[i] = i;
         }
         for (int i = 1; i < numbers.length - 1; i++) {
-                multNumbers *= i;
-                char ch = i < numbers.length - 2 ? '*' : '=';
-                System.out.print(i + " " + ch + " ");
+            multNumbers *= i;
+            char ch = i < numbers.length - 2 ? '*' : '=';
+            System.out.print(i + " " + ch + " ");
         }
         System.out.print(multNumbers);
     }
