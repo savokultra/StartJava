@@ -3,66 +3,59 @@ package com.startjava.lesson_2_3_4.array;
 public class ArraysTheme {
 
     public static void main(String[] args) {
-        ementsReverse();
-        ementsMultiplication();
+        elementsReverse();
+        elementsMultiplication();
         elementsDeletion();
         alphabetOutput();
         uniqueElementsCreate();
     }
 
-    public static void ementsReverse() {
+    public static void elementsReverse() {
         System.out.println("Задание 1 Реверс значений массива");
         int[] randomNumbers = {1, 7, 4, 5, 2, 6, 3};
-        System.out.print("До реверса: ");
+        int[] reverseRandomNumbers = new int[randomNumbers.length];
+        System.out.print("   До реверса: ");
         for (int a : randomNumbers) {
             System.out.print(a + " ");
         }
-        
-        int[] reverseRandomNumbers = new int[randomNumbers.length];
+        System.out.print("\nПосле реверса: ");
         int length = randomNumbers.length;
         for (int y : reverseRandomNumbers) {
             y = randomNumbers[length - 1];
             length--;
-            System.out.print(" " + y);
-        }
-        
-        System.out.print("\nПосле реверса: ");
-        for (int i = 6; i >= 0; i--) {
-            System.out.print(randomNumbers[i] + " ");
+            System.out.print(y + " ");
         }
     }
 
-    public static void ementsMultiplication() {
+    public static void elementsMultiplication() {
         System.out.println("\n\nЗадание 2 Произведение элементов массива");
-        int sum = 1;
+        int multNumbers = 1;
         int[] numbers = new int[10];
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = i;
         }
-        for (int i : numbers) {
-            if (i > 0 && i < 9) {
-                sum*= i;
-                char ch = i < 8 ? '*' : '=';
+        for (int i = 1; i < numbers.length - 1; i++) {
+                multNumbers *= i;
+                char ch = i < numbers.length - 2 ? '*' : '=';
                 System.out.print(i + " " + ch + " ");
-            }
         }
-        System.out.print(sum);
+        System.out.print(multNumbers);
     }
 
     public static void elementsDeletion() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] randomNumbers = new double[15];
         System.out.print("  Исходный массив: ");
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < randomNumbers.length; i++) {
             double randomNumber = Math.random();
             randomNumbers[i] = randomNumber;
             System.out.printf("%.3f ", randomNumber);
         }
-        
-        int centreCell = randomNumbers.length / 2;
+
+        double centreCell = randomNumbers[randomNumbers.length / 2];
         int count = 0;
-        for (int i = 0; i < 15; i++) {
-            if (randomNumbers[i] > randomNumbers[centreCell]) {
+        for (int i = 0; i < randomNumbers.length; i++) {
+            if (randomNumbers[i] > centreCell) {
                 randomNumbers[i] = 0;
                 count++;
             }
@@ -75,7 +68,7 @@ public class ArraysTheme {
     }
 
     public static void alphabetOutput() {
-        System.out.println("\nЗадание 4 Вывод алфавита лесенкой");
+        System.out.println("Задание 4 Вывод алфавита лесенкой");
         char[] alphabet = new char[26];
         char z = 'Z';
         for (int i = 0; i < alphabet.length; i++) {
