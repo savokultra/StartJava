@@ -17,6 +17,15 @@ public class ArraysTheme {
         for (int a : randomNumbers) {
             System.out.print(a + " ");
         }
+        
+        int[] reverseRandomNumbers = new int[randomNumbers.length];
+        int length = randomNumbers.length;
+        for (int y : reverseRandomNumbers) {
+            y = randomNumbers[length - 1];
+            length--;
+            System.out.print(" " + y);
+        }
+        
         System.out.print("\nПосле реверса: ");
         for (int i = 6; i >= 0; i--) {
             System.out.print(randomNumbers[i] + " ");
