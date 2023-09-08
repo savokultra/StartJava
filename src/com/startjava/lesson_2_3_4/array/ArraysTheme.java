@@ -3,14 +3,14 @@ package com.startjava.lesson_2_3_4.array;
 public class ArraysTheme {
 
     public static void main(String[] args) {
-        elementsReverse();
-        elementsMultiplication();
-        elementsDeletion();
+        rverse();
+        multiplication();
+        deletion();
         alphabetOutput();
         uniqueElementsCreate();
     }
 
-    public static void elementsReverse() {
+    public static void rverse() {
         System.out.println("Задание 1 Реверс значений массива");
         int[] randomNumbers = {1, 7, 4, 5, 2, 6, 3};
         int[] reverseRandomNumbers = new int[randomNumbers.length];
@@ -27,7 +27,7 @@ public class ArraysTheme {
         }
     }
 
-    public static void elementsMultiplication() {
+    public static void multiplication() {
         System.out.println("\n\nЗадание 2 Произведение элементов массива");
         int multNumbers = 1;
         int[] numbers = new int[10];
@@ -42,7 +42,7 @@ public class ArraysTheme {
         System.out.print(multNumbers);
     }
 
-    public static void elementsDeletion() {
+    public static void deletion() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] randomNumbers = new double[15];
         System.out.print("  Исходный массив: ");
