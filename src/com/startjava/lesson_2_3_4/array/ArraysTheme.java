@@ -10,7 +10,7 @@ public class ArraysTheme {
         uniqueElementsCreate();
     }
 
-    public static void rverse() {
+    private static void rverse() {
         System.out.println("Задание 1 Реверс значений массива");
         int[] randomNumbers = {1, 7, 4, 5, 2, 6, 3};
         int[] reverseRandomNumbers = new int[randomNumbers.length];
@@ -27,7 +27,7 @@ public class ArraysTheme {
         }
     }
 
-    public static void multiplication() {
+    private static void multiplication() {
         System.out.println("\n\nЗадание 2 Произведение элементов массива");
         int multNumbers = 1;
         int[] numbers = new int[10];
@@ -42,7 +42,7 @@ public class ArraysTheme {
         System.out.print(multNumbers);
     }
 
-    public static void deletion() {
+    private static void deletion() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] randomNumbers = new double[15];
         System.out.print("  Исходный массив: ");
@@ -67,7 +67,7 @@ public class ArraysTheme {
         System.out.println("\nКоличество обнуленных ячеек = " + count + "\n");
     }
 
-    public static void alphabetOutput() {
+    private static void alphabetOutput() {
         System.out.println("Задание 4 Вывод алфавита лесенкой");
         char[] alphabet = new char[26];
         char z = 'Z';
@@ -85,7 +85,7 @@ public class ArraysTheme {
         }
     }
 
-    public static void uniqueElementsCreate() {
+    private static void uniqueElementsCreate() {
         System.out.println("\nЗадание 5 Заполнение массива уникальными числами");
         // создание массива
         int[] randomNumbers = new int[30];
