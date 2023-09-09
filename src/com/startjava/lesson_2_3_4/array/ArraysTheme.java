@@ -3,50 +3,53 @@ package com.startjava.lesson_2_3_4.array;
 public class ArraysTheme {
 
     public static void main(String[] args) {
-        rverse();
-        multiplication();
-        deletion();
-        alphabetOutput();
-        uniqueElementsCreate();
+        returnNumbers();
+        multiplicateNumbers();
+        deleteNumbers();
+        printAlphabet();
+        insertUniqueElements();
     }
 
-    private static void rverse() {
+    private static void returnNumbers() {
         System.out.println("Задание 1 Реверс значений массива");
         int[] randomNumbers = {1, 7, 4, 5, 2, 6, 3};
-        int[] reverseRandomNumbers = new int[randomNumbers.length];
+        int length = randomNumbers.length;
+        int[] reverseRandomNumbers = new int[length];
         System.out.print("   До реверса: ");
         for (int a : randomNumbers) {
             System.out.print(a + " ");
         }
         System.out.print("\nПосле реверса: ");
-        int length = randomNumbers.length;
-        for (int y : reverseRandomNumbers) {
-            y = randomNumbers[length - 1];
+        for (int a : reverseRandomNumbers) {
+            a = randomNumbers[length - 1];
             length--;
-            System.out.print(y + " ");
+            System.out.print(a + " ");
         }
     }
 
-    private static void multiplication() {
+    private static void multiplicateNumbers() {
         System.out.println("\n\nЗадание 2 Произведение элементов массива");
-        int multNumbers = 1;
+
         int[] numbers = new int[10];
-        for (int i = 0; i < numbers.length; i++) {
+        int length = numbers.length;
+        for (int i = 0; i < length; i++) {
             numbers[i] = i;
         }
-        for (int i = 1; i < numbers.length - 1; i++) {
+        int multNumbers = 1;
+        for (int i = 1; i < length - 1; i++) {
             multNumbers *= i;
-            char ch = i < numbers.length - 2 ? '*' : '=';
+            char ch = i < length - 2 ? '*' : '=';
             System.out.print(i + " " + ch + " ");
         }
         System.out.print(multNumbers);
     }
 
-    private static void deletion() {
+    private static void deleteNumbers() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] randomNumbers = new double[15];
         System.out.print("  Исходный массив: ");
-        for (int i = 0; i < randomNumbers.length; i++) {
+        int length = randomNumbers.length;
+        for (int i = 0; i < length; i++) {
             double randomNumber = Math.random();
             randomNumbers[i] = randomNumber;
             System.out.printf("%.3f ", randomNumber);
@@ -54,20 +57,20 @@ public class ArraysTheme {
 
         double centreCell = randomNumbers[randomNumbers.length / 2];
         int count = 0;
-        for (int i = 0; i < randomNumbers.length; i++) {
+        for (int i = 0; i < length; i++) {
             if (randomNumbers[i] > centreCell) {
                 randomNumbers[i] = 0;
                 count++;
             }
         }
         System.out.print("\nИзмененный массив: ");
-        for (double x : randomNumbers) {
-            System.out.print(String.format("%.3f ", x));
+        for (double a : randomNumbers) {
+            System.out.print(String.format("%.3f ", a));
         }
         System.out.println("\nКоличество обнуленных ячеек = " + count + "\n");
     }
 
-    private static void alphabetOutput() {
+    private static void printAlphabet() {
         System.out.println("Задание 4 Вывод алфавита лесенкой");
         char[] alphabet = new char[26];
         char z = 'Z';
@@ -85,18 +88,19 @@ public class ArraysTheme {
         }
     }
 
-    private static void uniqueElementsCreate() {
+    private static void insertUniqueElements() {
         System.out.println("\nЗадание 5 Заполнение массива уникальными числами");
         // создание массива
         int[] randomNumbers = new int[30];
-        for (int i = 0; i < randomNumbers.length; i++) {
+        int length = randomNumbers.length;
+        for (int i = 0; i < length; i++) {
             randomNumbers[i] = (int) (Math.random() * (40)) + 60;
         }
         //вывод созданного массива
         System.out.println("\nвывод созданного массива");
         int count = 0;
-        for (int x : randomNumbers) {
-            System.out.print(x + " ");
+        for (int a : randomNumbers) {
+            System.out.print(a + " ");
             count++;
             if (count % 10 == 0) {
                 System.out.println();
@@ -106,8 +110,8 @@ public class ArraysTheme {
         boolean b;
         do {
             b = false;
-            for (int i = 0; i < randomNumbers.length; i++) {
-                for (int j = i + 1; j < randomNumbers.length; j++) {
+            for (int i = 0; i < length; i++) {
+                for (int j = i + 1; j < length; j++) {
                     if (randomNumbers[i] == randomNumbers[j]) {
                         b = true;
                         randomNumbers[j] = (int) (Math.random() * (40)) + 60;
@@ -119,8 +123,8 @@ public class ArraysTheme {
             }
         } while (b);
         //сортировка массива
-        for (int i = randomNumbers.length - 1; i >= 0; i--) {
-            for (int j = 0; j < randomNumbers.length - 1; j++) {
+        for (int i = length - 1; i >= 0; i--) {
+            for (int j = 0; j < length - 1; j++) {
                 if (randomNumbers[j] > randomNumbers[j + 1]) {
                     int temp = randomNumbers[j];
                     randomNumbers[j] = randomNumbers[j + 1];
