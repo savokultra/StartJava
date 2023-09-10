@@ -18,9 +18,9 @@ public class ArraysTheme {
             System.out.print(a + " ");
         }
         System.out.print("\nПосле реверса: ");
-        int reverseCell = randomNumbers.length - 1; //6;
+        int reverseCell = randomNumbers.length - 1;
         for (int i = 0; i < randomNumbers.length; i++) {
-            int buffer = randomNumbers[i];//1
+            int buffer = randomNumbers[i];
             while (reverseCell > i) {
                 randomNumbers[i] = randomNumbers[reverseCell];
                 randomNumbers[reverseCell] = buffer;
@@ -61,7 +61,6 @@ public class ArraysTheme {
                 System.out.println("");
             }
         }
-
         int count = 0;
         for (int i = 0; i < length; i++) {
             if (randomNumbers[i] > randomNumbers[centreCell]) {
