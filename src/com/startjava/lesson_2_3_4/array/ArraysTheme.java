@@ -13,23 +13,26 @@ public class ArraysTheme {
     private static void returnNumbers() {
         System.out.println("Задание 1 Реверс значений массива");
         int[] randomNumbers = {1, 7, 4, 5, 2, 6, 3};
-        int length = randomNumbers.length;
-        int[] reverseRandomNumbers = new int[length];
         System.out.print("   До реверса: ");
         for (int a : randomNumbers) {
             System.out.print(a + " ");
         }
         System.out.print("\nПосле реверса: ");
-        for (int a : reverseRandomNumbers) {
-            a = randomNumbers[length - 1];
-            length--;
-            System.out.print(a + " ");
+        int reverseCell = randomNumbers.length - 1; //6;
+        for (int i = 0; i < randomNumbers.length; i++) {
+            int buffer = randomNumbers[i];//1
+            while (reverseCell > i) {
+                randomNumbers[i] = randomNumbers[reverseCell];
+                randomNumbers[reverseCell] = buffer;
+                reverseCell--;
+                break;
+            }
+            System.out.print(randomNumbers[i] + " ");
         }
     }
 
     private static void multiplicateNumbers() {
         System.out.println("\n\nЗадание 2 Произведение элементов массива");
-
         int[] numbers = new int[10];
         int length = numbers.length;
         for (int i = 0; i < length; i++) {
@@ -38,8 +41,8 @@ public class ArraysTheme {
         int multNumbers = 1;
         for (int i = 1; i < length - 1; i++) {
             multNumbers *= i;
-            char ch = i < length - 2 ? '*' : '=';
-            System.out.print(i + " " + ch + " ");
+            char outputSymbol = i < length - 2 ? '*' : '=';
+            System.out.print(i + " " + outputSymbol + " ");
         }
         System.out.print(multNumbers);
     }
@@ -47,27 +50,33 @@ public class ArraysTheme {
     private static void deleteNumbers() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] randomNumbers = new double[15];
-        System.out.print("  Исходный массив: ");
+        System.out.print("Исходный массив: \n");
         int length = randomNumbers.length;
+        int centreCell = length / 2;
         for (int i = 0; i < length; i++) {
             double randomNumber = Math.random();
             randomNumbers[i] = randomNumber;
             System.out.printf("%.3f ", randomNumber);
+            if (i == centreCell) {
+                System.out.println("");
+            }
         }
 
-        double centreCell = randomNumbers[randomNumbers.length / 2];
         int count = 0;
         for (int i = 0; i < length; i++) {
-            if (randomNumbers[i] > centreCell) {
+            if (randomNumbers[i] > randomNumbers[centreCell]) {
                 randomNumbers[i] = 0;
                 count++;
             }
         }
-        System.out.print("\nИзмененный массив: ");
+        System.out.print("\n\nИзмененный массив: \n");
         for (double a : randomNumbers) {
             System.out.print(String.format("%.3f ", a));
+            if (a == randomNumbers[centreCell]) {
+                System.out.println("");
+            }
         }
-        System.out.println("\nКоличество обнуленных ячеек = " + count + "\n");
+        System.out.println("\n\nКоличество обнуленных ячеек = " + count + "\n");
     }
 
     private static void printAlphabet() {
