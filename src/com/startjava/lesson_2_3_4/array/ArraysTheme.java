@@ -4,14 +4,6 @@ import java.util.Arrays;
 
 public class ArraysTheme {
 
-    public static void main(String[] args) {
-        invertNumbers();
-        multiplicateNumbers();
-        deleteNumbers();
-        printAlphabet();
-        insertUniqueElements();
-    }
-
     private static void printArray(int[] inputArray) {
         int count = 0;
         for (int element : inputArray) {
@@ -109,6 +101,14 @@ public class ArraysTheme {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        invertNumbers();
+        multiplicateNumbers();
+        deleteNumbers();
+        printAlphabet();
+        insertUniqueElements();
     }
 
     private static void invertNumbers() {
