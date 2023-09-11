@@ -28,7 +28,6 @@ public class ArraysTheme {
     }
 
     private static void printArray(char[] inputArray) {
-        //int length = inputArray.length;
         int count = inputArray.length - 2;
         for (char element : inputArray) {
             for (int i = inputArray.length - 1; i > count; i--) {
