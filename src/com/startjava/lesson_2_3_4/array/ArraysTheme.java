@@ -13,19 +13,15 @@ public class ArraysTheme {
     private static void invertNumbers() {
         System.out.println("Задание 1 Реверс значений массива");
         int[] randomNumbers = {1, 7, 4, 5, 2, 6, 3};
-        System.out.print("   До реверса: ");
-        for (int a : randomNumbers) {
-            System.out.print(a + " ");
-        }
-        System.out.print("\nПосле реверса: ");
+        System.out.print("   До реверса: " + Arrays.toString(randomNumbers));
         int reverseCell = randomNumbers.length - 1;
         for (int i = 0; i < randomNumbers.length / 2; i++) {
             int temp = randomNumbers[i];
             randomNumbers[i] = randomNumbers[reverseCell];
             randomNumbers[reverseCell] = temp;
-            System.out.print(randomNumbers[i] + " ");
             reverseCell--;
         }
+        System.out.print("\nПосле реверса: " + Arrays.toString(randomNumbers));
     }
 
     private static void multiplicateNumbers() {
