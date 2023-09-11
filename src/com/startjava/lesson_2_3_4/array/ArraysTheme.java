@@ -3,14 +3,14 @@ package com.startjava.lesson_2_3_4.array;
 public class ArraysTheme {
 
     public static void main(String[] args) {
-        returnNumbers();
+        invertNumbers();
         multiplicateNumbers();
         deleteNumbers();
         printAlphabet();
         insertUniqueElements();
     }
 
-    private static void returnNumbers() {
+    private static void invertNumbers() {
         System.out.println("Задание 1 Реверс значений массива");
         int[] randomNumbers = {1, 7, 4, 5, 2, 6, 3};
         System.out.print("   До реверса: ");
@@ -19,15 +19,12 @@ public class ArraysTheme {
         }
         System.out.print("\nПосле реверса: ");
         int reverseCell = randomNumbers.length - 1;
-        for (int i = 0; i < randomNumbers.length; i++) {
-            int buffer = randomNumbers[i];
-            while (reverseCell > i) {
-                randomNumbers[i] = randomNumbers[reverseCell];
-                randomNumbers[reverseCell] = buffer;
-                reverseCell--;
-                break;
-            }
+        for (int i = 0; i < randomNumbers.length / 2; i++) {
+            int temp = randomNumbers[i];
+            randomNumbers[i] = randomNumbers[reverseCell];
+            randomNumbers[reverseCell] = temp;
             System.out.print(randomNumbers[i] + " ");
+            reverseCell--;
         }
     }
 
