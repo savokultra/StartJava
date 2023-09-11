@@ -99,7 +99,7 @@ public class ArraysTheme {
         } while (b);
     }
 
-    private static void sortUp(int[] inputArray) {
+    private static void sortingUp(int[] inputArray) {
         for (int i = inputArray.length - 1; i >= 0; i--) {
             for (int j = 0; j < inputArray.length - 1; j++) {
                 if (inputArray[j] > inputArray[j + 1]) {
@@ -134,12 +134,11 @@ public class ArraysTheme {
     private static void deleteNumbers() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] randomNumbers = new double[15];
-        int length = randomNumbers.length;
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < randomNumbers.length; i++) {
             double randomNumber = Math.random();
             randomNumbers[i] = randomNumber;
         }
-        System.out.print("Исходный массив: \n");
+        System.out.println("Исходный массив: ");
         printArray(randomNumbers);
         System.out.println("\nИзмененный массив: ");
         nullificateCells(randomNumbers);
@@ -156,18 +155,14 @@ public class ArraysTheme {
 
     private static void insertUniqueElements() {
         System.out.println("\nЗадание 5 Заполнение массива уникальными числами");
-        // создание массива
         int[] randomNumbers = new int[30];
-        int length = randomNumbers.length;
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < randomNumbers.length; i++) {
             randomNumbers[i] = (int) (Math.random() * (40)) + 60;
         }
         System.out.println("\nвывод созданного массива");
         printArray(randomNumbers);
-        //удаление дубликатов массива
         deleteDuplicates(randomNumbers);
-        //сортировка массива по возрастанию
-        sortUp(randomNumbers);
+        sortingUp(randomNumbers);
         System.out.println("вывод массива по возрастанию без дубликатов");
         printArray(randomNumbers);
     }
