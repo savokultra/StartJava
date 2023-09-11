@@ -26,16 +26,16 @@ public class ArraysTheme {
 
     private static void multiplicateNumbers() {
         System.out.println("\n\nЗадание 2 Произведение элементов массива");
-        int[] numbers = new int[10];
-        int length = numbers.length;
+        int[] multipliers = new int[10];
+        int length = multipliers.length;
         for (int i = 0; i < length; i++) {
-            numbers[i] = i;
+            multipliers[i] = i;
         }
         int multNumbers = 1;
         for (int i = 1; i < length - 1; i++) {
             multNumbers *= i;
-            char outputSymbol = i < length - 2 ? '*' : '=';
-            System.out.print(i + " " + outputSymbol + " ");
+            String sign = i < length - 2 ? i + " * " : i + " = ";
+            System.out.print(sign);
         }
         System.out.print(multNumbers);
     }
