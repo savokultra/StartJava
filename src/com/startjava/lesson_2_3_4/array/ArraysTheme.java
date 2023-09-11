@@ -1,5 +1,7 @@
 package com.startjava.lesson_2_3_4.array;
 
+import java.util.Arrays;
+
 public class ArraysTheme {
 
     public static void main(String[] args) {
@@ -10,18 +12,113 @@ public class ArraysTheme {
         insertUniqueElements();
     }
 
+    private static void printArray(int[] inputArray) {
+        int count = 0;
+        for (int element : inputArray) {
+            System.out.printf("%s ", element);
+            count++;
+            if (count % 10 == 0) {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
+
+    private static void printArray(double[] inputArray) {
+        double centreCell = inputArray[inputArray.length / 2];
+        for (double element : inputArray) {
+            System.out.printf("%.3f ", element);
+            if (element == centreCell) {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
+
+    private static void printArray(char[] inputArray) {
+        int length = inputArray.length;
+        int count = length;
+        for (char element : inputArray) {
+            for (int i = length - 1; i > count; i--) {
+                System.out.print(inputArray[i]);
+            }
+            count--;
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    private static void invertArray(int[] inputArray) {
+        int reverseCell = inputArray.length - 1;
+        for (int i = 0; i < inputArray.length / 2; i++) {
+            int temp = inputArray[i];
+            inputArray[i] = inputArray[reverseCell];
+            inputArray[reverseCell] = temp;
+            reverseCell--;
+        }
+    }
+
+    private static void multiplicate(int[] inputArray) {
+        int multNumbers = 1;
+        for (int i = 1; i < inputArray.length - 1; i++) {
+            multNumbers *= i;
+            String sign = i < inputArray.length - 2 ? i + " * " : i + " = ";
+            System.out.print(sign);
+        }
+        System.out.println(multNumbers);
+    }
+
+    private static void nullificateCells(double[] inputArray) {
+        double centreCell = inputArray[inputArray.length / 2];
+        int count = 0;
+        for (int i = 0; i < inputArray.length; i++) {
+            if (inputArray[i] > centreCell) {
+                inputArray[i] = 0;
+                count++;
+            }
+        }
+        printArray(inputArray);
+        System.out.println("\nКоличество обнуленных ячеек = " + count + "\n");
+    }
+
+    private static void deleteDuplicates(int[] inputArray) {
+        boolean b;
+        do {
+            b = false;
+            for (int i = 0; i < inputArray.length; i++) {
+                for (int j = i + 1; j < inputArray.length; j++) {
+                    if (inputArray[i] == inputArray[j]) {
+                        b = true;
+                        inputArray[j] = (int) (Math.random() * (40)) + 60;
+                    }
+                }
+                if (b) {
+                    break;
+                }
+            }
+        } while (b);
+    }
+
+    private static void sortUp(int[] inputArray) {
+        for (int i = inputArray.length - 1; i >= 0; i--) {
+            for (int j = 0; j < inputArray.length - 1; j++) {
+                if (inputArray[j] > inputArray[j + 1]) {
+                    int temp = inputArray[j];
+                    inputArray[j] = inputArray[j + 1];
+                    inputArray[j + 1] = temp;
+                }
+            }
+        }
+    }
+
     private static void invertNumbers() {
         System.out.println("Задание 1 Реверс значений массива");
         int[] randomNumbers = {1, 7, 4, 5, 2, 6, 3};
-        System.out.print("   До реверса: " + Arrays.toString(randomNumbers));
-        int reverseCell = randomNumbers.length - 1;
-        for (int i = 0; i < randomNumbers.length / 2; i++) {
-            int temp = randomNumbers[i];
-            randomNumbers[i] = randomNumbers[reverseCell];
-            randomNumbers[reverseCell] = temp;
-            reverseCell--;
-        }
-        System.out.print("\nПосле реверса: " + Arrays.toString(randomNumbers));
+        System.out.print("   До реверса: ");
+        printArray(randomNumbers);
+        invertArray(randomNumbers);
+        System.out.print("После реверса: ");
+        printArray(randomNumbers);
     }
 
     private static void multiplicateNumbers() {
@@ -31,62 +128,30 @@ public class ArraysTheme {
         for (int i = 0; i < length; i++) {
             multipliers[i] = i;
         }
-        int multNumbers = 1;
-        for (int i = 1; i < length - 1; i++) {
-            multNumbers *= i;
-            String sign = i < length - 2 ? i + " * " : i + " = ";
-            System.out.print(sign);
-        }
-        System.out.print(multNumbers);
+        multiplicate(multipliers);
     }
 
     private static void deleteNumbers() {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] randomNumbers = new double[15];
-        System.out.print("Исходный массив: \n");
         int length = randomNumbers.length;
-        int centreCell = length / 2;
         for (int i = 0; i < length; i++) {
             double randomNumber = Math.random();
             randomNumbers[i] = randomNumber;
-            System.out.printf("%.3f ", randomNumber);
-            if (i == centreCell) {
-                System.out.println("");
-            }
         }
-        int count = 0;
-        for (int i = 0; i < length; i++) {
-            if (randomNumbers[i] > randomNumbers[centreCell]) {
-                randomNumbers[i] = 0;
-                count++;
-            }
-        }
-        System.out.print("\n\nИзмененный массив: \n");
-        for (double a : randomNumbers) {
-            System.out.print(String.format("%.3f ", a));
-            if (a == randomNumbers[centreCell]) {
-                System.out.println("");
-            }
-        }
-        System.out.println("\n\nКоличество обнуленных ячеек = " + count + "\n");
+        System.out.print("Исходный массив: \n");
+        printArray(randomNumbers);
+        System.out.println("\nИзмененный массив: ");
+        nullificateCells(randomNumbers);
     }
 
     private static void printAlphabet() {
-        System.out.println("Задание 4 Вывод алфавита лесенкой");
+        System.out.print("\nЗадание 4 Вывод алфавита лесенкой");
         char[] alphabet = new char[26];
-        char z = 'Z';
         for (int i = 0; i < alphabet.length; i++) {
-            alphabet[i] = z;
-            z--;
+            alphabet[i] = (char) ('A' + i);
         }
-        int count = 1;
-        for (char a : alphabet) {
-            for(int i = 0; i < count; i++) {
-                System.out.print(alphabet[i]);
-            }
-            count++;
-            System.out.println();
-        }
+        printArray(alphabet);
     }
 
     private static void insertUniqueElements() {
@@ -97,49 +162,13 @@ public class ArraysTheme {
         for (int i = 0; i < length; i++) {
             randomNumbers[i] = (int) (Math.random() * (40)) + 60;
         }
-        //вывод созданного массива
         System.out.println("\nвывод созданного массива");
-        int count = 0;
-        for (int a : randomNumbers) {
-            System.out.print(a + " ");
-            count++;
-            if (count % 10 == 0) {
-                System.out.println();
-            }
-        }
+        printArray(randomNumbers);
         //удаление дубликатов массива
-        boolean b;
-        do {
-            b = false;
-            for (int i = 0; i < length; i++) {
-                for (int j = i + 1; j < length; j++) {
-                    if (randomNumbers[i] == randomNumbers[j]) {
-                        b = true;
-                        randomNumbers[j] = (int) (Math.random() * (40)) + 60;
-                    }
-                }
-                if (b) {
-                    break;
-                }
-            }
-        } while (b);
-        //сортировка массива
-        for (int i = length - 1; i >= 0; i--) {
-            for (int j = 0; j < length - 1; j++) {
-                if (randomNumbers[j] > randomNumbers[j + 1]) {
-                    int temp = randomNumbers[j];
-                    randomNumbers[j] = randomNumbers[j + 1];
-                    randomNumbers[j + 1] = temp;
-                }
-            }
-        }
-        System.out.println("\nвывод массива по возрастанию без дубликатов");
-        for (int x : randomNumbers) {
-            System.out.print(x + " ");
-            count++;
-            if (count % 10 == 0) {
-                System.out.println();
-            }
-        }
+        deleteDuplicates(randomNumbers);
+        //сортировка массива по возрастанию
+        sortUp(randomNumbers);
+        System.out.println("вывод массива по возрастанию без дубликатов");
+        printArray(randomNumbers);
     }
 }
