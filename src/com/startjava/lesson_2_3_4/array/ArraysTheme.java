@@ -28,10 +28,10 @@ public class ArraysTheme {
     }
 
     private static void printArray(char[] inputArray) {
-        int length = inputArray.length;
-        int count = length - 2;
+        //int length = inputArray.length;
+        int count = inputArray.length - 2;
         for (char element : inputArray) {
-            for (int i = length - 1; i > count; i--) {
+            for (int i = inputArray.length - 1; i > count; i--) {
                 System.out.print(inputArray[i]);
             }
             count--;
@@ -145,7 +145,7 @@ public class ArraysTheme {
     }
 
     private static void printAlphabet() {
-        System.out.print("\nЗадание 4 Вывод алфавита лесенкой");
+        System.out.println("\nЗадание 4 Вывод алфавита лесенкой");
         char[] alphabet = new char[26];
         for (int i = 0; i < alphabet.length; i++) {
             alphabet[i] = (char) ('A' + i);
