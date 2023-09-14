@@ -6,7 +6,7 @@ public class ArraysTheme {
 
     public static void main(String[] args) {
         invertNumbers();
-        multiplicateNumbers();
+        multiplyNumbers();
         deleteNumbers();
         printAlphabet();
         insertUniqueElements();
@@ -22,14 +22,13 @@ public class ArraysTheme {
         printArray(randomNumbers);
     }
 
-    private static void multiplicateNumbers() {
+    private static void multiplyNumbers() {
         System.out.println("\n\nЗадание 2 Произведение элементов массива");
         int[] multipliers = new int[10];
-        int length = multipliers.length;
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < multipliers.length; i++) {
             multipliers[i] = i;
         }
-        multiplicate(multipliers);
+        multiply(multipliers);
     }
 
     private static void deleteNumbers() {
@@ -113,14 +112,13 @@ public class ArraysTheme {
         }
     }
 
-    private static void multiplicate(int[] inputArray) {
-        int multNumbers = 1;
+    private static void multiply(int[] inputArray) {
+        int multiplyNumbers = 1;
         for (int i = 1; i < inputArray.length - 1; i++) {
-            multNumbers *= i;
-            String sign = i < inputArray.length - 2 ? i + " * " : i + " = ";
-            System.out.print(sign);
+            multiplyNumbers *= inputArray[i];
+            System.out.print(i < inputArray.length - 2 ? inputArray[i] + " * " : inputArray[i]);
         }
-        System.out.println(multNumbers);
+        System.out.println(" = " + multiplyNumbers);
     }
 
     private static void nullificateCells(double[] inputArray) {
