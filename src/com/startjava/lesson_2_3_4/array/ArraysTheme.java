@@ -116,7 +116,7 @@ public class ArraysTheme {
         int multiplyNumbers = 1;
         for (int i = 1; i < inputArray.length - 1; i++) {
             multiplyNumbers *= inputArray[i];
-            System.out.print(i >= inputArray.length - 2 ? inputArray[i] : inputArray[i] + " * ");
+            System.out.print(inputArray[i] + (i >= inputArray.length - 2 ? " = " : " * "));
         }
         System.out.println(" = " + multiplyNumbers);
     }
