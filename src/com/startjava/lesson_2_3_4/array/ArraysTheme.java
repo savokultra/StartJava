@@ -121,10 +121,10 @@ public class ArraysTheme {
     }
 
     private static void nullificateCells(double[] inputArray) {
-        double centreCell = inputArray[inputArray.length / 2];
+        double middleCellValue = inputArray[inputArray.length / 2];
         int count = 0;
         for (int i = 0; i < inputArray.length; i++) {
-            if (inputArray[i] > centreCell) {
+            if (inputArray[i] > middleCellValue) {
                 inputArray[i] = 0;
                 count++;
             }
