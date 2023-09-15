@@ -54,16 +54,16 @@ public class ArraysTheme {
 
     private static void insertUniqueElements() {
         System.out.println("\nЗадание 5 Заполнение массива уникальными числами");
-        int[] randomNumbers = new int[30];
-        for (int i = 0; i < randomNumbers.length; i++) {
+        int[] uniqueNumbers = new int[30];
+        for (int i = 0; i < uniqueNumbers.length; i++) {
             randomNumbers[i] = (int) (Math.random() * (40)) + 60;
         }
         System.out.println("\nвывод созданного массива");
-        printArray(randomNumbers);
-        deleteDuplicates(randomNumbers);
-        sortingUp(randomNumbers);
+        printArray(uniqueNumbers);
+        deleteDuplicates(uniqueNumbers);
+        sortingUp(uniqueNumbers);
         System.out.println("вывод массива по возрастанию без дубликатов");
-        printArray(randomNumbers);
+        printArray(uniqueNumbers);
     }
 
     private static void printArray(int[] inputArray) {
