@@ -35,8 +35,7 @@ public class ArraysTheme {
         System.out.println("\n\nЗадание 3 Удаление элементов массива");
         double[] randomNumbers = new double[15];
         for (int i = 0; i < randomNumbers.length; i++) {
-            double randomNumber = Math.random();
-            randomNumbers[i] = randomNumber;
+            randomNumbers[i] = Math.random();
         }
         System.out.println("Исходный массив: ");
         printArray(randomNumbers);
