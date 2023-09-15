@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArraysTheme {
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         invertNumbers();
         multiplyNumbers();
         deleteNumbers();
@@ -56,12 +56,12 @@ public class ArraysTheme {
         System.out.println("\nЗадание 5 Заполнение массива уникальными числами");
         int[] uniqueNumbers = new int[30];
         for (int i = 0; i < uniqueNumbers.length; i++) {
-            randomNumbers[i] = (int) (Math.random() * (40)) + 60;
+            uniqueNumbers[i] = (int) (Math.random() * (40)) + 60;
         }
         System.out.println("\nвывод созданного массива");
         printArray(uniqueNumbers);
         deleteDuplicates(uniqueNumbers);
-        sortingUp(uniqueNumbers);
+        sort(uniqueNumbers);
         System.out.println("вывод массива по возрастанию без дубликатов");
         printArray(uniqueNumbers);
     }
@@ -79,10 +79,10 @@ public class ArraysTheme {
     }
 
     private static void printArray(double[] inputArray) {
-        double centreCell = inputArray[inputArray.length / 2];
+        double middleCellValue = inputArray[inputArray.length / 2];
         for (double element : inputArray) {
             System.out.printf("%.3f ", element);
-            if (element == centreCell) {
+            if (element == middleCellValue) {
                 System.out.println();
             }
         }
@@ -117,7 +117,7 @@ public class ArraysTheme {
             multiplyNumbers *= inputArray[i];
             System.out.print(inputArray[i] + (i >= inputArray.length - 2 ? " = " : " * "));
         }
-        System.out.println(" = " + multiplyNumbers);
+        System.out.println(multiplyNumbers);
     }
 
     private static void nullificateCells(double[] inputArray) {
@@ -151,7 +151,7 @@ public class ArraysTheme {
         } while (b);
     }
 
-    private static void sortingUp(int[] inputArray) {
+    private static void sort(int[] inputArray) {
         for (int i = inputArray.length - 1; i >= 0; i--) {
             for (int j = 0; j < inputArray.length - 1; j++) {
                 if (inputArray[j] > inputArray[j + 1]) {
