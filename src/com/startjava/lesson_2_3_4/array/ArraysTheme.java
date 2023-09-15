@@ -134,21 +134,21 @@ public class ArraysTheme {
     }
 
     private static void deleteDuplicates(int[] inputArray) {
-        boolean b;
+        boolean isDuplicate;
         do {
-            b = false;
+            isDuplicate = false;
             for (int i = 0; i < inputArray.length; i++) {
                 for (int j = i + 1; j < inputArray.length; j++) {
                     if (inputArray[i] == inputArray[j]) {
-                        b = true;
+                        isDuplicate = true;
                         inputArray[j] = (int) (Math.random() * (40)) + 60;
                     }
                 }
-                if (b) {
+                if (isDuplicate) {
                     break;
                 }
             }
-        } while (b);
+        } while (isDuplicate);
     }
 
     private static void sort(int[] inputArray) {
