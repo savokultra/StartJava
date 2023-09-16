@@ -138,11 +138,8 @@ public class ArraysTheme {
         do {
             isDuplicate = false;
             for (int i = 0; i < inputArray.length; i++) {
-                if (inputArray[i] == 0) {
-                    inputArray[i] = (int) (Math.random() * (40)) + 60;
-                }
                 for (int j = i + 1; j < inputArray.length; j++) {
-                    if (inputArray[j] == 0 || inputArray[j] == inputArray[i]) {
+                    if (inputArray[j] == inputArray[i]) {
                         inputArray[j] = (int) (Math.random() * (40)) + 60;
                         isDuplicate = true;
                     }
