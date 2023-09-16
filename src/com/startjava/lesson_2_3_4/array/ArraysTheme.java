@@ -60,7 +60,7 @@ public class ArraysTheme {
         }
         System.out.println("\nвывод созданного массива");
         printArray(uniqueNumbers);
-        makeUniqueNumber(uniqueNumbers);
+        makeUniqueNumbers(uniqueNumbers);
         sort(uniqueNumbers);
         System.out.println("вывод массива по возрастанию без дубликатов");
         printArray(uniqueNumbers);
@@ -133,7 +133,7 @@ public class ArraysTheme {
         System.out.println("\nКоличество обнуленных ячеек = " + count + "\n");
     }
 
-    private static void makeUniqueNumber(int[] inputArray) {
+    private static void makeUniqueNumbers(int[] inputArray) {
         boolean isDuplicate;
         do {
             isDuplicate = false;
