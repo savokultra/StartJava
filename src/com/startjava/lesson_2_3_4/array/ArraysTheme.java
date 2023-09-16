@@ -58,11 +58,8 @@ public class ArraysTheme {
         for (int i = 0; i < uniqueNumbers.length; i++) {
             uniqueNumbers[i] = (int) (Math.random() * (40)) + 60;
         }
-        System.out.println("\nвывод созданного массива");
-        printArray(uniqueNumbers);
         makeUniqueNumbers(uniqueNumbers);
         sort(uniqueNumbers);
-        System.out.println("вывод массива по возрастанию без дубликатов");
         printArray(uniqueNumbers);
     }
 
