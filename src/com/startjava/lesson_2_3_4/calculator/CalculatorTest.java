@@ -8,12 +8,19 @@ public class CalculatorTest {
         Calculator calcTest = new Calculator();
         Scanner sc = new Scanner(System.in);
         String agree;
+        char sign1;
         do {
             System.out.println("Введите выражение ");
             String expressoin = sc.nextLine();
-            String[] elements = expressoin.split(" ");
-            for (String word : elements) {
+            String[] numbers = expressoin.split("[-+*/^]");
+            for (String word : numbers) {
                 System.out.println("word: " + word);
+            }
+            if (expressoin.contains("-")) {
+                sign1 = '-';
+            }
+            if (expressoin.contains("+")) {
+                sign1 = '+';
             }
             System.out.println("Введите первое число: ");
             int number = sc.nextInt();
