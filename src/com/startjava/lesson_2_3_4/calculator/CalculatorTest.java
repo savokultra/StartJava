@@ -9,6 +9,12 @@ public class CalculatorTest {
         Scanner sc = new Scanner(System.in);
         String agree;
         do {
+            System.out.println("Введите выражение ");
+            String expressoin = sc.nextLine();
+            String[] elements = expressoin.split(" ");
+            for (String word : elements) {
+                System.out.println("word: " + word);
+            }
             System.out.println("Введите первое число: ");
             int number = sc.nextInt();
             calcTest.setNumber(number);
