@@ -46,11 +46,7 @@ public class Calculator {
                     break;
             }
             System.out.printf("%.0f %c %.0f %s" ,number, sign, number1, " = ");
-            if (result % 1 == 0) {
-                System.out.printf("%.0f%n", result);
-            } else  {
-                System.out.printf("%.3f%n", result);
-            }
+            System.out.printf(result % 1 == 0 ? "%.0f%n" : "%.3f%n", result);
         } else  {
             System.out.println("Ошибка: знак " + sign + " не поддерживается");
         }
