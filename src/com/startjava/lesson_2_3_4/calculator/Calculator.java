@@ -45,7 +45,7 @@ public class Calculator {
                     System.out.println("Что то пошло не так");
                     break;
             }
-            System.out.print(number + " " + sign + " " + number1 + " = " + result);
+            System.out.print(number + " " + sign + " " + number1 + " = ");
             /*f (result % 1 == 0) {
                 System.out.print(result);
             } else  {
