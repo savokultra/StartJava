@@ -2,15 +2,15 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    private int number;
-    private int number1;
+    private double number;
+    private double number1;
     private char sign;
 
-    public void setNumber(int number) {
+    public void setNumber(double number) {
         this.number = number;
     }
 
-    public void setNumber1(int number1) {
+    public void setNumber1(double number1) {
         this.number1 = number1;
     }
 
@@ -45,12 +45,12 @@ public class Calculator {
                     System.out.println("Что то пошло не так");
                     break;
             }
-            System.out.print(number + " " + sign + " " + number1 + " = ");
-            /*f (result % 1 == 0) {
-                System.out.print(result);
+            System.out.printf("%.0f %c %.0f %s" ,number, sign, number1, " = ");
+            if (result % 1 == 0) {
+                System.out.printf("%.0f%n", result);
             } else  {
-                System.out.print(result);
-            }*/
+                System.out.printf("%.3f%n", result);
+            }
         } else  {
             System.out.println("Ошибка: знак " + sign + " не поддерживается");
         }
