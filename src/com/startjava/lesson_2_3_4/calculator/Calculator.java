@@ -19,32 +19,40 @@ public class Calculator {
     }
 
     public void calculate() {
-        int result = 1;
-        switch(sign) {
-            case '+':
-                result = number + number1;
-                break;
-            case '-':
-                result = number - number1;
-                break;
-            case '/':
-                if (number1 != 0) {
-                    result = number / number1;
-                } else {
-                    System.out.println("На 0 делить нельзя!");
-                }
-                break;
-            case '*':
-                result = number * number1;
-                break;
-            case '^':
-                for (int i = 0; i < number1; i++) {
-                result *= number;
-                }
-                break;
-            default:
-                System.out.println("Такая математическая операция не поддерживается");
+        double result = 1;
+        if (sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '^') {
+            switch(sign) {
+                case '+':
+                    result = number + number1;
+                    break;
+                case '-':
+                    result = number - number1;
+                    break;
+                case '/':
+                    if (number1 != 0) {
+                        result = number / number1;
+                    } else {
+                        System.out.println("На 0 делить нельзя!");
+                    }
+                    break;
+                case '*':
+                    result = number * number1;
+                    break;
+                case '^':
+                    result = Math.pow(number, number1);
+                    break;
+                default:
+                    System.out.println("Что то пошло не так");
+                    break;
+            }
+            System.out.print(number + " " + sign + " " + number1 + " = " + result);
+            /*f (result % 1 == 0) {
+                System.out.print(result);
+            } else  {
+                System.out.print(result);
+            }*/
+        } else  {
+            System.out.println("Ошибка: знак " + sign + " не поддерживается");
         }
-        System.out.println(number + " " + sign + " " + number1 + " = " + result);
     }
 }

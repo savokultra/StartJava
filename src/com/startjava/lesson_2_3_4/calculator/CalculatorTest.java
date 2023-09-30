@@ -8,33 +8,16 @@ public class CalculatorTest {
         Calculator calcTest = new Calculator();
         Scanner sc = new Scanner(System.in);
         String agree;
-        char sign1;
         do {
             System.out.println("Введите выражение ");
-            String expressoin = sc.nextLine();
-            String[] numbers = expressoin.split("[-+*/^]");
-            for (String word : numbers) {
-                System.out.println("word: " + word);
-            }
-            if (expressoin.contains("-")) {
-                sign1 = '-';
-            }
-            if (expressoin.contains("+")) {
-                sign1 = '+';
-            }
-            System.out.println("Введите первое число: ");
-            int number = sc.nextInt();
-            calcTest.setNumber(number);
-            System.out.println("Введите знак математической операции: + - * / ^ ");
-            char sign = sc.next().charAt(0);
-            calcTest.setSign(sign);
-            System.out.println("Введите второе число: ");
-            int number1 = sc.nextInt();
-            calcTest.setNumber1(number1);
+            String expression = sc.nextLine();
+            String[] numbers = expression.split(" ");
+            calcTest.setNumber(Integer.parseInt(numbers[0]));
+            calcTest.setSign(numbers[1].charAt(0));
+            calcTest.setNumber1(Integer.parseInt(numbers[2]));
             calcTest.calculate();
             do {
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");
-                sc.nextLine();
                 agree = sc.nextLine();
             } while (!agree.equals("yes") && !agree.equals("no"));
         } while (agree.equals("yes"));
