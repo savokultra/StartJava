@@ -11,10 +11,7 @@ public class CalculatorTest {
         do {
             System.out.println("Введите выражение ");
             String expression = sc.nextLine();
-            String[] numbers = expression.split(" ");
-            calcTest.setNumber(Integer.parseInt(numbers[0]));
-            calcTest.setSign(numbers[1].charAt(0));
-            calcTest.setNumber1(Integer.parseInt(numbers[2]));
+            calcTest.setExpression(expression);
             calcTest.calculate();
             do {
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");

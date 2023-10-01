@@ -2,9 +2,14 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
+    private String expression;
     private double number;
     private double number1;
     private char sign;
+
+    public void setExpression(String expression) {
+        this.expression = expression;
+    }
 
     public void setNumber(double number) {
         this.number = number;
@@ -19,7 +24,11 @@ public class Calculator {
     }
 
     public void calculate() {
-        double result = 1;
+        String[] numbers = expression.split(" ");
+        setNumber(Integer.parseInt(numbers[0]));
+        setSign(numbers[1].charAt(0));
+        setNumber1(Integer.parseInt(numbers[2]));
+        double result = 0;
         if (sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '^') {
             switch(sign) {
                 case '+':
@@ -45,7 +54,7 @@ public class Calculator {
                     System.out.println("Что то пошло не так");
                     break;
             }
-            System.out.printf("%.0f %c %.0f %s" ,number, sign, number1, " = ");
+            System.out.printf("%.0f %c %.0f %s" ,number, sign, number1, "= ");
             System.out.printf(result % 1 == 0 ? "%.0f%n" : "%.3f%n", result);
         } else  {
             System.out.println("Ошибка: знак " + sign + " не поддерживается");
