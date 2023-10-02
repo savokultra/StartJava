@@ -49,7 +49,7 @@ public class Calculator {
                 result = Math.pow(number, number1);
                 break;
             default:
-                System.out.println("Что то пошло не так");
+                System.out.println("Ошибка: знак " + sign + " не поддерживается");
                 break;
         }
         System.out.printf("%.0f %c %.0f %s" ,number, sign, number1, "= ");
