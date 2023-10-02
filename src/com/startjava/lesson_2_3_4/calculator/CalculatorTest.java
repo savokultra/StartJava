@@ -13,6 +13,7 @@ public class CalculatorTest {
                 System.out.println("Введите выражение ");
                 String expression = sc.nextLine();
                 calcTest.calculate(expression);
+                System.out.printf(calcTest.getResult() % 1 == 0 ? "%.0f%n" : "%.3f%n", calcTest.getResult());
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
             agree = sc.nextLine();
