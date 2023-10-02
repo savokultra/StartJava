@@ -12,8 +12,7 @@ public class CalculatorTest {
             if (agree.equals("yes")) {
                 System.out.println("Введите выражение ");
                 String expression = sc.nextLine();
-                calcTest.setExpression(expression);
-                calcTest.calculate();
+                calcTest.calculate(expression);
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
             agree = sc.nextLine();
