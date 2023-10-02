@@ -7,7 +7,7 @@ public class Calculator {
         double number = Integer.parseInt(elements[0]);
         char sign = elements[1].charAt(0);
         double number1 = Integer.parseInt(elements[2]);
-        double result = 1;
+        double result = 0;
         switch(sign) {
             case '+':
                 result = number + number1;
@@ -30,7 +30,7 @@ public class Calculator {
                 break;
             default:
                 result = Double.MIN_VALUE;
-                System.out.print("Ошибка: знак " + sign + " не поддерживается");
+                System.out.println("Ошибка: знак " + sign + " не поддерживается");
                 break;
         }
         return result;
