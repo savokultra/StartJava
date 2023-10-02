@@ -2,7 +2,6 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    private String expression;
     private double number;
     private double number1;
     private char sign;
