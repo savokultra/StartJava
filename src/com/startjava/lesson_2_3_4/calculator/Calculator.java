@@ -23,7 +23,7 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public void calculate() {
+    public void calculate(String expression) {
         String[] numbers = expression.split(" ");
         setNumber(Integer.parseInt(numbers[0]));
         setSign(numbers[1].charAt(0));
