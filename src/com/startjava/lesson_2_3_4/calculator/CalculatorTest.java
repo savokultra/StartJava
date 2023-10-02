@@ -12,10 +12,10 @@ public class CalculatorTest {
             if (agree.equals("yes")) {
                 System.out.println("Введите выражение ");
                 String expression = sc.nextLine();
-                if (calcTest.calculate(expression) != Double.MIN_VALUE) {
+                double result = calcTest.calculate(expression);
+                if (result != Double.MIN_VALUE) {
                     System.out.print(expression + " = ");
-                    System.out.printf(calcTest.calculate(expression) % 1 == 0 ? "%.0f%n" : "%.3f%n",
-                            calcTest.calculate(expression));
+                    System.out.printf(result % 1 == 0 ? "%.0f%n" : "%.3f%n", result);
                 }
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
