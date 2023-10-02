@@ -7,10 +7,6 @@ public class Calculator {
     private double number1;
     private char sign;
 
-    public void setExpression(String expression) {
-        this.expression = expression;
-    }
-
     public void setNumber(double number) {
         this.number = number;
     }
