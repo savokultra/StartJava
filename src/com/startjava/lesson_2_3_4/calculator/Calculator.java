@@ -4,35 +4,28 @@ public class Calculator {
 
     public double calculate(String expression) {
         String[] elements = expression.split(" ");
-        double number = Integer.parseInt(elements[0]);
+        double a = Integer.parseInt(elements[0]);
         char sign = elements[1].charAt(0);
-        double number1 = Integer.parseInt(elements[2]);
+        double b = Integer.parseInt(elements[2]);
         double result = 0;
         switch(sign) {
             case '+':
-                result = number + number1;
-                break;
+                return a + b;
             case '-':
-                result = number - number1;
-                break;
+                return a - b;
             case '/':
-                if (number1 != 0) {
-                    result = number / number1;
+                if (b != 0) {
+                    return a / b;
                 } else {
                     System.out.println("На 0 делить нельзя!");
                 }
-                break;
             case '*':
-                result = number * number1;
-                break;
+                return a * b;
             case '^':
-                result = Math.pow(number, number1);
-                break;
+                return Math.pow(a, b);
             default:
-                result = Double.MIN_VALUE;
                 System.out.println("Ошибка: знак " + sign + " не поддерживается");
-                break;
+                return Double.MIN_VALUE;
         }
-        return result;
     }
 }
