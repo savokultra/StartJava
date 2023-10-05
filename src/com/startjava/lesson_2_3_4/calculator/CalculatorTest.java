@@ -13,17 +13,17 @@ public class CalculatorTest {
                 System.out.println("Введите выражение ");
                 String expression = sc.nextLine();
                 double result = calcTest.calculate(expression);
-                if (result != Double.MIN_VALUE) {
-                    resultOutput(expression, result);
-                }
+                outputResult(expression, result);
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
             choice = sc.nextLine();
         }
     }
 
-    public static void resultOutput(String expression, double result) {
-        System.out.print(expression + " = ");
-        System.out.printf(result % 1 == 0 ? "%.0f%n" : "%.3f%n", result);
+    public static void outputResult(String expression, double result) {
+        if (result != Double.MIN_VALUE) {
+            System.out.print(expression + " = ");
+            System.out.printf(result % 1 == 0 ? "%.0f%n" : "%.3f%n", result);
+        }
     }
 }
