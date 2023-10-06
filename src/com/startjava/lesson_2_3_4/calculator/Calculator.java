@@ -16,10 +16,9 @@ public class Calculator {
             case '/':
                 if (b != 0) {
                     return a / b;
-                } else {
-                    System.out.println("На 0 делить нельзя!");
-                    return Double.MIN_VALUE;
                 }
+                System.out.println("На 0 делить нельзя!");
+                return Double.MIN_VALUE;
             case '*':
                 return a * b;
             case '^':
