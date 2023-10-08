@@ -7,7 +7,7 @@ public class GuessNumber {
     private Player player1;
     Scanner sc = new Scanner(System.in);
     private int hideNumber;
-    private int attempt = 0;
+    private int attempt = 1;
 
     public GuessNumber(String player, String player1) {
         this.player = new Player(player);
@@ -25,7 +25,7 @@ public class GuessNumber {
                     break;
                 }
                 System.out.println("\nПервый игрок " + player.getName() + " введите число");
-                player.setAttempt(attempt);
+                player.setAttempt(attempt - 1);
                 int number = sc.nextInt();
                 player.setNumber(number);
                 if (player.getNumber() < hideNumber) {
@@ -43,7 +43,7 @@ public class GuessNumber {
                     break;
                 }
                 System.out.println("\nВторой игрок " + player1.getName() + " введите число");
-                player1.setAttempt(attempt);
+                player1.setAttempt(attempt - 1);
                 number = sc.nextInt();
                 player1.setNumber(number);
                 if (player1.getNumber() < hideNumber) {
