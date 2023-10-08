@@ -12,13 +12,7 @@ public class GuessNumber {
     public GuessNumber(String player, String player1) {
         this.player = new Player(player);
         this.player1 = new Player(player1);
-        //newPlayers();
     }
-
-    /*public void newPlayers() {
-        Player player = new Player(playerName);
-        Player player1 = new Player(player1Name);
-    }*/
 
     public void start() {
         do {
