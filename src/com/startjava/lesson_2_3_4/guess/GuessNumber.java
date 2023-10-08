@@ -3,11 +3,11 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Scanner;
 
 public class GuessNumber {
-    Player player;
-    Player player1;
+    private Player player;
+    private Player player1;
     Scanner sc = new Scanner(System.in);
     private int hideNumber;
-    int attempt = 0;
+    private int attempt = 0;
 
     public GuessNumber(String player, String player1) {
         this.player = new Player(player);
