@@ -2,7 +2,7 @@ package com.startjava.lesson_2_3_4.guess;
 
 public class Player {
     private String name;
-    private int[] number = new int[10];
+    private int[] numbers = new int[10];
     private int attempt;
 
     public Player(String name) {
@@ -14,11 +14,11 @@ public class Player {
     }
 
     public int getNumber() {
-        return this.number[attempt];
+        return numbers[attempt];
     }
 
     public void setNumber(int number) {
-        this.number[attempt] = number;
+        numbers[attempt] = number;
     }
 
     public void setAttempt(int attempt) {

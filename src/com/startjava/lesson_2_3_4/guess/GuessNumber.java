@@ -17,8 +17,13 @@ public class GuessNumber {
     public void start() {
         do {
             generateHiddenNumber();
+            System.out.println("Игра началась! У каждого игрока по 10 попыток.");
             do {
                 System.out.println("\nПодсказка, искомое число = " + hideNumber);
+                if (attempt > 10) {
+                    System.out.println("У " + player.getName() + " закончились попытки");
+                    break;
+                }
                 System.out.println("\nПервый игрок " + player.getName() + " введите число");
                 player.setAttempt(attempt);
                 int number = sc.nextInt();
@@ -33,6 +38,10 @@ public class GuessNumber {
                     break;
                 }
 
+                if (attempt > 10) {
+                    System.out.println("У " + player1.getName() + " закончились попытки");
+                    break;
+                }
                 System.out.println("\nВторой игрок " + player1.getName() + " введите число");
                 player1.setAttempt(attempt);
                 number = sc.nextInt();
@@ -48,7 +57,7 @@ public class GuessNumber {
                 }
                 attempt++;
             } while (true);
-        } while (player.getNumber() != hideNumber && player1.getNumber() != hideNumber);
+        } while (player.getNumber() != hideNumber && player1.getNumber() != hideNumber && attempt < 11);
     }
 
     private void generateHiddenNumber() {
