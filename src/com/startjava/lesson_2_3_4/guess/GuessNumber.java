@@ -9,10 +9,16 @@ public class GuessNumber {
     private int hideNumber;
     int attempt = 0;
 
-    public GuessNumber(Player player, Player player1) {
-        this.player = player;
-        this.player1 = player1;
+    public GuessNumber(String player, String player1) {
+        this.player = new Player(player);
+        this.player1 = new Player(player1);
+        //newPlayers();
     }
+
+    /*public void newPlayers() {
+        Player player = new Player(playerName);
+        Player player1 = new Player(player1Name);
+    }*/
 
     public void start() {
         do {

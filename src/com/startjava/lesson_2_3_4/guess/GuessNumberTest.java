@@ -8,11 +8,12 @@ public class GuessNumberTest {
         String answer;
         System.out.println("Введите имя первого игрока: ");
         Scanner sc = new Scanner(System.in);
-        Player player = new Player(sc.nextLine());
+        String player = sc.nextLine();
+        //Player player = new Player(sc.nextLine());
 
         System.out.println("\nВведите имя второго игрока: ");
-        Player player1 = new Player(sc.nextLine());
-
+        String player1 = sc.nextLine();
+        //Player player1 = new Player(sc.nextLine());
         GuessNumber players = new GuessNumber(player, player1);
 
         do {
