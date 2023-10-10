@@ -41,22 +41,27 @@ public class GuessNumber {
                     }
                 }
                 
-                System.out.println("\nВторой игрок " + player1.getName() + " введите число");
-                player1.setAttempt(player1Attempt - 1);
-                int number = sc.nextInt();
-                player1.setNumber(number);
-                if (player1.getNumber() < hideNumber) {
-                    System.out.println("\nЧисло " + player1.getNumber() + " меньше загаданного компьютером");
-                } else if (player1.getNumber() > hideNumber) {
-                    System.out.println("\nЧисло " + player1.getNumber() + " больше загаданного компьютером");
-                } else {
-                    System.out.println("\nВы победили!\nЧисло " + player1.getNumber() + " совпадает с" +
-                            " загаданным");
-                    break;
+                if (playerAttempt < 3) {
+                    System.out.println("\nВторой игрок " + player1.getName() + " введите число");
+                    player1.setAttempt(player1Attempt - 1);
+                    player1Attempt++;
+                    int number = sc.nextInt();
+                    player1.setNumber(number);
+                    if (player1.getNumber() < hideNumber) {
+                        System.out.println("\nЧисло " + player1.getNumber() + " меньше загаданного компьютером");
+                    } else if (player1.getNumber() > hideNumber) {
+                        System.out.println("\nЧисло " + player1.getNumber() + " больше загаданного компьютером");
+                    } else {
+                        System.out.println("\nВы победили!\nЧисло " + player1.getNumber() + " совпадает с" +
+                                " загаданным");
+                        break;
+                    }
+                    if (player1Attempt > 2) {
+                        System.out.println("У " + player.getName() + " закончились попытки");
+                    }
                 }
-                player1Attempt++;
             } while (true);
-        } while (player.getNumber() != hideNumber && player1.getNumber() != hideNumber && player1Attempt < 11);
+        } while (player.getNumber() != hideNumber && player1.getNumber() != hideNumber);
     }
 
     private void generateHiddenNumber() {
