@@ -58,10 +58,6 @@ public class GuessNumber {
                         System.out.println("У " + player1.getName() + " закончились попытки");
                     }
                 }
-                
-                if (playerAttempt > 2 || player1Attempt > 2) {
-                    break;
-                }
             } while (playerAttempt < 3 || player1Attempt < 3);
         } while ((player.getNumber() != hideNumber && player1.getNumber() != hideNumber) && (playerAttempt < 3 || player1Attempt < 3));
     }
