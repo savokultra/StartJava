@@ -22,6 +22,7 @@ public class GuessNumber {
             System.out.println("Игра началась! У каждого игрока по 10 попыток.");
             game();
         } while (player.getNumber() != hideNumber && player1.getNumber() != hideNumber && (playerAttempt < 10 || player1Attempt < 10));
+        returnArray();
     }
 
     private void generateHiddenNumber() {
@@ -71,5 +72,26 @@ public class GuessNumber {
                 }
             }
         } while (playerAttempt < 10 || player1Attempt < 10);
+    }
+
+    private void returnArray() {
+        int arrayCopy[] = new int[10];
+        System.out.print("\nplayer назвал числа ");
+        for (int i = 0; i < arrayCopy.length; i++) {
+            player.setAttempt(i);
+            arrayCopy[i] = player.getNumber();
+            if (arrayCopy[i] != 0) {
+                System.out.printf("%d ", arrayCopy[i]);
+            }
+        }
+        int array1Copy[] = new int[10];
+        System.out.print("\nplayer1 назвал числа ");
+        for (int i = 0; i < array1Copy.length; i++) {
+            player1.setAttempt(i);
+            array1Copy[i] = player1.getNumber();
+            if (array1Copy[i] != 0) {
+                System.out.printf("%d ", array1Copy[i]);
+            }
+        }
     }
 }
