@@ -1,7 +1,5 @@
 package com.startjava.lesson_2_3_4.guess;
 
-import java.util.Scanner;
-
 public class GuessNumber {
     private Player player;
     private Player player1;
@@ -57,15 +55,15 @@ public class GuessNumber {
                         break;
                     }
                     if (player1Attempt > 2) {
-                        System.out.println("У " + player.getName() + " закончились попытки");
+                        System.out.println("У " + player1.getName() + " закончились попытки");
                     }
                 }
                 
                 if (playerAttempt > 2 || player1Attempt > 2) {
                     break;
                 }
-            } while (true);
-        } while ((player.getNumber() != hideNumber && player1.getNumber() != hideNumber) && (playerAttempt > 2 || player1Attempt > 2));
+            } while (playerAttempt < 3 || player1Attempt < 3);
+        } while ((player.getNumber() != hideNumber && player1.getNumber() != hideNumber) && (playerAttempt < 3 || player1Attempt < 3));
     }
 
     private void generateHiddenNumber() {
