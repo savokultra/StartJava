@@ -41,7 +41,7 @@ public class GuessNumber {
                     }
                 }
                 
-                if (playerAttempt < 3) {
+                if (player1Attempt < 3) {
                     System.out.println("\nВторой игрок " + player1.getName() + " введите число");
                     player1.setAttempt(player1Attempt - 1);
                     player1Attempt++;
@@ -60,8 +60,12 @@ public class GuessNumber {
                         System.out.println("У " + player.getName() + " закончились попытки");
                     }
                 }
+                
+                if (playerAttempt > 2 || player1Attempt > 2) {
+                    break;
+                }
             } while (true);
-        } while (player.getNumber() != hideNumber && player1.getNumber() != hideNumber);
+        } while ((player.getNumber() != hideNumber && player1.getNumber() != hideNumber) && (playerAttempt > 2 || player1Attempt > 2));
     }
 
     private void generateHiddenNumber() {
