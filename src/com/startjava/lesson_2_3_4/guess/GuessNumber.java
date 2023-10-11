@@ -1,6 +1,5 @@
-package com.startjava.lesson_2_3_4.guess;
-
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class GuessNumber {
     private Player player;
@@ -71,8 +70,9 @@ public class GuessNumber {
                     System.out.println("У " + player1.getName() + " закончились попытки");
                 }
             }
-        System.out.println("getNumbers(): " + player.getNumbers());
+            System.out.println("getNumbers(): " + Arrays.toString(player.getNumbers()) );
         } while (playerAttempt < 10 || player1Attempt < 10);
+        System.out.println("getNumbers(): " + player.getNumbers());
     }
 
     private void returnArray() {
