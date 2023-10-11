@@ -71,6 +71,7 @@ public class GuessNumber {
                     System.out.println("У " + player1.getName() + " закончились попытки");
                 }
             }
+        System.out.println("getNumbers(): " + player.getNumbers());
         } while (playerAttempt < 10 || player1Attempt < 10);
     }
 
