@@ -24,4 +24,9 @@ public class Player {
     public void setAttempt(int attempt) {
         this.attempt = attempt;
     }
+
+    public int[] getNumbers() {
+    int[] destArray = Arrays.copyOf(numbers, numbers.length);
+    return destArray;
+    }
 }
