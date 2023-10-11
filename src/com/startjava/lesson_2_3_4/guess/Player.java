@@ -1,7 +1,5 @@
 package com.startjava.lesson_2_3_4.guess;
 
-import java.util.Arrays;
-
 public class Player {
     private String name;
     private int[] numbers = new int[10];
@@ -26,8 +24,12 @@ public class Player {
     public void setAttempt(int attempt) {
         this.attempt = attempt;
     }
-    public int[] getNumbers() {
-        int[] destArray = Arrays.copyOf(numbers, numbers.length);
-        return destArray;
+    
+    public void getNumbers() {
+        for (int x : numbers) {
+            if (x != 0) {
+                System.out.printf("%d ", x);
+            }
+        }
     }
 }
