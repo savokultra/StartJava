@@ -27,7 +27,7 @@ public class Player {
     
     public void getNumbers() {
         for (int x : numbers) {
-            System.out.print(x !=0 ? x + " ": "");
+            System.out.print(x != 0 ? x + " " : "");
         }
     }
 }
