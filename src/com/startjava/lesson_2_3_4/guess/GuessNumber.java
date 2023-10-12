@@ -22,7 +22,11 @@ public class GuessNumber {
             System.out.println("Игра началась! У каждого игрока по 10 попыток.");
             game();
         } while (player.getNumber() != hideNumber && player1.getNumber() != hideNumber && (playerAttempt < 10 || player1Attempt < 10));
-        //returnArray();
+    }
+
+    public void arraysFill() {
+        player.arraysFill();
+        player1.arraysFill();
     }
 
     private void generateHiddenNumber() {
