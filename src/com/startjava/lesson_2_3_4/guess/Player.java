@@ -27,9 +27,7 @@ public class Player {
     
     public void getNumbers() {
         for (int x : numbers) {
-            if (x != 0) {
-                System.out.printf("%d %s", x, name);
-            }
+            System.out.print(x !=0 ? x + " ": "");
         }
     }
 }
