@@ -30,7 +30,7 @@ public class Player {
     
     public void getNumbers() {
         int[] numbersCopy;
-        numbersCopy = Arrays.copyOf(numbers, numbers.length);
+        numbersCopy = Arrays.copyOf(numbers, attempt);
         for (int x : numbersCopy) {
             System.out.print(x != 0 ? x + " " : "");
         }
