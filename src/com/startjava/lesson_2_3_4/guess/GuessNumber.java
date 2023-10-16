@@ -77,5 +77,6 @@ public class GuessNumber {
             }
         } while (playerAttempt < 10 || player1Attempt < 10);
         player.getNumbers();
+        player1.getNumbers();
     }
 }
