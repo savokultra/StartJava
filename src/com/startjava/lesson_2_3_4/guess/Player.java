@@ -27,7 +27,7 @@ public class Player {
         this.attempt = attempt;
     }
     
-    public void getAttempt() {
+    public void getAttempts() {
         int[] numbersCopy;
         numbersCopy = Arrays.copyOf(numbers, attempt + 1);
         System.out.print("\nПопытки игрока " + name);

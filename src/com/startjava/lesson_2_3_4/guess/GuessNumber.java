@@ -78,8 +78,8 @@ public class GuessNumber {
                 }
             }
         } while (playerAttempt < 10 || player1Attempt < 10);
-        player.getAttempt();
-        player1.getAttempt();
+        player.getAttempts();
+        player1.getAttempts();
     }
 
     private boolean checkCondition() {
