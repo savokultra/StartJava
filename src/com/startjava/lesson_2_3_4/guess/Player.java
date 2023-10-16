@@ -37,6 +37,6 @@ public class Player {
     }
 
     public void arraysFill() {
-        Arrays.fill(numbers, 0);
+        Arrays.fill(numbers, 0, attempt + 1, 0);
     }
 }
