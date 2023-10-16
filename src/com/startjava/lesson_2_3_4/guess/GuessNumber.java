@@ -83,11 +83,9 @@ public class GuessNumber {
     }
 
     private boolean checkCondition() {
-        boolean b = true;
         if (player.getNumber() != hideNumber && player1.getNumber() != hideNumber && (playerAttempt < 10 ||
                 player1Attempt < 10)); {
-            b = false;
         }
-        return b;
+        return false;
     }
 }
