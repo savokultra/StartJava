@@ -20,7 +20,7 @@ public class GuessNumber {
         do {
             generateHiddenNumber();
             game();
-        } while (condition());
+        } while (checkCondition());
     }
 
     public void arraysReset() {
@@ -32,15 +32,6 @@ public class GuessNumber {
         hideNumber = 1 + (int) (Math.random() * 100);
     }
 
-   private boolean condition() {
-        boolean b = true;
-        if (player.getNumber() != hideNumber && player1.getNumber() != hideNumber && (playerAttempt < 10 ||
-                player1Attempt < 10)); {
-            b = false;
-        }
-        return b;
-    }
-
     private void game() {
         System.out.println("Игра началась! У каждого игрока по 10 попыток.");
         playerAttempt = 0;
@@ -49,7 +40,7 @@ public class GuessNumber {
             System.out.println("\nПодсказка, искомое число = " + hideNumber);
             if (playerAttempt < 10) {
                 System.out.println("\nПервый игрок " + player.getName() + " введите число");
-                player.setAttempt(playerAttempt);
+                player.setAttemptNumber(playerAttempt);
                 playerAttempt++;
                 int number = sc.nextInt();
                 player.setNumber(number);
@@ -69,7 +60,7 @@ public class GuessNumber {
                 
             if (player1Attempt < 10) {
                 System.out.println("\nВторой игрок " + player1.getName() + " введите число");
-                player1.setAttempt(player1Attempt);
+                player1.setAttemptNumber(player1Attempt);
                 player1Attempt++;
                 int number = sc.nextInt();
                 player1.setNumber(number);
@@ -87,7 +78,16 @@ public class GuessNumber {
                 }
             }
         } while (playerAttempt < 10 || player1Attempt < 10);
-        player.getNumbers();
-        player1.getNumbers();
+        player.getAttempt();
+        player1.getAttempt();
+    }
+
+    private boolean checkCondition() {
+        boolean b = true;
+        if (player.getNumber() != hideNumber && player1.getNumber() != hideNumber && (playerAttempt < 10 ||
+                player1Attempt < 10)); {
+            b = false;
+        }
+        return b;
     }
 }

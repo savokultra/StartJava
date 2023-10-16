@@ -23,11 +23,11 @@ public class Player {
         numbers[attempt] = number;
     }
 
-    public void setAttempt(int attempt) {
+    public void setAttemptNumber(int attempt) {
         this.attempt = attempt;
     }
     
-    public void getNumbers() {
+    public void getAttempt() {
         int[] numbersCopy;
         numbersCopy = Arrays.copyOf(numbers, attempt + 1);
         System.out.print("\nПопытки игрока " + name);
