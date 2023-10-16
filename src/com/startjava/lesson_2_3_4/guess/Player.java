@@ -2,26 +2,41 @@ package com.startjava.lesson_2_3_4.guess;
 
 import java.util.Arrays;
 
-public class GuessNumberTest {
+public class Player {
+    private String name;
+    private int[] numbers = new int[10];
+    private int attempt;
 
-    public static void main(String[] args) {
-        
-        System.out.println("Введите имя первого игрока: ");
-        Scanner sc = new Scanner(System.in);
-        String player = sc.nextLine();
-        String answer = "";
-        System.out.println("\nВведите имя второго игрока: ");
-        String player1 = sc.nextLine();
-        GuessNumber players = new GuessNumber(player, player1);
+    public Player(String name) {
+        this.name = name;
+    }
 
-        do {
-            answer = "";
-            players.start();
-            if (!answer.equals("yes") && !answer.equals("no")) {
-                System.out.println("\nХотите продолжить игру [yes/no]:");
-                answer = sc.nextLine();
-            }
-            players.arraysFill();
-        } while (answer.equals("yes"));
+    public String getName() {
+        return name;
+    }
+
+    public int getNumber() {
+        return numbers[attempt];
+    }
+
+    public void setNumber(int number) {
+        numbers[attempt] = number;
+    }
+
+    public void setAttempt(int attempt) {
+        this.attempt = attempt;
+    }
+    
+    public void getNumbers() {
+        int[] numbersCopy;
+        numbersCopy = Arrays.copyOf(numbers, attempt + 1);
+        System.out.print("\nПопытки игрока " + name);
+        for (int x : numbersCopy) {
+            System.out.print(" " + x);
+        }
+    }
+
+    public void arraysFill() {
+        Arrays.fill(numbers, 0, attempt + 1, 0);
     }
 }
