@@ -19,21 +19,30 @@ public class GuessNumber {
     public void start() {
         do {
             generateHiddenNumber();
-            System.out.println("Игра началась! У каждого игрока по 10 попыток.");
             game();
-        } while (player.getNumber() != hideNumber && player1.getNumber() != hideNumber && (playerAttempt < 10 || player1Attempt < 10));
+        } while (condition());
     }
 
-    public void arraysFill() {
-        player.arraysFill();
-        player1.arraysFill();
+    public void arraysReset() {
+        player.arrayReset();
+        player1.arrayReset();
     }
 
     private void generateHiddenNumber() {
         hideNumber = 1 + (int) (Math.random() * 100);
     }
-    
+
+   private boolean condition() {
+        boolean b = true;
+        if (player.getNumber() != hideNumber && player1.getNumber() != hideNumber && (playerAttempt < 10 ||
+                player1Attempt < 10)); {
+            b = false;
+        }
+        return b;
+    }
+
     private void game() {
+        System.out.println("Игра началась! У каждого игрока по 10 попыток.");
         playerAttempt = 0;
         player1Attempt = 0;
         do {
@@ -49,7 +58,8 @@ public class GuessNumber {
                 } else if (player.getNumber() > hideNumber) {
                     System.out.println("\nЧисло " + player.getNumber() + " больше загаданного компьютером");
                 } else {
-                    System.out.println("\nИгрок " + player.getName() + " угадал число " + player.getNumber() + " с " + playerAttempt + " попытки");
+                    System.out.println("\nИгрок " + player.getName() + " угадал число " + player.getNumber() + " с " +
+                            playerAttempt + " попытки");
                     break;
                 }
                 if (playerAttempt > 9) {
@@ -68,7 +78,8 @@ public class GuessNumber {
                 } else if (player1.getNumber() > hideNumber) {
                     System.out.println("\nЧисло " + player1.getNumber() + " больше загаданного компьютером");
                 } else {
-                    System.out.println("\nИгрок " + player1.getName() + " угадал число " + player1.getNumber() + " с " + player1Attempt + " попытки");
+                    System.out.println("\nИгрок " + player1.getName() + " угадал число " + player1.getNumber() + " с " +
+                            player1Attempt + " попытки");
                     break;
                 }
                 if (player1Attempt > 9) {

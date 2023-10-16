@@ -17,7 +17,7 @@ public class GuessNumberTest {
         do {
             if (answer.equals("yes")) {
                 players.start();
-                players.arraysFill();
+                players.arraysReset();
             }
             System.out.println("\nХотите продолжить игру [yes/no]:");
             answer = sc.nextLine();
