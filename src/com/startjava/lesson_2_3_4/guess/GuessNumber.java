@@ -78,7 +78,7 @@ public class GuessNumber {
                 }
             }
         } while (playerAttempt < 10 || player1Attempt < 10);
-        getPlayerNumbers();
+        showPlayerNumbers();
     }
 
     private boolean checkCondition() {
@@ -88,15 +88,16 @@ public class GuessNumber {
         return false;
     }
 
-    private void getPlayerNumbers() {
-        int[] newArray = player.getAllNumbers();
-        for (int x : newArray) {
-            System.out.print(x + " ");
+    private void getPlayerNumbers(int[] inputArray) {
+        for (int element : inputArray) {
+            System.out.printf("%s ", element);
         }
-        System.out.println();
-        newArray = player1.getAllNumbers();
-        for (int x : newArray) {
-            System.out.print(x + " ");
-        }
+    }
+
+    private void showPlayerNumbers() {
+        System.out.print("\nИгрок " + player.getName() + " загадал числа: ");
+        getPlayerNumbers(player.getAllNumbers());
+        System.out.print("\nИгрок " + player1.getName() + " загадал числа: ");
+        getPlayerNumbers(player1.getAllNumbers());
     }
 }
