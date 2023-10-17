@@ -16,20 +16,20 @@ public class Player {
     }
 
     public int getNumber() {
-        return numbers[attempt];
+        return numbers[attempt - 1];
     }
 
-    public void setNumber(int number) {
+    public void addNumber(int number) {
         numbers[attempt] = number;
     }
 
-    public void setAttemptNumber(int attempt) {
-        this.attempt = attempt;
+    public void setAttemptNumber() {
+        attempt++;
     }
     
     public void getAttempts() {
         int[] numbersCopy;
-        numbersCopy = Arrays.copyOf(numbers, attempt + 1);
+        numbersCopy = Arrays.copyOf(numbers, attempt);
         System.out.print("\nПопытки игрока " + name);
         for (int x : numbersCopy) {
             System.out.print(" " + x);
@@ -37,6 +37,7 @@ public class Player {
     }
 
     public void arrayReset() {
-        Arrays.fill(numbers, 0, attempt + 1, 0);
+        Arrays.fill(numbers, 0, attempt, 0);
+        attempt = 0;
     }
 }

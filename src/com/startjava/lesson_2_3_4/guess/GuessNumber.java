@@ -9,7 +9,6 @@ public class GuessNumber {
     private int playerAttempt;
     private int player1Attempt;
     Scanner sc = new Scanner(System.in);
-    
 
     public GuessNumber(String player, String player1) {
         this.player = new Player(player);
@@ -40,10 +39,10 @@ public class GuessNumber {
             System.out.println("\nПодсказка, искомое число = " + hideNumber);
             if (playerAttempt < 10) {
                 System.out.println("\nПервый игрок " + player.getName() + " введите число");
-                player.setAttemptNumber(playerAttempt);
-                playerAttempt++;
                 int number = sc.nextInt();
-                player.setNumber(number);
+                player.addNumber(number);
+                playerAttempt++;
+                player.setAttemptNumber();
                 if (player.getNumber() < hideNumber) {
                     System.out.println("\nЧисло " + player.getNumber() + " меньше загаданного компьютером");
                 } else if (player.getNumber() > hideNumber) {
@@ -60,10 +59,10 @@ public class GuessNumber {
                 
             if (player1Attempt < 10) {
                 System.out.println("\nВторой игрок " + player1.getName() + " введите число");
-                player1.setAttemptNumber(player1Attempt);
-                player1Attempt++;
                 int number = sc.nextInt();
-                player1.setNumber(number);
+                player1.addNumber(number);
+                player1Attempt++;
+                player1.setAttemptNumber();
                 if (player1.getNumber() < hideNumber) {
                     System.out.println("\nЧисло " + player1.getNumber() + " меньше загаданного компьютером");
                 } else if (player1.getNumber() > hideNumber) {
