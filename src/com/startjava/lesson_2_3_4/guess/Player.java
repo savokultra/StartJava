@@ -28,8 +28,7 @@ public class Player {
     }
     
     public int[] getAllNumbers() {
-        int[] numbersCopy = Arrays.copyOf(numbers, attempt);
-        return numbersCopy;
+        return Arrays.copyOf(numbers, attempt);
     }
 
     public void clear() {
