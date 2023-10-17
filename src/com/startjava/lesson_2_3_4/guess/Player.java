@@ -27,16 +27,12 @@ public class Player {
         attempt++;
     }
     
-    public void getAttempts() {
-        int[] numbersCopy;
-        numbersCopy = Arrays.copyOf(numbers, attempt);
-        System.out.print("\nПопытки игрока " + name);
-        for (int x : numbersCopy) {
-            System.out.print(" " + x);
-        }
+    public int[] getAllNumbers() {
+        int[] numbersCopy = Arrays.copyOf(numbers, attempt);
+        return numbersCopy;
     }
 
-    public void arrayReset() {
+    public void clear() {
         Arrays.fill(numbers, 0, attempt, 0);
         attempt = 0;
     }

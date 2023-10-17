@@ -1,6 +1,7 @@
 package com.startjava.lesson_2_3_4.guess;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class GuessNumber {
     private Player player;
@@ -23,8 +24,8 @@ public class GuessNumber {
     }
 
     public void arraysReset() {
-        player.arrayReset();
-        player1.arrayReset();
+        player.clear();
+        player1.clear();
     }
 
     private void generateHiddenNumber() {
@@ -77,8 +78,7 @@ public class GuessNumber {
                 }
             }
         } while (playerAttempt < 10 || player1Attempt < 10);
-        player.getAttempts();
-        player1.getAttempts();
+        getPlayerNumbers();
     }
 
     private boolean checkCondition() {
@@ -86,5 +86,17 @@ public class GuessNumber {
                 player1Attempt < 10)); {
         }
         return false;
+    }
+
+    private void getPlayerNumbers() {
+        int[] newArray = player.getAllNumbers();
+        for (int x : newArray) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+        newArray = player1.getAllNumbers();
+        for (int x : newArray) {
+            System.out.print(x + " ");
+        }
     }
 }
