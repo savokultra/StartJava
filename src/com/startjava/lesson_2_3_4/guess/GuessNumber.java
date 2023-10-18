@@ -20,13 +20,7 @@ public class GuessNumber {
             generateHiddenNumber();
             game();
         } while (checkCondition());
-        player.clear();
-        player1.clear();
-    }
-
-    public void arraysReset() {
-        player.clear();
-        player1.clear();
+        arraysReset();
     }
 
     private void generateHiddenNumber() {
@@ -100,5 +94,10 @@ public class GuessNumber {
         getPlayerNumbers(player.getAllNumbers());
         System.out.print("\nИгрок " + player1.getName() + " загадал числа: ");
         getPlayerNumbers(player1.getAllNumbers());
+    }
+    
+    private void arraysReset() {
+        player.clear();
+        player1.clear();
     }
 }
