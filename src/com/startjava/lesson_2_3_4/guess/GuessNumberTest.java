@@ -8,16 +8,15 @@ public class GuessNumberTest {
         String answer = "yes";
         System.out.println("Введите имя первого игрока: ");
         Scanner sc = new Scanner(System.in);
-        String player = sc.nextLine();
+        String name1 = sc.nextLine();
 
         System.out.println("\nВведите имя второго игрока: ");
-        String player1 = sc.nextLine();
-        GuessNumber players = new GuessNumber(player, player1);
+        String name2 = sc.nextLine();
+        GuessNumber game = new GuessNumber(name1, name2);
 
         do {
             if (answer.equals("yes")) {
-                players.start();
-                players.arraysReset();
+                game.start();
             }
             System.out.println("\nХотите продолжить игру [yes/no]:");
             answer = sc.nextLine();
