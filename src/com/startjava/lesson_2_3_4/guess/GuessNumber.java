@@ -16,7 +16,7 @@ public class GuessNumber {
     public void start() {
         do {
             generateHiddenNumber();
-            game();
+            playGame();
         } while (checkCondition());
         arraysReset();
     }
@@ -25,7 +25,7 @@ public class GuessNumber {
         hiddenNumber = 1 + (int) (Math.random() * 100);
     }
 
-    private void game() {
+    private void playGame() {
         System.out.println("Игра началась! У каждого игрока по 10 попыток.");
         do {
             System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
