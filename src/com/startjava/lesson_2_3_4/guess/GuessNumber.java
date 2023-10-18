@@ -6,7 +6,7 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int hiddenNumber;
-    private boolean b;
+    private boolean condition;
     Scanner sc = new Scanner(System.in);
 
     public GuessNumber(String name1, String name2) {
@@ -18,8 +18,9 @@ public class GuessNumber {
         do {
             generateHiddenNumber();
             playGame();
-        } while (!checkCondition(player1) || !checkCondition(player2));
+        } while (!checkCondition(player1) || !checkCondition(player1)|| player2.getAttemptNumber() < 11);
         arraysReset();
+        condition = false;
     }
 
     private void generateHiddenNumber() {
@@ -38,17 +39,17 @@ public class GuessNumber {
             if (checkCondition(player2)) {
                 break;
             }
-        } while (player2.getAttemptNumber() < 10);
+        } while (player2.getAttemptNumber() < 11);
         showPlayerNumbers(player1);
         showPlayerNumbers(player2);
     }
 
     private boolean checkCondition(Player name) {
         if (name.getNumber() == hiddenNumber) {
-            b = true;
+            condition = true;
         }
-        System.out.println("\n" + name + " boolean = " + b);
-        return b;
+        System.out.println("\n" + name + " boolean = " + condition);
+        return condition;
     }
 
     private void getPlayerNumbers(int[] inputArray) {
@@ -72,7 +73,6 @@ public class GuessNumber {
             System.out.print("\nИгрок " + name.getName() + " введите число ");
             int number = sc.nextInt();
             name.addNumber(number);
-            name.setAttemptNumber();
             if (name.getNumber() < hiddenNumber) {
                 System.out.println("\nЧисло " + name.getNumber() + " меньше загаданного компьютером");
             } else if (name.getNumber() > hiddenNumber) {
@@ -85,6 +85,8 @@ public class GuessNumber {
         }
         if (name.getAttemptNumber() == 10) {
             System.out.println("У " + name.getName() + " закончились попытки");
+            //return;
         }
+        name.setAttemptNumber();
     }
 }
