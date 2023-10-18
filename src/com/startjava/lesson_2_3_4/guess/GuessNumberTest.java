@@ -12,11 +12,12 @@ public class GuessNumberTest {
 
         System.out.println("\nВведите имя второго игрока: ");
         String name2 = sc.nextLine();
-        GuessNumber playGame = new GuessNumber(name1, name2);
+
+        GuessNumber game = new GuessNumber(name1, name2);
 
         do {
             if (answer.equals("yes")) {
-                playGame.start();
+                game.start();
             }
             System.out.println("\nХотите продолжить игру [yes/no]:");
             answer = sc.nextLine();

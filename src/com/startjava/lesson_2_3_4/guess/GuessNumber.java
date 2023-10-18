@@ -10,16 +10,15 @@ public class GuessNumber {
     Scanner sc = new Scanner(System.in);
 
     public GuessNumber(String name1, String name2) {
-        this.player1 = new Player(name1);
-        this.player2 = new Player(name2);
+        player1 = new Player(name1);
+        player2 = new Player(name2);
     }
 
     public void start() {
         do {
             generateHiddenNumber();
             playGame();
-        } while (player1.getNumber() != hiddenNumber && player2.getNumber() != hiddenNumber && (player1.getAttemptNumber() < 11 ||
-                player2.getAttemptNumber() < 11));
+        } while (!checkCondition(player1) || !checkCondition(player2));
         arraysReset();
     }
 
@@ -32,19 +31,23 @@ public class GuessNumber {
         do {
             System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
             selectWinner(player1);
-            if (player1.getNumber() == hiddenNumber) {
+            if (checkCondition(player1)) {
                 break;
             }
             selectWinner(player2);
-        } while (checkCondition());
-        showPlayerNumbers();
+            if (checkCondition(player2)) {
+                break;
+            }
+        } while (player2.getAttemptNumber() < 10);
+        showPlayerNumbers(player1);
+        showPlayerNumbers(player2);
     }
 
-    private boolean checkCondition() {
-        if (player1.getNumber() != hiddenNumber && player2.getNumber() != hiddenNumber && (player1.getAttemptNumber() < 11 ||
-                player2.getAttemptNumber() < 11)) {
-            b = true;            
+    private boolean checkCondition(Player name) {
+        if (name.getNumber() == hiddenNumber) {
+            b = true;
         }
+        System.out.println("\n" + name + " boolean = " + b);
         return b;
     }
 
@@ -54,11 +57,9 @@ public class GuessNumber {
         }
     }
 
-    private void showPlayerNumbers() {
-        System.out.print("\nИгрок " + player1.getName() + " загадал числа: ");
-        getPlayerNumbers(player1.getAllNumbers());
-        System.out.print("\nИгрок " + player2.getName() + " загадал числа: ");
-        getPlayerNumbers(player2.getAllNumbers());
+    private void showPlayerNumbers(Player name) {
+        System.out.print("\nИгрок " + name.getName() + " загадал числа: ");
+        getPlayerNumbers(name.getAllNumbers());
     }
     
     private void arraysReset() {
@@ -68,7 +69,7 @@ public class GuessNumber {
     
     private void selectWinner(Player name) {
         if (name.getAttemptNumber() < 11) {
-            System.out.println("\nИгрок " + name.getName() + " введите число");
+            System.out.print("\nИгрок " + name.getName() + " введите число ");
             int number = sc.nextInt();
             name.addNumber(number);
             name.setAttemptNumber();
@@ -77,14 +78,13 @@ public class GuessNumber {
             } else if (name.getNumber() > hiddenNumber) {
                 System.out.println("\nЧисло " + name.getNumber() + " больше загаданного компьютером");
             } else {
-                System.out.println("\nИгрок " + player1.getName() + " угадал число " + name.getNumber() + " с " +
+                System.out.println("\nИгрок " + name.getName() + " угадал число " + name.getNumber() + " с " +
                         name.getAttemptNumber() + " попытки");
                 return;
             }
         }
-        if (name.getAttemptNumber() > 10) {
+        if (name.getAttemptNumber() == 10) {
             System.out.println("У " + name.getName() + " закончились попытки");
-            return;
         }
     }
 }
