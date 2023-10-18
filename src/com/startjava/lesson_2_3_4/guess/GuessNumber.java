@@ -16,7 +16,8 @@ public class GuessNumber {
         do {
             generateHiddenNumber();
             playGame();
-        } while (checkCondition());
+        } while (player1.getNumber() != hiddenNumber && player2.getNumber() != hiddenNumber && (player1.getAttemptNumber() < 11 ||
+                player2.getAttemptNumber() < 11));
         arraysReset();
     }
 
@@ -29,16 +30,18 @@ public class GuessNumber {
         do {
             System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
             selectWinner(player1);
+            if (player1.getNumber() == hiddenNumber) {
+                break;
+            }
             selectWinner(player2);
-        } while (b);
+        } while (checkCondition());
         showPlayerNumbers();
     }
 
     private boolean checkCondition() {
-        b = true;
         if (player1.getNumber() != hiddenNumber && player2.getNumber() != hiddenNumber && (player1.getAttemptNumber() < 11 ||
-                player2.getAttemptNumber() < 11)); {
-            b = false;            
+                player2.getAttemptNumber() < 11)) {
+            b = true;            
         }
         return b;
     }
