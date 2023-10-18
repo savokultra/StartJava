@@ -20,6 +20,8 @@ public class GuessNumber {
             generateHiddenNumber();
             game();
         } while (checkCondition());
+        player.clear();
+        player1.clear();
     }
 
     public void arraysReset() {
