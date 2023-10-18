@@ -22,6 +22,10 @@ public class Player {
     public void addNumber(int number) {
         numbers[attempt] = number;
     }
+    
+    public int getAttemptNumber() {
+        return attempt;
+    }
 
     public void setAttemptNumber() {
         attempt++;
