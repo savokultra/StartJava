@@ -21,7 +21,7 @@ public class GuessNumber {
             if (player2.getAttemptNumber() == 11) {
                 break;
             }
-        } while (!checkCondition(player1) || !checkCondition(player1));
+        } while (!checkCondition(player1) || !checkCondition(player2));
         arraysReset();
         condition = false;
     }
