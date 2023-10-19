@@ -18,7 +18,7 @@ public class GuessNumber {
         do {
             generateHiddenNumber();
             playGame();
-            if (player2.getAttemptNumber() == 11) {
+            if (player2.getAttemptNumber() < 11) {
                 break;
             }
         } while (!checkCondition(player1) || !checkCondition(player2));
