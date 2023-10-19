@@ -82,10 +82,11 @@ public class GuessNumber {
             } else {
                 System.out.println("\nИгрок " + name.getName() + " угадал число " + name.getNumber() + " с " +
                         name.getAttemptNumber() + " попытки");
+                //name.setCell();
                 return;
             }
             name.setAttemptNumber();
-            name.setCount();
+            name.setCell();
         }
         if (name.getAttemptNumber() == 10) {
             System.out.println("У " + name.getName() + " закончились попытки");
