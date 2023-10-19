@@ -84,6 +84,8 @@ public class GuessNumber {
                         name.getAttemptNumber() + " попытки");
                 return;
             }
+            name.setAttemptNumber();
+            name.setCount();
         }
         if (name.getAttemptNumber() == 10) {
             System.out.println("У " + name.getName() + " закончились попытки");
