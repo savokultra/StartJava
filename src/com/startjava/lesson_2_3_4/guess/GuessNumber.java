@@ -51,7 +51,6 @@ public class GuessNumber {
         if (name.getNumber() == hiddenNumber) {
             condition = true;
         }
-        System.out.println("\n" + name + " boolean = " + condition);
         return condition;
     }
 
