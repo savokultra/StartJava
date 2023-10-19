@@ -45,10 +45,7 @@ public class GuessNumber {
     }
 
     private boolean checkCondition(Player name) {
-        if (name.getNumber() == hiddenNumber) {
-            condition = true;
-        }
-        if (name.getAttemptNumber() > 10) {
+        if (name.getNumber() == hiddenNumber || name.getAttemptNumber() > 10) {
             condition = true;
         }
         return condition;
