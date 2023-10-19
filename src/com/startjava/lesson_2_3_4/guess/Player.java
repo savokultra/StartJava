@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int[] numbers = new int[11];
+    private int[] numbers = new int[10];
     private int attempt = 1;
-    private int cell = 0;
+    private int cell;
 
     public Player(String name) {
         this.name = name;
@@ -42,7 +42,7 @@ public class Player {
 
     public void clear() {
         Arrays.fill(numbers, 0, cell, 0);
-        attempt = 0;
+        attempt = 1;
         cell = 0;
     }
 }

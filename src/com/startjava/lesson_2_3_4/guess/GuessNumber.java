@@ -18,9 +18,6 @@ public class GuessNumber {
         do {
             generateHiddenNumber();
             playGame();
-            if (player2.getAttemptNumber() > 11) {
-                break;
-            }
         } while (!checkCondition(player1) || !checkCondition(player2));
         arraysReset();
         condition = false;
@@ -35,14 +32,14 @@ public class GuessNumber {
         do {
             System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
             selectWinner(player1);
-            if (checkCondition(player1)) {
+            if (player1.getNumber() == hiddenNumber) {
                 break;
             }
             selectWinner(player2);
             if (checkCondition(player2)) {
                 break;
             }
-        } while (player2.getAttemptNumber() != 11);
+        } while (true);
         showPlayerNumbers(player1);
         showPlayerNumbers(player2);
     }
@@ -51,12 +48,17 @@ public class GuessNumber {
         if (name.getNumber() == hiddenNumber) {
             condition = true;
         }
+        if (name.getAttemptNumber() > 10) {
+            condition = true;
+        }
         return condition;
     }
 
     private void getPlayerNumbers(int[] inputArray) {
         for (int element : inputArray) {
-            System.out.printf("%s ", element);
+            if (element != 0) {
+                System.out.printf("%s ", element);
+            }
         }
     }
 
@@ -82,15 +84,16 @@ public class GuessNumber {
             } else {
                 System.out.println("\nИгрок " + name.getName() + " угадал число " + name.getNumber() + " с " +
                         name.getAttemptNumber() + " попытки");
-                //name.setCell();
                 return;
             }
-            name.setAttemptNumber();
-            name.setCell();
+            if (name.getAttemptNumber() < 10) {
+                name.setAttemptNumber();
+                name.setCell();
+            } else {
+                name.setAttemptNumber();
+                System.out.println("У " + name.getName() + " закончились попытки");
+                return;
+            }
         }
-        if (name.getAttemptNumber() == 10) {
-            System.out.println("У " + name.getName() + " закончились попытки");
-        }
-        name.setAttemptNumber();
     }
 }
