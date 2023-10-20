@@ -84,10 +84,10 @@ public class GuessNumber {
                 return;
             }
             if (name.getAttemptNumber() < 10) {
-                name.setAttemptNumber();
-                name.setCell();
+                //name.setAttemptNumber();
+                //name.setCell();
             } else {
-                name.setAttemptNumber();
+                //name.setAttemptNumber();
                 System.out.println("У " + name.getName() + " закончились попытки");
                 return;
             }
