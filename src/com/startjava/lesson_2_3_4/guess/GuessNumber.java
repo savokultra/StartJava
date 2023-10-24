@@ -1,7 +1,5 @@
 package com.startjava.lesson_2_3_4.guess;
 
-import java.util.Scanner;
-
 public class GuessNumber {
     private Player player1;
     private Player player2;
@@ -45,8 +43,10 @@ public class GuessNumber {
     }
 
     private boolean checkCondition(Player name) {
-        if (name.getNumber() == hiddenNumber || name.getAttemptNumber() == 9) {
-            condition = true;
+        if (name.getAttemptNumber() != 0) {
+            if (name.getNumber() == hiddenNumber || name.getAttemptNumber() == 9) {
+                condition = true;
+            }
         }
         return condition;
     }
