@@ -17,7 +17,7 @@ public class GuessNumber {
     public void start() {
         do {
             generateHiddenNumber();
-            playGame();
+            startGameplay();
         } while (!condition);
         arraysReset();
         condition = false;
@@ -27,7 +27,7 @@ public class GuessNumber {
         hiddenNumber = 1 + (int) (Math.random() * 100);
     }
 
-    private void playGame() {
+    private void startGameplay() {
         System.out.println("Игра началась! У каждого игрока по 10 попыток.");
         do {
             System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
@@ -36,22 +36,10 @@ public class GuessNumber {
                 break;
             }
             selectWinner(player2);
-            if (condition) {
-                break;
-            }
         } while (!condition);
         showPlayerNumbers(player1);
         showPlayerNumbers(player2);
     }
-
-    /*private boolean checkCondition(Player name) {
-        if (name.getAttemptNumber() != 0) {
-            if (name.getNumber() == hiddenNumber || name.getAttemptNumber() == 9) {
-                condition = true;
-            }
-        }
-        return condition;
-    }*/
 
     private void getPlayerNumbers(int[] inputArray) {
         for (int element : inputArray) {
@@ -85,9 +73,11 @@ public class GuessNumber {
                         name.getAttemptNumber() + " попытки");
                 condition = true;
             }
-            if (name.getAttemptNumber() == 9) {
+            if (name.getAttemptNumber() > 9) {
                 System.out.println("У " + name.getName() + " закончились попытки");
-                condition = true;
+                if (player2.getAttemptNumber() > 9) {
+                    condition = true;
+                }
             }
         }
         return condition;
