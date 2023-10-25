@@ -38,19 +38,15 @@ public class GuessNumber {
             }
             selectWinner(player2);
         } while (!condition);
-        showPlayerNumbers(player1);
-        showPlayerNumbers(player2);
+        showPlayerNumbers(player1, player1.getAllNumbers());
+        showPlayerNumbers(player2, player2.getAllNumbers());
     }
 
-    private void getPlayerNumbers(int[] inputArray) {
+    private void showPlayerNumbers(Player name, int[] inputArray) {
+        System.out.print("\nИгрок " + name.getName() + " загадал числа: ");
         for (int element : inputArray) {
             System.out.printf("%s ", element);
         }
-    }
-
-    private void showPlayerNumbers(Player name) {
-        System.out.print("\nИгрок " + name.getName() + " загадал числа: ");
-        getPlayerNumbers(name.getAllNumbers());
     }
     
     private void arraysReset() {
