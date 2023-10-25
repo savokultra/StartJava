@@ -20,7 +20,7 @@ public class GuessNumber {
             generateHiddenNumber();
             startGameplay();
         } while (!condition);
-        arraysReset();
+        clear();
         condition = false;
     }
 
@@ -42,39 +42,39 @@ public class GuessNumber {
         showPlayerNumbers(player2, player2.getAllNumbers());
     }
 
-    private void showPlayerNumbers(Player name, int[] inputArray) {
-        System.out.print("\nИгрок " + name.getName() + " загадал числа: ");
-        for (int element : inputArray) {
+    private void showPlayerNumbers(Player player, int[] numbers) {
+        System.out.print("\nИгрок " + player.getName() + " загадал числа: ");
+        for (int element : numbers) {
             System.out.printf("%s ", element);
         }
     }
     
-    private void arraysReset() {
+    private void clear() {
         player1.clear();
         player2.clear();
     }
     
-    private boolean selectWinner(Player name) {
-        if (name.getAttemptNumber() < 10) {
+    private boolean selectWinner(Player player) {
+        if (player.getAttemptNumber() < 10) {
             do {
-                System.out.print("\nИгрок " + name.getName() + " введите число от 1 до 100");
+                System.out.print("\nИгрок " + player.getName() + " введите число от 1 до 100: ");
                 number = sc.nextInt();
                 if (number < 1 || number > 100) {
                     System.out.print("\nВведенное число " + number + " не в диапазоне от 1 до 100");
                 }
             } while (number < 1 || number > 100);
-            name.addNumber(number);
-            if (name.getNumber() < hiddenNumber) {
-                System.out.println("\nЧисло " + name.getNumber() + " меньше загаданного компьютером");
-            } else if (name.getNumber() > hiddenNumber) {
-                System.out.println("\nЧисло " + name.getNumber() + " больше загаданного компьютером");
+            player.addNumber(number);
+            if (player.getNumber() < hiddenNumber) {
+                System.out.println("\nЧисло " + player.getNumber() + " меньше загаданного компьютером");
+            } else if (player.getNumber() > hiddenNumber) {
+                System.out.println("\nЧисло " + player.getNumber() + " больше загаданного компьютером");
             } else {
-                System.out.println("\nИгрок " + name.getName() + " угадал число " + name.getNumber() + " с " +
-                        name.getAttemptNumber() + " попытки");
+                System.out.println("\nИгрок " + player.getName() + " угадал число " + player.getNumber() + " с " +
+                        player.getAttemptNumber() + " попытки");
                 condition = true;
             }
-            if (name.getAttemptNumber() > 9) {
-                System.out.println("У " + name.getName() + " закончились попытки");
+            if (player.getAttemptNumber() > 9) {
+                System.out.println("У " + player.getName() + " закончились попытки");
                 if (player2.getAttemptNumber() > 9) {
                     condition = true;
                 }
