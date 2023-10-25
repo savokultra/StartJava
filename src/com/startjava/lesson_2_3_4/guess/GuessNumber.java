@@ -7,6 +7,7 @@ public class GuessNumber {
     private Player player2;
     private int hiddenNumber;
     private boolean condition;
+    private int number;
     Scanner sc = new Scanner(System.in);
 
     public GuessNumber(String name1, String name2) {
@@ -43,9 +44,7 @@ public class GuessNumber {
 
     private void getPlayerNumbers(int[] inputArray) {
         for (int element : inputArray) {
-            if (element != 0) {
-                System.out.printf("%s ", element);
-            }
+            System.out.printf("%s ", element);
         }
     }
 
@@ -61,8 +60,13 @@ public class GuessNumber {
     
     private boolean selectWinner(Player name) {
         if (name.getAttemptNumber() < 10) {
-            System.out.print("\nИгрок " + name.getName() + " введите число ");
-            int number = sc.nextInt();
+            do {
+                System.out.print("\nИгрок " + name.getName() + " введите число от 1 до 100");
+                number = sc.nextInt();
+                if (number < 1 || number > 100) {
+                    System.out.print("\nВведенное число " + number + " не в диапазоне от 1 до 100");
+                }
+            } while (number < 1 || number > 100);
             name.addNumber(number);
             if (name.getNumber() < hiddenNumber) {
                 System.out.println("\nЧисло " + name.getNumber() + " меньше загаданного компьютером");
