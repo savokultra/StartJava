@@ -20,8 +20,7 @@ public class Player {
     }
 
     public void addNumber(int number) {
-        numbers[attempt] = number;
-        attempt++;
+        numbers[attempt++] = number;
     }
     
     public int getAttemptNumber() {
