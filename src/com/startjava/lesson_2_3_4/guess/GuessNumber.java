@@ -6,7 +6,6 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int hiddenNumber;
-    Scanner sc = new Scanner(System.in);
 
     public GuessNumber(String name1, String name2) {
         player1 = new Player(name1);
@@ -60,6 +59,7 @@ public class GuessNumber {
     }
 
     private int checkInsertNumber(Player player) {
+        Scanner sc = new Scanner(System.in);
         int number;
         do {
             System.out.print("\nИгрок " + player.getName() + " введите число от 1 до 100: ");
