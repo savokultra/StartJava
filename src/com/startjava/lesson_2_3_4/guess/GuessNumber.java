@@ -5,8 +5,30 @@ import java.util.Scanner;
 public class GuessNumber {
     private Player player1;
     private Player player2;
+
+
+
+
+
+    private String[] names = new String[3];
+
+
+
+
+
     private int hiddenNumber;
     private Scanner sc = new Scanner(System.in);
+
+
+
+
+    public GuessNumber(String names[]) {
+       Player gamers = new Player(names);
+    }
+
+
+
+
 
     public GuessNumber(String name1, String name2) {
         player1 = new Player(name1);

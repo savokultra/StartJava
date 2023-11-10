@@ -4,12 +4,25 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
+
+
+    private String names[] = new String[3];
+
+
     private int[] numbers = new int[10];
     private int attempt;
 
     public Player(String name) {
         this.name = name;
     }
+
+
+
+    public Player(String gamers[]) {
+        names = gamers;
+    }
+
+
 
     public String getName() {
         return name;
