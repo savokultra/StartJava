@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class GuessNumberTest {
 
     public static void main(String[] args) {
-        System.out.println("Введите имя первого игрока: ");
         Scanner sc = new Scanner(System.in);
+        System.out.println("Введите имя первого игрока: ");
         String name1 = sc.nextLine();
 
         System.out.println("\nВведите имя второго игрока: ");
