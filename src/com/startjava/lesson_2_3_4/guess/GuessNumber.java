@@ -38,7 +38,7 @@ public class GuessNumber {
     
     private boolean isGuessed(Player player) {
         if (player.getAttemptNumber() < 10) {
-            player.addNumber(checkInsertNumber(player));
+            player.addNumber(inputNumber(player));
             if (player.getNumber() < hiddenNumber) {
                 System.out.println("\nЧисло " + player.getNumber() + " меньше загаданного компьютером");
             } else if (player.getNumber() > hiddenNumber) {
@@ -58,7 +58,7 @@ public class GuessNumber {
         return false;
     }
 
-    private int checkInsertNumber(Player player) {
+    private int inputNumber(Player player) {
         Scanner sc = new Scanner(System.in);
         int number;
         do {
