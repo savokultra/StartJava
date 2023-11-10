@@ -6,6 +6,7 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int hiddenNumber;
+    private Scanner sc = new Scanner(System.in);
 
     public GuessNumber(String name1, String name2) {
         player1 = new Player(name1);
@@ -13,9 +14,8 @@ public class GuessNumber {
     }
 
     public void start() {
-        do {
-            generateHiddenNumber();
-        } while (!startGameplay());
+        generateHiddenNumber();
+        startGameplay();
         clear();
     }
 
@@ -38,13 +38,14 @@ public class GuessNumber {
     
     private boolean isGuessed(Player player) {
         if (player.getAttemptNumber() < 10) {
-            player.addNumber(checkInsertNumber(player));
+            player.addNumber(inputNumber(player));
             if (player.getNumber() == hiddenNumber) {
                 System.out.println("\nИгрок " + player.getName() + " угадал число " + player.getNumber() + " с " +
                         player.getAttemptNumber() + " попытки");
                 return true;
             }
-            System.out.println("\nИгрок " + (player.getNumber() < hiddenNumber ? " меньше загаданного компьютером" : " больше загаданного компьютером"));
+            System.out.println("\nИгрок " + (player.getNumber() < hiddenNumber ? " меньше загаданного компьютером" :
+                    " больше загаданного компьютером"));
             if (player.getAttemptNumber() > 9) {
                 System.out.println("У " + player.getName() + " закончились попытки");
                 if (player2.getAttemptNumber() > 9) {
@@ -55,16 +56,17 @@ public class GuessNumber {
         return false;
     }
 
-    private int checkInsertNumber(Player player) {
-        Scanner sc = new Scanner(System.in);
+    private int inputNumber(Player player) {
         int number;
         do {
             System.out.print("\nИгрок " + player.getName() + " введите число от 1 до 100: ");
             number = sc.nextInt();
             if (number < 1 || number > 100) {
                 System.out.print("\nВведенное число " + number + " не в диапазоне от 1 до 100");
+            } else {
+                break;
             }
-        } while (number < 1 || number > 100);
+        } while (true);
         return number;
     }
 
