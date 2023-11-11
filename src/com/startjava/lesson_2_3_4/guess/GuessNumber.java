@@ -40,7 +40,7 @@ public class GuessNumber {
 
     private boolean isGuessed(Player player) {
         if (player.getAttempt() < 10) {
-            player.addNumber(inputNumber(player));
+            inputNumber(player);
             if (player.getNumber() == hiddenNumber) {
                 System.out.println("\nИгрок " + player.getName() + " угадал число " + player.getNumber() + " с " +
                         player.getAttempt() + " попытки");
@@ -58,18 +58,12 @@ public class GuessNumber {
         return false;
     }
 
-    private int inputNumber(Player player) {
+    private void inputNumber(Player player) {
         int number;
         do {
             System.out.print("\nИгрок " + player.getName() + " введите число от 1 до 100: ");
             number = sc.nextInt();
-            if (number < 1 || number > 100) {
-                System.out.print("\nВведенное число " + number + " не в диапазоне от 1 до 100");
-            } else {
-                break;
-            }
-        } while (true);
-        return number;
+        } while (player.addNumber(number));
     }
 
     private void showPlayerNumbers(Player[] players) {

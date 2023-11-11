@@ -19,8 +19,13 @@ public class Player {
         return numbers[attempt - 1];
     }
 
-    public void addNumber(int number) {
+    public boolean addNumber(int number) {
+        while (number < 1 || number > 100) {
+            System.out.print("\nВведенное число " + number + " не в диапазоне от 1 до 100");
+            return true;
+        }
         numbers[attempt++] = number;
+        return false;
     }
 
     public int getAttempt() {
