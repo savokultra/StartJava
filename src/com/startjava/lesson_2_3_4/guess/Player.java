@@ -6,6 +6,7 @@ public class Player {
     private String name;
     private int[] numbers = new int[10];
     private int attempt;
+    private int wins;
 
     public Player(String name) {
         this.name = name;
@@ -17,6 +18,10 @@ public class Player {
 
     public int getNumber() {
         return numbers[attempt - 1];
+    }
+
+    public int getWins() {
+        return wins;
     }
 
     public boolean addNumber(int number) {
@@ -36,8 +41,13 @@ public class Player {
         return Arrays.copyOf(numbers, attempt);
     }
 
+    public void addWin() {
+        wins++;
+    }
+
     public void clear() {
         Arrays.fill(numbers, 0, attempt, 0);
         attempt = 0;
+        wins = 0;
     }
 }
