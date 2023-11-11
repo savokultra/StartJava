@@ -1,6 +1,7 @@
 package com.startjava.lesson_2_3_4.guess;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class GuessNumber {
     private Player[] players = new Player[3];
@@ -14,9 +15,28 @@ public class GuessNumber {
     }
 
     public void start() {
+        shuffle();
         generateHiddenNumber();
         startGameplay();
         clear();
+    }
+
+    private void shuffle() {
+        int[] playerNumbers = new int[players.length];
+        for(int i = 0; i < playerNumbers.length; i++) {
+            playerNumbers[i] = i;
+        }
+        Random rand = new Random();
+        int temp;
+        for (int i = playerNumbers.length - 1; i > 0; i--) {
+            int j = rand.nextInt(i + 1);
+            temp = playerNumbers[i];
+            playerNumbers[i] = playerNumbers[j];
+            playerNumbers[j] = temp;
+        }
+        for(int x : playerNumbers) {
+            System.out.println("X = " + x);
+        }
     }
 
     private void generateHiddenNumber() {
