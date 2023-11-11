@@ -8,7 +8,7 @@ public class GuessNumber {
     private Scanner sc = new Scanner(System.in);
 
     public GuessNumber(String[] names) {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < players.length; i++) {
             players[i] = new Player(names[i]);
         }
     }
@@ -80,7 +80,7 @@ public class GuessNumber {
     }
 
     private void clear() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < players.length; i++) {
             players[i].clear();
         }
     }
