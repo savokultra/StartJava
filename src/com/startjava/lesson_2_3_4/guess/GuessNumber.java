@@ -32,7 +32,7 @@ public class GuessNumber {
         }
         System.out.println("\nЖребий брошен, игроки ходят в следующем порядке: ");
         for(int i = 0; i <= players.length - 1; i++) {
-            System.out.println((i + 1) + "м ходит - " + players[i].getName());
+            System.out.println((i + 1) + "м угадывает - " + players[i].getName());
         }
     }
 
