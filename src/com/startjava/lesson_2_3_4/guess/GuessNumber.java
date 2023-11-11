@@ -36,18 +36,18 @@ public class GuessNumber {
     }
 
     private boolean isGuessed(Player player) {
-        if (player.getAttemptNumber() < 10) {
+        if (player.getAttempt() < 10) {
             player.addNumber(inputNumber(player));
             if (player.getNumber() == hiddenNumber) {
                 System.out.println("\nИгрок " + player.getName() + " угадал число " + player.getNumber() + " с " +
-                        player.getAttemptNumber() + " попытки");
+                        player.getAttempt() + " попытки");
                 return true;
             }
             System.out.println("\nЧисло " + (player.getNumber() < hiddenNumber ? player.getNumber() +
                     " меньше загаданного компьютером" : player.getNumber() + " больше загаданного компьютером"));
-            if (player.getAttemptNumber() > 9) {
+            if (player.getAttempt() > 9) {
                 System.out.println("У " + player.getName() + " закончились попытки");
-                if (players[2].getAttemptNumber() > 9) {
+                if (players[2].getAttempt() > 9) {
                     return true;
                 }
             }

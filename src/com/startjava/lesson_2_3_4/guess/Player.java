@@ -23,7 +23,7 @@ public class Player {
         numbers[attempt++] = number;
     }
 
-    public int getAttemptNumber() {
+    public int getAttempt() {
         return attempt;
     }
 
