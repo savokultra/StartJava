@@ -20,7 +20,7 @@ public class Player {
     }
 
     public boolean addNumber(int number) {
-        while (number < 1 || number > 100) {
+        if (number < 1 || number > 100) {
             System.out.print("\nВведенное число " + number + " не в диапазоне от 1 до 100");
             return true;
         }

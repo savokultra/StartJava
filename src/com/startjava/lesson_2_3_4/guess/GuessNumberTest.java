@@ -9,7 +9,7 @@ public class GuessNumberTest {
 
         insertNames(names);
         GuessNumber game = new GuessNumber(names);
-        gameContinue("yes", game);
+        gameContinue(game);
     }
 
     private static void insertNames(String[] names) {
@@ -20,8 +20,9 @@ public class GuessNumberTest {
         }
     }
 
-    private static void gameContinue(String answer, GuessNumber game) {
+    private static void gameContinue(GuessNumber game) {
         Scanner sc = new Scanner(System.in);
+        String answer = "yes";
         do {
             if (answer.equals("yes")) {
                 game.start();

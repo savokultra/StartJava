@@ -48,12 +48,7 @@ public class GuessNumber {
             }
             System.out.println("\nЧисло " + (player.getNumber() < hiddenNumber ? player.getNumber() +
                     " меньше" : player.getNumber() + " больше") + " загаданного компьютером");
-            if (player.getAttempt() > 9) {
-                System.out.println("У " + player.getName() + " закончились попытки");
-                if (players[2].getAttempt() > 9) {
-                    return true;
-                }
-            }
+            return checkAttempt(player);
         }
         return false;
     }
@@ -66,10 +61,18 @@ public class GuessNumber {
         } while (player.addNumber(number));
     }
 
+    private boolean checkAttempt(Player player) {
+        if (player.getAttempt() > 9) {
+            System.out.println("У " + player.getName() + " закончились попытки");
+            return players[2].getAttempt() > 9;
+        }
+        return false;
+    }
+
     private void showPlayerNumbers(Player[] players) {
-        for (int i = 0; i < players.length; i++) {
-            System.out.print("\nИгрок " + players[i].getName() + " загадал числа: ");
-            int[] numbers = players[i].getAllNumbers();
+        for (Player player : players) {
+            System.out.print("\nИгрок " + player.getName() + " загадал числа: ");
+            int[] numbers = player.getAllNumbers();
             for (int number : numbers) {
                 System.out.printf("%s ", number);
             }
@@ -77,8 +80,8 @@ public class GuessNumber {
     }
 
     private void clear() {
-        for (int i = 0; i < players.length; i++) {
-            players[i].clear();
+        for (Player player : players) {
+            player.clear();
         }
     }
 }
