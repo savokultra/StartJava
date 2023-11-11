@@ -70,7 +70,7 @@ public class GuessNumber {
     }
 
     private void showPlayerNumbers(Player[] players) {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < players.length; i++) {
             System.out.print("\nИгрок " + players[i].getName() + " загадал числа: ");
             int[] numbers = players[i].getAllNumbers();
             for (int number : numbers) {
