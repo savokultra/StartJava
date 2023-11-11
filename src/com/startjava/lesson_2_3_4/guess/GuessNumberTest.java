@@ -8,7 +8,7 @@ public class GuessNumberTest {
         Scanner sc = new Scanner(System.in);
 
         String[] names = new String[3];
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < names.length; i++) {
             System.out.println("Введите имя " + (i + 1) + " игрока: ");
             names[i] = sc.nextLine();
         }
