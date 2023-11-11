@@ -47,7 +47,7 @@ public class GuessNumber {
                 return true;
             }
             System.out.println("\nЧисло " + (player.getNumber() < hiddenNumber ? player.getNumber() +
-                    " меньше загаданного компьютером" : player.getNumber() + " больше загаданного компьютером"));
+                    " меньше" : player.getNumber() + " больше") + " загаданного компьютером");
             if (player.getAttempt() > 9) {
                 System.out.println("У " + player.getName() + " закончились попытки");
                 if (players[2].getAttempt() > 9) {
