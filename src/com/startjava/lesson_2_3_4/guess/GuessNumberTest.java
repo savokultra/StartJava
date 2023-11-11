@@ -5,17 +5,23 @@ import java.util.Scanner;
 public class GuessNumberTest {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
         String[] names = new String[3];
+
+        insertNames(names);
+        GuessNumber game = new GuessNumber(names);
+        gameContinue("yes", game);
+    }
+
+    private static void insertNames(String[] names) {
+        Scanner sc = new Scanner(System.in);
         for (int i = 0; i < names.length; i++) {
             System.out.println("Введите имя " + (i + 1) + " игрока: ");
             names[i] = sc.nextLine();
         }
+    }
 
-        GuessNumber game = new GuessNumber(names);
-        String answer = "yes";
-
+    private static void gameContinue(String answer, GuessNumber game) {
+        Scanner sc = new Scanner(System.in);
         do {
             if (answer.equals("yes")) {
                 game.start();
