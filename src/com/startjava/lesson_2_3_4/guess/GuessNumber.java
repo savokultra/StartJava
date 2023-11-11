@@ -23,16 +23,19 @@ public class GuessNumber {
         hiddenNumber = 1 + (int) (Math.random() * 100);
     }
 
-    private boolean startGameplay() {
+    private void startGameplay() {
         System.out.println("Игра началась! У каждого игрока по 10 попыток.");
+        boolean b = false;
         do {
             System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
-            if (isGuessed(players[0]) || isGuessed(players[1])) {
-                break;
+            for (Player x : players) {
+                if (isGuessed(x)) {
+                    b = true;
+                    break;
+                }
             }
-        } while (!isGuessed(players[2]));
+        } while (!b);
         showPlayerNumbers(players);
-        return true;
     }
 
     private boolean isGuessed(Player player) {
