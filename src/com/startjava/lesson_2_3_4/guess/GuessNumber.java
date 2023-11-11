@@ -15,27 +15,24 @@ public class GuessNumber {
     }
 
     public void start() {
-        shuffle();
+        shufflePlayers();
         generateHiddenNumber();
         startGameplay();
         clear();
     }
 
-    private void shuffle() {
-        int[] playerNumbers = new int[players.length];
-        for(int i = 0; i < playerNumbers.length; i++) {
-            playerNumbers[i] = i;
-        }
+    private void shufflePlayers() {
         Random rand = new Random();
-        int temp;
-        for (int i = playerNumbers.length - 1; i > 0; i--) {
+        Player temp;
+        for (int i = players.length - 1; i > 0; i--) {
             int j = rand.nextInt(i + 1);
-            temp = playerNumbers[i];
-            playerNumbers[i] = playerNumbers[j];
-            playerNumbers[j] = temp;
+            temp = players[i];
+            players[i] = players[j];
+            players[j] = temp;
         }
-        for(int x : playerNumbers) {
-            System.out.println("X = " + x);
+        System.out.println("\nЖребий брошен, игроки ходят в следующем порядке: ");
+        for(int i = 0; i <= players.length - 1; i++) {
+            System.out.println((i + 1) + "м ходит - " + players[i].getName());
         }
     }
 
@@ -44,7 +41,7 @@ public class GuessNumber {
     }
 
     private void startGameplay() {
-        System.out.println("Игра началась! У каждого игрока по 10 попыток.");
+        System.out.println("\nИгра началась! У каждого игрока по 10 попыток.");
         boolean b = true;
         while (b) {
             System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
