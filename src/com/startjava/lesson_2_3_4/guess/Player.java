@@ -22,11 +22,11 @@ public class Player {
     public void addNumber(int number) {
         numbers[attempt++] = number;
     }
-    
+
     public int getAttemptNumber() {
         return attempt;
     }
-    
+
     public int[] getAllNumbers() {
         return Arrays.copyOf(numbers, attempt);
     }

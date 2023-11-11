@@ -3,14 +3,14 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Scanner;
 
 public class GuessNumber {
-    private Player player1;
-    private Player player2;
+    private Player[] players = new Player[3];
     private int hiddenNumber;
     private Scanner sc = new Scanner(System.in);
 
-    public GuessNumber(String name1, String name2) {
-        player1 = new Player(name1);
-        player2 = new Player(name2);
+    public GuessNumber(String[] names) {
+        for (int i = 0; i < 3; i++) {
+            players[i] = new Player(names[i]);
+        }
     }
 
     public void start() {
@@ -27,12 +27,11 @@ public class GuessNumber {
         System.out.println("Игра началась! У каждого игрока по 10 попыток.");
         do {
             System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
-            if (isGuessed(player1)) {
+            if (isGuessed(players[0]) || isGuessed(players[1])) {
                 break;
             }
-        } while (!isGuessed(player2));
-        showPlayerNumbers(player1);
-        showPlayerNumbers(player2);
+        } while (!isGuessed(players[2]));
+        showPlayerNumbers(players);
         return true;
     }
 
@@ -44,11 +43,11 @@ public class GuessNumber {
                         player.getAttemptNumber() + " попытки");
                 return true;
             }
-            System.out.println("\nЧисло " + (player.getNumber() < hiddenNumber ? player.getNumber() + 
+            System.out.println("\nЧисло " + (player.getNumber() < hiddenNumber ? player.getNumber() +
                     " меньше загаданного компьютером" : player.getNumber() + " больше загаданного компьютером"));
             if (player.getAttemptNumber() > 9) {
                 System.out.println("У " + player.getName() + " закончились попытки");
-                if (player2.getAttemptNumber() > 9) {
+                if (players[2].getAttemptNumber() > 9) {
                     return true;
                 }
             }
@@ -70,16 +69,19 @@ public class GuessNumber {
         return number;
     }
 
-    private void showPlayerNumbers(Player player) {
-        System.out.print("\nИгрок " + player.getName() + " загадал числа: ");
-        int[] numbers = player.getAllNumbers();
-        for (int number : numbers) {
-            System.out.printf("%s ", number);
+    private void showPlayerNumbers(Player[] players) {
+        for (int i = 0; i < 3; i++) {
+            System.out.print("\nИгрок " + players[i].getName() + " загадал числа: ");
+            int[] numbers = players[i].getAllNumbers();
+            for (int number : numbers) {
+                System.out.printf("%s ", number);
+            }
         }
     }
 
     private void clear() {
-        player1.clear();
-        player2.clear();
+        for (int i = 0; i < 3; i++) {
+            players[i].clear();
+        }
     }
 }
