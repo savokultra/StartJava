@@ -103,9 +103,9 @@ public class GuessNumber {
     }
 
     private void showWins() {
-        for (int i = 0; i < players.length; i++) {
-            System.out.println("Игрок " + players[i].getName() + " угадал загаданное число " + players[i].getWins() +
-                    (players[i].getWins() > 1 ?  " раза" : " раз"));
+        for (Player player : players) {
+            System.out.println("Игрок " + player.getName() + " угадал загаданное число " + player.getWins() +
+                    (player.getWins() > 1 ? " раза" : " раз"));
         }
     }
 
