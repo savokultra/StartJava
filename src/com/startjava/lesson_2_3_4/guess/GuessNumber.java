@@ -6,7 +6,7 @@ import java.util.Random;
 public class GuessNumber {
     private static final Player[] PLAYERS = new Player[3];
     private static final Scanner SC = new Scanner(System.in);
-    private static final int hiddenNumber = 1 + (int) (Math.random() * 100);
+    private int hiddenNumber;
 
     public GuessNumber(String[] names) {
         for (int i = 0; i < PLAYERS.length; i++) {
