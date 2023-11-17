@@ -4,10 +4,10 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class GuessNumber {
-    private Player[] players = new Player[3];
+    private final Player[] players = new Player[3];
 
     private int hiddenNumber;
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
 
     public GuessNumber(String[] names) {
         for (int i = 0; i < players.length; i++) {
