@@ -50,9 +50,10 @@ public class GuessNumber {
                 }
             }
             showPlayerNumbers(players);
+            clear();
         }
         showWins();
-        clear();
+        clearWins();
     }
 
     private void generateHiddenNumber() {
@@ -112,6 +113,12 @@ public class GuessNumber {
     private void clear() {
         for (Player player : players) {
             player.clear();
+        }
+    }
+
+    private void clearWins() {
+        for (Player player : players) {
+            player.clearWins();
         }
     }
 }
