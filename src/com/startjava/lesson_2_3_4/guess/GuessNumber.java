@@ -21,12 +21,11 @@ public class GuessNumber {
 
     private void shufflePlayers() {
         Random rand = new Random();
-        Player temp;
         for (int i = PLAYERS.length - 1; i > 0; i--) {
-            int j = rand.nextInt(i + 1);
-            temp = PLAYERS[i];
-            PLAYERS[i] = PLAYERS[j];
-            PLAYERS[j] = temp;
+            int random = rand.nextInt(i + 1);
+            Player temp = PLAYERS[i];
+            PLAYERS[i] = PLAYERS[random];
+            PLAYERS[random] = temp;
         }
         System.out.println("\nЖребий брошен, игроки ходят в следующем порядке: ");
         for(int i = 0; i <= PLAYERS.length - 1; i++) {
@@ -38,12 +37,12 @@ public class GuessNumber {
         for (int i = 1; i < 4; i++) {
             generateHiddenNumber();
             System.out.println("\n\n" + i + "й Раунд! У каждого игрока по 10 попыток.");
-            boolean b = true;
-            while (b) {
+            boolean isWin = false;
+            while (!isWin) {
                 System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
-                for (Player x : PLAYERS) {
-                    if (isGuessed(x)) {
-                        b = false;
+                for (Player players : PLAYERS) {
+                    if (isGuessed(players)) {
+                        isWin = true;
                         break;
                     }
                 }
