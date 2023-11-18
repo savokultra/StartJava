@@ -59,19 +59,17 @@ public class GuessNumber {
     }
 
     private boolean isGuessed(Player player) {
-        if (player.getAttempt() < 10) {
             inputNumber(player);
-            if (player.getNumber() == hiddenNumber) {
-                System.out.println("\nИгрок " + player.getName() + " угадал число " + player.getNumber() + " с " +
+            int playerNumber = player.getNumber();
+            if (playerNumber == hiddenNumber) {
+                System.out.println("\nИгрок " + player.getName() + " угадал число " + playerNumber + " с " +
                         player.getAttempt() + " попытки");
                 player.addWin();
                 return true;
             }
-            System.out.println("\nЧисло " + (player.getNumber() < hiddenNumber ? player.getNumber() +
-                    " меньше" : player.getNumber() + " больше") + " загаданного компьютером");
+            System.out.println("\nЧисло " + (playerNumber < hiddenNumber ? playerNumber +
+                    " меньше" : playerNumber + " больше") + " загаданного компьютером");
             return checkAttempt(player);
-        }
-        return false;
     }
 
     private void inputNumber(Player player) {
