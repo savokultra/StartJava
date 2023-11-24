@@ -7,6 +7,8 @@ public class Player {
     private final int[] numbers = new int[10];
     private int attempt;
     private int score;
+    private static final int LOW_RANGE_NUMBER = 1;
+    private static final int HI_RANGE_NUMBER = 100;
 
     public Player(String name) {
         this.name = name;
@@ -21,7 +23,7 @@ public class Player {
     }
 
     public boolean addNumber(int number) {
-        if (number < 1 || number > 100) {
+        if (number < LOW_RANGE_NUMBER || number > HI_RANGE_NUMBER) {
             System.out.print("\nВведенное число " + number + " не в диапазоне от 1 до 100");
             return true;
         }
@@ -41,7 +43,7 @@ public class Player {
         return score;
     }
 
-    public void addScore() {
+    public void upScore() {
         score++;
     }
 
