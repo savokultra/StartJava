@@ -3,12 +3,14 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Arrays;
 
 public class Player {
-    private final String name;
-    private final int[] numbers = new int[10];
-    private int attempt;
-    private int score;
     private static final int LOW_RANGE_NUMBER = 1;
     private static final int HI_RANGE_NUMBER = 100;
+    private static final int ATTEMPTS = 10;
+    private final String name;
+    private final int[] numbers = new int[ATTEMPTS];
+    private int attempt;
+    private int score;
+
 
     public Player(String name) {
         this.name = name;
