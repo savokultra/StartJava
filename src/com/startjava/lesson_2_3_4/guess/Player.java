@@ -6,7 +6,7 @@ public class Player {
     private final String name;
     private final int[] numbers = new int[10];
     private int attempt;
-    private int wins;
+    private int score;
 
     public Player(String name) {
         this.name = name;
@@ -20,10 +20,6 @@ public class Player {
         return numbers[attempt - 1];
     }
 
-    public int getWins() {
-        return wins;
-    }
-
     public boolean addNumber(int number) {
         if (number < 1 || number > 100) {
             System.out.print("\nВведенное число " + number + " не в диапазоне от 1 до 100");
@@ -33,16 +29,20 @@ public class Player {
         return false;
     }
 
-    public int getAttempt() {
-        return attempt;
-    }
-
     public int[] getAllNumbers() {
         return Arrays.copyOf(numbers, attempt);
     }
 
-    public void addWin() {
-        wins++;
+    public int getAttempt() {
+        return attempt;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void addScore() {
+        score++;
     }
 
     public void clear() {
@@ -50,7 +50,7 @@ public class Player {
         attempt = 0;
     }
 
-    public void clearWins() {
-        wins = 0;
+    public void clearScore() {
+        score = 0;
     }
 }

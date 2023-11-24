@@ -64,7 +64,7 @@ public class GuessNumber {
             if (playerNumber == hiddenNumber) {
                 System.out.println("\nИгрок " + player.getName() + " угадал число " + playerNumber + " с " +
                         player.getAttempt() + " попытки");
-                player.addWin();
+                player.addScore();
                 return true;
             }
             System.out.println("\nЧисло " + (playerNumber < hiddenNumber ? playerNumber +
@@ -101,8 +101,8 @@ public class GuessNumber {
 
     private void showWins() {
         for (Player player : PLAYERS) {
-            System.out.println("Игрок " + player.getName() + " угадал загаданное число " + player.getWins() +
-                    (player.getWins() > 1 ? " раза" : " раз"));
+            System.out.println("Игрок " + player.getName() + " угадал загаданное число " + player.getScore() +
+                    (player.getScore() > 1 ? " раза" : " раз"));
         }
     }
 
@@ -114,7 +114,7 @@ public class GuessNumber {
 
     private void clearWins() {
         for (Player player : PLAYERS) {
-            player.clearWins();
+            player.clearScore();
         }
     }
 }
