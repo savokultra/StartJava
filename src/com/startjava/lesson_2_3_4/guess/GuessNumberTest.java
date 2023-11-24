@@ -6,10 +6,6 @@ public class GuessNumberTest {
 private static final int PLAYERS_QUANTITY = 3;
 
     public static void main(String[] args) {
-        playGame();
-    }
-
-    private static void playGame() {
         Scanner sc = new Scanner(System.in);
         GuessNumber game = new GuessNumber(inputNames());
         String answer = "yes";
