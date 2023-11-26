@@ -85,9 +85,9 @@ public class GuessNumber {
     }
 
     private boolean hasAttempt(Player player) {
-        if (player.getAttempt() >= Player.ATTEMPTS) {
+        if (player.getAttempt() >= Player.getATTEMPTS()) {
             System.out.println("У " + player.getName() + " закончились попытки");
-            return players[2].getAttempt() == Player.ATTEMPTS;
+            return players[2].getAttempt() == Player.getATTEMPTS();
         }
         return false;
     }
