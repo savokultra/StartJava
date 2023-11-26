@@ -7,7 +7,7 @@ private static final int PLAYERS_QUANTITY = 3;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        GuessNumber game = new GuessNumber(inputNames());
+        GuessNumber game = new GuessNumber(inputNames(sc));
         String answer = "yes";
         do {
             if (answer.equals("yes")) {
@@ -18,13 +18,13 @@ private static final int PLAYERS_QUANTITY = 3;
         } while (!answer.equals("no"));
     }
 
-    private static String[] inputNames() {
-        String[] NAMES = new String[PLAYERS_QUANTITY];
-        Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < NAMES.length; i++) {
+    private static String[] inputNames(Scanner sc) {
+        String[] names = new String[PLAYERS_QUANTITY];
+        sc = new Scanner(System.in);
+        for (int i = 0; i < names.length; i++) {
             System.out.println("Введите имя " + (i + 1) + " игрока: ");
-            NAMES[i] = sc.nextLine();
+            names[i] = sc.nextLine();
         }
-        return NAMES;
+        return names;
     }
 }
