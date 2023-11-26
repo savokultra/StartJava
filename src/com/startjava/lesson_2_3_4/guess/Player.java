@@ -3,9 +3,9 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Arrays;
 
 public class Player {
+    public static final int ATTEMPTS = 10;
     private static final int START_RANGE = 1;
     private static final int END_RANGE = 100;
-    private static final int ATTEMPTS = 10;
     private final String name;
     private final int[] numbers = new int[ATTEMPTS];
     private int attempt;

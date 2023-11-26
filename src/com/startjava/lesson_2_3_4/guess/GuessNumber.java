@@ -7,13 +7,12 @@ public class GuessNumber {
 
     private static final int QUANTITY_PLAYERS = 3;
     private static final int QUANTITY_ROUNDS = 3;
-    private static final int LAST_ATTEMPT = 10;
-    private final Player[] PLAYERS = new Player[QUANTITY_PLAYERS];
+    private final Player[] players = new Player[QUANTITY_PLAYERS];
     private int hiddenNumber;
 
     public GuessNumber(String[] names) {
-        for (int i = 0; i < PLAYERS.length; i++) {
-            PLAYERS[i] = new Player(names[i]);
+        for (int i = 0; i < players.length; i++) {
+            players[i] = new Player(names[i]);
         }
     }
 
@@ -23,16 +22,16 @@ public class GuessNumber {
     }
 
     private void shufflePlayers() {
-        Random rand = new Random();
-        for (int i = PLAYERS.length - 1; i > 0; i--) {
-            int random = rand.nextInt(i + 1);
-            Player temp = PLAYERS[i];
-            PLAYERS[i] = PLAYERS[random];
-            PLAYERS[random] = temp;
+        Random r = new Random();
+        for (int i = players.length - 1; i > 0; i--) {
+            int random = r.nextInt(i + 1);
+            Player temp = players[i];
+            players[i] = players[random];
+            players[random] = temp;
         }
         System.out.println("\nЖребий брошен, игроки ходят в следующем порядке: ");
-        for(int i = 0; i <= PLAYERS.length - 1; i++) {
-            System.out.println((i + 1) + "м угадывает - " + PLAYERS[i].getName());
+        for(int i = 0; i < players.length; i++) {
+            System.out.println((i + 1) + "м угадывает - " + players[i].getName());
         }
     }
 
@@ -43,7 +42,7 @@ public class GuessNumber {
             boolean isWin = false;
             while (!isWin) {
                 System.out.println("\nПодсказка, искомое число = " + hiddenNumber);
-                for (Player players : PLAYERS) {
+                for (Player players : players) {
                     if (isGuessed(players)) {
                         isWin = true;
                         break;
@@ -62,7 +61,8 @@ public class GuessNumber {
     }
 
     private boolean isGuessed(Player player) {
-        inputNumber(player);
+        Scanner sc = new Scanner(System.in);
+        inputNumber(player, sc);
         int playerNumber = player.getNumber();
         if (playerNumber == hiddenNumber) {
             System.out.println("\nИгрок " + player.getName() + " угадал число " + playerNumber + " с " +
@@ -72,11 +72,11 @@ public class GuessNumber {
         }
         System.out.println("\nЧисло " + (playerNumber < hiddenNumber ? playerNumber +
                 " меньше" : playerNumber + " больше") + " загаданного компьютером");
-        return checkAttempt(player);
+        return hasAttempt(player);
     }
 
-    private void inputNumber(Player player) {
-        Scanner sc = new Scanner(System.in);
+    private void inputNumber(Player player, Scanner sc) {
+        sc = new Scanner(System.in);
         int number;
         do {
             System.out.print("\nИгрок " + player.getName() + " введите число от 1 до 100: ");
@@ -84,16 +84,16 @@ public class GuessNumber {
         } while (player.addNumber(number));
     }
 
-    private boolean checkAttempt(Player player) {
-        if (player.getAttempt() == LAST_ATTEMPT) {
+    private boolean hasAttempt(Player player) {
+        if (player.getAttempt() >= Player.ATTEMPTS) {
             System.out.println("У " + player.getName() + " закончились попытки");
-            return PLAYERS[2].getAttempt() == LAST_ATTEMPT;
+            return players[2].getAttempt() == Player.ATTEMPTS;
         }
         return false;
     }
 
     private void showPlayerNumbers() {
-        for (Player player : PLAYERS) {
+        for (Player player : players) {
             System.out.print("\nИгрок " + player.getName() + " загадал числа: ");
             int[] numbers = player.getAllNumbers();
             for (int number : numbers) {
@@ -104,20 +104,20 @@ public class GuessNumber {
     }
 
     private void showWins() {
-        for (Player player : PLAYERS) {
+        for (Player player : players) {
             System.out.println("Игрок " + player.getName() + " угадал загаданное число " + player.getScore() +
                     (player.getScore() > 1 ? " раза" : " раз"));
         }
     }
 
     private void clear() {
-        for (Player player : PLAYERS) {
+        for (Player player : players) {
             player.clear();
         }
     }
 
     private void clearWins() {
-        for (Player player : PLAYERS) {
+        for (Player player : players) {
             player.clearScore();
         }
     }
