@@ -3,14 +3,13 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Arrays;
 
 public class Player {
-    private static final int LOW_RANGE_NUMBER = 1;
-    private static final int HI_RANGE_NUMBER = 100;
+    private static final int START_RANGE = 1;
+    private static final int END_RANGE = 100;
     private static final int ATTEMPTS = 10;
     private final String name;
     private final int[] numbers = new int[ATTEMPTS];
     private int attempt;
     private int score;
-
 
     public Player(String name) {
         this.name = name;
@@ -25,7 +24,7 @@ public class Player {
     }
 
     public boolean addNumber(int number) {
-        if (number < LOW_RANGE_NUMBER || number > HI_RANGE_NUMBER) {
+        if (number < START_RANGE || number > END_RANGE) {
             System.out.print("\nВведенное число " + number + " не в диапазоне от 1 до 100");
             return true;
         }
@@ -49,12 +48,12 @@ public class Player {
         score++;
     }
 
+    public void clearScore() {
+        score = 0;
+    }
+
     public void clear() {
         Arrays.fill(numbers, 0, attempt, 0);
         attempt = 0;
-    }
-
-    public void clearScore() {
-        score = 0;
     }
 }
