@@ -1,45 +1,57 @@
-\echo Все роботы
-SELECT * FROM jaegers
-ORDER BY model_name;
+\echo Р’СЃРµ СЂРѕР±РѕС‚С‹
+SELECT *
+  FROM jaegers
+ ORDER BY model_name;
 
-\echo Не уничтоженные работы
-SELECT * FROM jaegers
-WHERE status = 'Active'
-ORDER BY model_name;
+\echo РќРµ СѓРЅРёС‡С‚РѕР¶РµРЅРЅС‹Рµ СЂР°Р±РѕС‚С‹
+SELECT *
+  FROM jaegers
+ WHERE status = 'Active'
+ ORDER BY model_name;
 
-\echo Роботы mark-1 и mark-4
-SELECT * FROM jaegers
-WHERE mark IN (1, 4)
-ORDER BY model_name;
+\echo Р РѕР±РѕС‚С‹ mark-1 Рё mark-4
+SELECT *
+  FROM jaegers
+ WHERE mark IN (1, 4)
+ ORDER BY model_name;
 
-\echo Все роботы, кроме mark-1 и mark-4
-SELECT *FROM jaegers
-WHERE mark NOT IN (1, 4)
-ORDER BY mark DESC;
+\echo Р’СЃРµ СЂРѕР±РѕС‚С‹, РєСЂРѕРјРµ mark-1 Рё mark-4
+SELECT *
+  FROM jaegers
+ WHERE mark NOT IN (1, 4)
+ ORDER BY mark DESC;
 
-\echo Самый старый робот
-SELECT *FROM jaegers
-WHERE launch <= (SELECT MIN(launch)FROM jaegers)
-ORDER BY model_name;
+\echo РЎР°РјС‹Р№ СЃС‚Р°СЂС‹Р№ СЂРѕР±РѕС‚
+SELECT *
+  FROM jaegers
+ WHERE launch <= (SELECT MIN(launch)
+                    FROM jaegers)
+ ORDER BY model_name;
 
-\echo Роботы, которые уничтожили больше всех kaiju
-SELECT * FROM jaegers
-WHERE kaiju_kill >= (SELECT MAX(kaiju_kill)FROM jaegers)
-ORDER BY kaiju_kill DESC;
+ \echo Р РѕР±РѕС‚С‹, РєРѕС‚РѕСЂС‹Рµ СѓРЅРёС‡С‚РѕР¶РёР»Рё Р±РѕР»СЊС€Рµ РІСЃРµС… kaiju
+SELECT *
+  FROM jaegers
+ WHERE kaiju_kill >= (SELECT MAX(kaiju_kill)
+                        FROM jaegers)
+ ORDER BY kaiju_kill DESC;
 
-\echo Средний вес роботов
-SELECT ROUND(AVG(weight), 3) AS avg_weight FROM jaegers;
+ \echo РЎСЂРµРґРЅРёР№ РІРµСЃ СЂРѕР±РѕС‚РѕРІ
+ SELECT ROUND(AVG(weight), 3) AS avg_weight
+   FROM jaegers;
 
-\echo Увеличение количества убитых kaiju на 1 у не уничтоженных роботов
-UPDATE jaegers SET kaiju_kill = kaiju_kill + 1
-WHERE status = 'Active';
+\echo РЈРІРµР»РёС‡РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° СѓР±РёС‚С‹С… kaiju РЅР° 1 Сѓ РЅРµ СѓРЅРёС‡С‚РѕР¶РµРЅРЅС‹С… СЂРѕР±РѕС‚РѕРІ
+UPDATE jaegers
+   SET kaiju_kill = kaiju_kill + 1
+ WHERE status = 'Active';
 
-SELECT * FROM jaegers
-ORDER BY model_name;
+SELECT *
+  FROM jaegers
+ ORDER BY model_name;
 
-\echo Удаление уничтоженных роботов
+\echo РЈРґР°Р»РµРЅРёРµ СѓРЅРёС‡С‚РѕР¶РµРЅРЅС‹С… СЂРѕР±РѕС‚РѕРІ
 DELETE FROM jaegers
-WHERE status = 'Destroyed';
+ WHERE status = 'Destroyed';
 
-SELECT * FROM jaegers
-ORDER BY model_name;
+SELECT *
+  FROM jaegers
+ ORDER BY model_name;
